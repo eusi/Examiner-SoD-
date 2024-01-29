@@ -2,10 +2,13 @@ local ex = Examiner;
 local cfg, cache;
 
 -- Module
+-- local mod = ex:CreateModule("Cache","Cached Players");
+-- mod.help = "Right Click for extended menu";
+-- mod:CreatePage(false,"");
+-- mod:HasButton(true);
 local mod = ex:CreateModule("Cache","Cached Players");
-mod.help = "Right Click for extended menu";
-mod:CreatePage(false,"");
-mod:HasButton(true);
+mod.help = "Examiner Settings";
+mod:CreatePage(false,"Cached Players");
 
 -- Variables
 local cacheSortMethods = { "none", "name", "realm", "level", "guild", "race", "class", "time" };

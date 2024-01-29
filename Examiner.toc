@@ -1,10 +1,9 @@
-## Interface: 11306
-## Version: Classic Fan Update (1.09.5)
+## Interface: 100205
+## Version: SoD Classic Fan Update by sAks
 ## Title: Examiner
-## Author: Aezay (Earthen Ring EU), Grome (Sulfuron)
-## Notes: Advanced Inspection Mod of Gear and Honor.
+## Author: Aezay (Earthen Ring EU)
+## Notes: Advanced Inspection Mod of Gear, Talents, Honor, Arena and Achievements.
 ## SavedVariables: Examiner_Config, Examiner_Cache
-## OptionalDeps: Details
 
 ## libs ##
 LibGearExam\LibGearExam.xml
@@ -18,12 +17,11 @@ Examiner.lua
 modcore.lua
 
 ## modules ##
-Modules\modlist.lua
 Modules\itemslots.lua
 Modules\config.lua
 Modules\cache.lua
 Modules\stats.lua
 Modules\pvp.lua
-Modules\gearlist.lua
 Modules\delayedscan.lua
-Modules\itemusage.lua
+Modules\talents.lua
+Modules\modlist.lua

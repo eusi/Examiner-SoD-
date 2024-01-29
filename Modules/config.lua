@@ -1,12 +1,10 @@
 local ex = Examiner;
 local cfg;
 
-
-
 -- Module
-local mod = ex:CreateModule("Config","Configurations");
+local mod = ex:CreateModule("Config","Settings");
 mod.help = "Examiner Settings";
-mod:CreatePage(false,"Configurations");
+mod:CreatePage(false,"Settings");
 
 -- Create Version String
 local modName = ex:GetName();
@@ -39,10 +37,8 @@ local function ConfigCheckBox_OnClick(self,button)
 		end
 		ex:SetScript("OnHide",onHide);
 	end
-
 	-- Post Change to Modules
 	ex:SendModuleEvent("OnConfigChanged",var,cfg[var]);
-	PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 end
 
 -- CheckBoxes: OnEnter

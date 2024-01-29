@@ -52,70 +52,76 @@ end
 
 -- Stat Names
 LGE.StatNames = {
-	-- Base Stats
 	STR = ITEM_MOD_STRENGTH_SHORT,
 	AGI = ITEM_MOD_AGILITY_SHORT,
 	STA = ITEM_MOD_STAMINA_SHORT,
 	INT = ITEM_MOD_INTELLECT_SHORT,
 	SPI = ITEM_MOD_SPIRIT_SHORT,
-	HP = HEALTH.." Points",
-	MP = MANA.." Points",
-	HP5 = ITEM_MOD_HEALTH_REGEN_SHORT,
-	MP5 = ITEM_MOD_POWER_REGEN0_SHORT,
 
-	-- Defensive Stats
 	ARMOR = ARMOR,
-	DODGE = DODGE_CHANCE,
-	PARRY = PARRY_CHANCE,
-	DEFENSE = DEFENSE,
-	BLOCK = BLOCK_CHANCE,
-	BLOCKVALUE = ITEM_MOD_BLOCK_VALUE_SHORT,
-	
-	-- Resistances
+
 	ARCANERESIST = RESISTANCE6_NAME,
 	FIRERESIST = RESISTANCE2_NAME,
 	NATURERESIST = RESISTANCE3_NAME,
 	FROSTRESIST = RESISTANCE4_NAME,
 	SHADOWRESIST = RESISTANCE5_NAME,
 
-	-- Offensive Stats
+	MASTERY = STAT_MASTERY,
+
+	DODGE = DODGE_CHANCE,
+	PARRY = PARRY_CHANCE,
+	DEFENSE = DEFENSE,
+	BLOCK = BLOCK_CHANCE,
+	BLOCKVALUE = ITEM_MOD_BLOCK_VALUE_SHORT,
+	RESILIENCE = STAT_RESILIENCE,
+	PVPPOWER = STAT_PVP_POWER,
+
 	AP = STAT_ATTACK_POWER,
 	RAP = ITEM_MOD_RANGED_ATTACK_POWER_SHORT,
-	APFERAL = ITEM_MOD_FERAL_ATTACK_POWER_SHORT,
-	CRIT = CRIT_CHANCE,
-	HIT = STAT_HIT_CHANCE,
-	RANGEDHIT = ITEM_MOD_HIT_RANGED_RATING_SHORT,	-- why doesn't this work? added to overall hit as workaround for hunters
+	CRIT = CRIT_CHANCE ,
+	HIT = STAT_HIT_CHANCE ,
 	HASTE = MELEE.." "..STAT_HASTE,
+
 	WPNDMG = DAMAGE_TOOLTIP,
 	RANGEDDMG = RANGED_DAMAGE_TOOLTIP,
-	--ARMORPENETRATION = ITEM_MOD_ARMOR_PENETRATION_RATING_SHORT,	-- Az: Obsolete
-	--EXPERTISE = STAT_EXPERTISE,	-- not in classic
+	ARMORPENETRATION = ITEM_MOD_ARMOR_PENETRATION_RATING_SHORT,	-- Az: Obsolete
+	EXPERTISE = STAT_EXPERTISE,
 
-	-- Spells
 	SPELLCRIT = STAT_CATEGORY_SPELL.." "..CRIT_ABBR,
 	SPELLHIT = STAT_CATEGORY_SPELL.." "..HIT,
 	SPELLHASTE = STAT_CATEGORY_SPELL.." "..STAT_HASTE,
 	SPELLPENETRATION = ITEM_MOD_SPELL_PENETRATION_SHORT,
+
 	SPELLDMG = ITEM_MOD_SPELL_POWER_SHORT,
-	HEAL = ITEM_MOD_SPELL_HEALING_DONE_SHORT,
 	ARCANEDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_ARCANE..")",
 	FIREDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_FIRE..")",
 	NATUREDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_NATURE..")",
 	FROSTDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_FROST..")",
 	SHADOWDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_SHADOW..")",
 	HOLYDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_HOLY..")",
+
+	-- Az: How to make these two more global?
+	HP = HEALTH.." Points",
+	MP = MANA.." Points",
+
+	HP5 = ITEM_MOD_HEALTH_REGEN_SHORT,
+	MP5 = ITEM_MOD_POWER_REGEN0_SHORT,
 	
-	-- Skill Bonuses
-	DAGGERSKILL = "Daggers Skill Bonus",
-	ONEAXESKILL = "Axes Skill Bonus",
-	TWOAXESKILL = "Two-Handed Axes Skill Bonus",
-	ONESWORDSKILL = "Swords Skill Bonus",
-	TWOSWORDSKILL = "Two-Handed Swords Skill Bonus",
-	ONEMACESKILL = "Maces Skill Bonus",
-	TWOMACESKILL = "Two-Handed Maces Skill Bonus",
-	BOWSKILL = "Bows skill Bonus",
-	GUNSSKILL = "Guns skill Bonus",
-	CROSSBOWSKILL = "Crossbows Skill Bonus",
+	-- Can we find a global variable for these one ?
+	DAGGERSKILL = "Increased Daggers Skill",
+	
+	ONEAXESKILL = "Increased Axes Skill",
+	TWOAXESKILL = "Increased Two-Handed Axes Skill",
+
+	ONESWORDSKILL = "Increased Swords Skill",
+	TWOSWORDSKILL = "Increased Two-Handed Swords Skill",
+	
+	ONEMACESKILL = "Increased Maces Skill",
+	TWOMACESKILL = "Increased Two-Handed Maces Skill",
+	
+	BOWSKILL = "Increased Bows skill",
+	GUNSSKILL = "Increased Guns skill",
+	CROSSBOWSKILL = "Increased Crossbows Skill",
 };
 
 -- Create a sorted List of Stats
@@ -336,7 +342,7 @@ end
 --------------------------------------------------------------------------------------------------------
 function LGE:ScanLineForPatterns(text,statTable)
 	for index, pattern in ipairs(self.Patterns) do
-		local pos, _, value1, value2, value3 = text:find(pattern.p);
+		local pos, _, value1, value2 = text:find(pattern.p);
 		if (pos) and (value1 or pattern.v) then
 --pattern.uses = (pattern.uses or 0) + 1;
 			-- Pattern Debugging -> Find obsolete patterns put on alert
@@ -357,8 +363,6 @@ function LGE:ScanLineForPatterns(text,statTable)
 					if (type(pattern.v) == "table") then
 						statTable[statName] = (statTable[statName] or 0) + (pattern.v[statIndex]);
 					-- Az: This is a bit messy, only supports 2 now, needs to make it dynamic and support as many extra values as needed
-					elseif (statIndex == 3) and (value3) then
-						statTable[statName] = (statTable[statName] or 0) + (value3);
 					elseif (statIndex == 2) and (value2) then
 						statTable[statName] = (statTable[statName] or 0) + (value2);
 					else
@@ -435,10 +439,7 @@ function LGE:GetStatValue(statToken,statTable,compareTable,level,combineAdditive
 			end
 		end
 		if (statToken == "SPELLDMG") and (statTable["INT"]) then
-		--	value = (value + statTable["INT"]);	Intellect does not give spellpower in classic.
-		end
-		if (statToken == "HEAL") and (statTable["SPELLDMG"]) then
-			value = (value + statTable["SPELLDMG"]);	-- spelldmg is also healing power though. tested on mage and paladin
+			value = (value + statTable["INT"]);
 		end
 		if (statToken == "RAP") and (statTable["AP"]) then
 			value = (value + statTable["AP"]);
@@ -491,11 +492,16 @@ function LGE:GetEnchantInfo(link)
 	local id = tonumber(link:match(LGE.ITEMLINK_PATTERN_ENCHANT));
 	-- Prepare basic item with enchant
 	if (id == nil  or id == "") then
+	id = ""
+	end
+	local link = "item:8383:"..id..":"
+	-- No enchant
+	if (not id) or (id == 0) then
 		return;
 	end
-	local link = "item:20768:"..id..":" -- Item needs to have only one line
 	-- Set Link
 	self.Tip:ClearLines();
+	-- self.Tip:SetHyperlink(format("item:%d+:%d+",id));	-- Az: somewhat hackish, but it works!
 	self.Tip:SetHyperlink(link);
 	local enchantName = LibGearExamTipTextLeft2:GetText();
 	if (not enchantName) or (enchantName == "") then

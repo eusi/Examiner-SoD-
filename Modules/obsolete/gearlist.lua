@@ -1,12 +1,10 @@
 local ex = Examiner;
-local cfg;
 
 -- Module
-local mod = ex:CreateModule("Gear","Gear List");
+local mod = ex:CreateModule("Gear","Gear List (beta)");
 mod.help = "Lists gear with enchants or the lack thereof";
 mod:CreatePage(true,"");
 mod:HasButton(true);
-mod:AddOption({ var = "gearbutton", default = true, label = "Display Gear Tab", tip = "If enabled Examiner will display the Gear tab." });
 
 -- Variables
 local NUM_BUTTONS = 9;
@@ -59,20 +57,6 @@ local ENCHANT_SLOT_LEVEL = {
 --------------------------------------------------------------------------------------------------------
 --                                           Module Scripts                                           --
 --------------------------------------------------------------------------------------------------------
-
--- OnInitialize
-function mod:OnInitialize()
-	cfg = ex.cfg;
-end
-
--- OnConfigChanged
-function mod:OnConfigChanged()
-	if cfg.gearbutton then
-		mod:HasButton(true);
-	else
-		mod:HasButton(false);
-	end
-end
 
 -- OnInspectReady
 function mod:OnInspectReady(unit)

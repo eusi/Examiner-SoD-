@@ -57,7 +57,7 @@ ex.options = {
 	{ var = "clearInspectOnHide", default = false, label = "Clear Inspect Data on Hide", tip = "When Examiner gets hidden, this option will clear inspection data, thus freeing up some memory." },
 	-- { var = "percentRatings", default = false, label = "Show Ratings in Percentage *", tip = "* = Not working in WoD.\nWith this option enabled, ratings will be displayed in percent relative to the inspected person's level." },
 	{ var = "combineAdditiveStats", default = true, label = "Combine Additive Stats", tip = "This option will combine certain stats which stacks with others.\n- Spell Power to specific schools\n- Intellect to Spell Power\n- AP to Ranged AP" },
-	{ var = "tooltipSmartAnchor", default = false, label = "Fixed Tooltip Anchor", tip = "Instead of showing item tooltips next to the item button, it will place it next to the Examiner window, in a fixed position" },
+	{ var = "tooltipSmartAnchor", default = false, label = "Smart Tooltip Anchor", tip = "Instead of showing item tooltips next to the item button, it will place it next to the Examiner window, in a fixed position" },
 };
 
 -- Binding Name
@@ -107,10 +107,6 @@ end
 local function Examiner_OnUpdate(self,elapsed)
 	if (self:ValidateUnit()) and (CheckInteractDistance(self.unit,3)) then
 		self:DoInspect(self.unit);
-		-- We do another inspect due to honnor data reporting the last succesful inspect... (needs to find something more elegant)
-		C_Timer.After(0.5, function()
-			self:DoInspect(self.unit);
-		end)
 	end
 end
 
@@ -170,9 +166,6 @@ function ex:VARIABLES_LOADED(event)
 	for _, option in ipairs(self.options) do
 		self:SendModuleEvent("OnConfigChanged",option.var,cfg[option.var]);
 	end
-	-- Show/Hide user modules
-	ex:SendModuleEvent("OnPvpTabConfigChange", value);
-	ex:SendModuleEvent("OnGearTabConfigChange", value);
 	-- Remove this event
 	self:UnregisterEvent(event);
 	self[event] = nil;
@@ -182,12 +175,6 @@ end
 function ex:PLAYER_TARGET_CHANGED(event)
 	if (cfg.autoInspect) and (UnitExists("target")) then
 		self:DoInspect("target");
-			if _G.Details and (UnitIsPlayer("target")) then
-				InspectFrame = Examiner
-				Details:ShowTalentsPanel()
-			elseif _G.Details then
-				DetailsTalentFrame:Hide();
-			end
 	elseif (self.unit == "target") then
 		self.unit = nil;
 		self:SetScript("OnUpdate",nil);
@@ -289,21 +276,12 @@ local function Model_OnMouseDown(self,button)
 		self.isRotating = true;
 		if (IsControlKeyDown()) then
 			ex:SetBackgroundTexture(true);
-			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
-		end
-		if (IsShiftKeyDown()) then
-			local z, x, y = self:GetPosition();
-			if not (z == 0 and x == 0 and y == 0) then
-				self:SetPosition(0,0,0);
-				PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
-			end
 		end
 	elseif (button == "RightButton") then
 		self.isPanning = true;
 		if (IsControlKeyDown()) then
 			cfg.showBackground = (not cfg.showBackground);
 			ex:ShowBackground();
-			PlaySound(SOUNDKIT.IG_MAINMENU_OPTION_CHECKBOX_ON);
 		end
 	end
 end
@@ -510,9 +488,6 @@ function ex:LoadPlayerFromCache(entryName)
 	-- Item Slots
 	for slotName, slotId in next, LibGearExam.SlotIDs do
 		local link = entry.Items[slotName];
-		-- C_Timer.After(0.1, function()
-			-- local link = entry.Items[slotName];	
-		-- end)
 		info.Items[slotName] = link;
 		LibGearExam:ScanItemLink(link,unitStats);
 	end
@@ -645,11 +620,6 @@ function ex:InspectReady(guid)
 		end
 		-- Scan Gear & Post InspectReady
 		self:ScanGear(unit);
-		-- We rebuild the stats list since all items are not fully loaded. This need to be rewriten, can we use ContinueOnItemLoad(function() ?
-		C_Timer.After(0.1, function()
-			self:ScanGear(unit);	
-		end)
-		
 		self:ShowModulePage();
 		self:SendModuleEvent("OnInspectReady",unit,guid);
 		-- Cache
@@ -753,12 +723,6 @@ function ex:DoInspect(unit,openFlag)
 		-- We couldn't Inspect, try and see if we have them cached?
 		if (not self.canInspect) and (not self:LoadPlayerFromCache(self:GetEntryName())) and (cfg.activePage) then
 			self.modules[cfg.activePage].page:Hide();	-- Az: this is slightly bad to do, what if a module still have data to show? feats still work outside inspect range for example
-		end
-		-- show talents
-		if (openFlag ~= false) and _G.Details and (UnitIsPlayer("target")) and (not self:IsShown()) then
-    		self:Display();
-    		InspectFrame = Examiner
-    		Details:ShowTalentsPanel()
 		end
 		-- Outside range, monitor range and inspect as soon as they are in range
 		if (not CheckInteractDistance(unit,3)) then

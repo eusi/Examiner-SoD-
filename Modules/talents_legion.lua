@@ -4,7 +4,6 @@ local cfg;
 -- Module
 local mod = ex:CreateModule("Talent",TALENTS);
 mod.help = "The Inspected Player's Talent Specialization";
---mod.page = CreateFrame("Frame",nil,ex);
 mod:CreatePage(false,SPECIALIZATION);
 mod:HasButton(true);
 mod.canCache = true;
@@ -15,7 +14,7 @@ local TALENT_BUTTON_SIZE = 28;
 local TALENT_BUTTON_SPACING = 7;
 
 -- Variables
-local talentGroup;
+local talentGroup;		-- the active talent spec group, 1 for primary or 2 for secondary
 
 --------------------------------------------------------------------------------------------------------
 --                                           Module Scripts                                           --
@@ -37,7 +36,7 @@ end
 
 -- OnInspectReady
 function mod:OnInspectReady(unit)
-	talentGroup = ex.isSelf and GetActiveSpecGroup() or nil;
+	talentGroup = GetActiveSpecGroup(not ex.isSelf);
 	self:HasData(ex.canInspect);
 	self:InitTalents();
 end
@@ -105,14 +104,13 @@ end
 local function TalentButton_OnEnter(self,motion)
 	local classDisplayName, class, classID = UnitClass(INSPECTED_UNIT);
 	GameTooltip:SetOwner(self,"ANCHOR_RIGHT");
-	GameTooltip:SetTalent(self.id,true,talentGroup,ex.unit,classID);
+	GameTooltip:SetTalent(self.talentID,true,talentGroup,INSPECTED_UNIT,classID);
 end
 
 -- Create Talent Row
-function CreateTalentRow(parent,tier)
+local function CreateTalentRow(parent,tier)
 	local row = CreateFrame("Frame",nil,parent);
-	row:SetWidth(parent:GetWidth() - 32);
-	row:SetHeight(TALENT_BUTTON_SIZE + TALENT_BUTTON_SPACING);
+	row:SetSize(parent:GetWidth() - 32,TALENT_BUTTON_SIZE + TALENT_BUTTON_SPACING);
 	row:SetPoint("TOPLEFT",16,-tier * (TALENT_BUTTON_SIZE + TALENT_BUTTON_SPACING));
 
 --	local backdrop = { bgFile = "Interface\\Buttons\\WHITE8X8", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, tileSize = 16, edgeSize = 16, insets = { left = 4, right = 4, top = 4, bottom = 4 } };
@@ -122,22 +120,21 @@ function CreateTalentRow(parent,tier)
 	row.levelText = row:CreateFontString(nil,"OVERLAY","GameFontNormal");
 	row.levelText:SetPoint("LEFT",16,0);
 
-	for i = 1, NUM_TALENT_COLUMNS do
+	-- each talent row has 3 bottons/columns/talents
+	for col = 1, NUM_TALENT_COLUMNS do
 		local btn = CreateFrame("Button",nil,row);
 		btn:SetWidth(TALENT_BUTTON_SIZE);
 		btn:SetHeight(TALENT_BUTTON_SIZE);
-		btn:SetPoint("LEFT",i * (TALENT_BUTTON_SIZE + TALENT_BUTTON_SPACING) + 32,0);
+		btn:SetPoint("LEFT",col * (TALENT_BUTTON_SIZE + TALENT_BUTTON_SPACING) + 32,0);
 		btn:SetScript("OnEnter",TalentButton_OnEnter);
 		btn:SetScript("OnLeave",ex.HideGTT);
 
 		btn.icon = btn:CreateTexture(nil,"BORDER");
 		btn.icon:SetPoint("TOPLEFT",1,-1);
 		btn.icon:SetPoint("BOTTOMRIGHT",-1,1);
-		btn.icon:SetTexCoord(0.07,0.93,0.07,0.93);
+		btn.icon:SetTexCoord(0.07,0.93,0.07,0.93);		-- these fractions omits the border, giving us nice borderless icons
 
-		btn.id = (tier - 1) * 3 + i;
-
-		row["talent"..i] = btn;
+		row["talent"..col] = btn;
 	end
 
 	parent["row"..tier] = row;
@@ -165,19 +162,9 @@ local function OnHide(self)
 	ex:SetBackgroundTexture();
 end
 
--- Talent Page
---mod.page:SetWidth(320);
---mod.page:SetHeight(354);
---mod.page:SetPoint("BOTTOM",-11,10);
---mod.page:Hide();
---mod.page:SetScript("OnShow",OnShow);
---mod.page:SetScript("OnHide",OnHide);
---local backdrop = { bgFile = "Interface\\Buttons\\WHITE8X8", edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border", tile = true, tileSize = 16, edgeSize = 16, insets = { left = 4, right = 4, top = 4, bottom = 4 } };
---mod.page:SetBackdrop(backdrop);
-
 -- Create Tier Frames
-for i = 1, MAX_TALENT_TIERS do
-	CreateTalentRow(mod.page,i);
+for tier = 1, MAX_TALENT_TIERS do
+	CreateTalentRow(mod.page,tier);
 end
 
 --------------------------------------------------------------------------------------------------------
@@ -186,29 +173,30 @@ end
 
 -- Initialize Talents
 function mod:InitTalents()
-	local _, class, classID = UnitClass(ex.unit);	-- Az: classID not used anymore, remove?
+	local _, class, classID = UnitClass(INSPECTED_UNIT);	-- Az: classID not used anymore, remove?
 	-- Background
 --	local background = "WarriorProtection";
 --	ex:SetBackgroundTexture("Interface\\TalentFrame\\"..background.."-");
 	-- Update Widgets
 	for tier = 1, MAX_TALENT_TIERS do
+		local group = mod.page["row"..tier];
+		group:Show();
 		-- Set Levels (these are different for deathknights)
 		local talentLevel = CLASS_TALENT_LEVELS[class] or CLASS_TALENT_LEVELS["DEFAULT"];
-		local group = mod.page["row"..tier];
 		group.levelText:SetText(talentLevel[tier]);
-		group:Show();
 		-- Set Talents
 		for column = 1, NUM_TALENT_COLUMNS do
-			local talentID, name, iconTexture, selected, available = GetTalentInfo(tier,column,talentGroup,true,ex.unit);	-- always inspect mode
+			local talentID, name, iconTexture, selected, available = GetTalentInfo(tier,column,talentGroup,true,INSPECTED_UNIT);	-- always inspect mode
 			local talent = group["talent"..column];
+			talent.talentID = talentID;
 			talent.icon:SetTexture(iconTexture);
 			talent.icon:SetDesaturated(not selected);
 		end
 	end
 	-- Spec Name
-	local specID = GetInspectSpecialization(ex.unit);
+	local specID = GetInspectSpecialization(INSPECTED_UNIT);
 	local _, specName = GetSpecializationInfoByID(specID);
-	self.talentSpec = specName or NO.." "..SPECIALIZATION;
+	self.talentSpec = specName or NO.." "..SPECIALIZATION;	-- concat of two localized strings which *may* not sound right in non-English
 	mod.page.header:SetText(self.talentSpec);
 	-- Details
 	self.details:Clear();

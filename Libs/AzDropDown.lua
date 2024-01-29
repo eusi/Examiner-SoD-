@@ -239,7 +239,7 @@ end
 
 -- Create Dropdown Menu Item Button
 local function CreateMenuItem()
-	local item = CreateFrame("Button",nil,menu);
+	local item = CreateFrame("Button",nil,menu,"BackdropTemplate");
 	item:SetHeight(MENU_ITEM_HEIGHT);
 	item:SetHitRectInsets(-12,-10,0,0);
 	item:SetHighlightTexture("Interface\\QuestFrame\\UI-QuestTitleHighlight");
@@ -300,7 +300,7 @@ end
 
 -- Creates the DropDown menu with item buttons and scrollbar
 local function CreateDropDownMenu()
-	menu = CreateFrame("Frame",nil,nil);
+	menu = CreateFrame("Frame",nil,nil,"BackdropTemplate");
 
 	menu:SetToplevel(true);
 	menu:SetClampedToScreen(true);
@@ -394,7 +394,7 @@ function AzDropDown:CreateDropDown(parent,width,initFunc,selectValueFunc,isAutoS
 		return;
 	end
 
-	local dd = CreateFrame("Frame",nil,parent);
+	local dd = CreateFrame("Frame",nil,parent,"BackdropTemplate");
 	dd:SetSize(abs(width),24);
 
 	dd.button = CreateFrame("Button",nil,dd);

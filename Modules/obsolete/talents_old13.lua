@@ -8,7 +8,6 @@ mod.help = "Talents and Glyphs";
 mod:CreatePage(false,"Talents and Glyphs");
 mod:HasButton(true);
 
-local numTalents = GetNumTalents();
 local talents = {};
 local glyphs = {};
 local spec, role;
@@ -40,36 +39,18 @@ end
 
 function mod:UpdateSpecRoleTalentsGlyphs()
 	local unit = ex.unit;
-	local activeSpec = GetActiveSpecGroup(unit);
 
-	-- Specc
-	local currentSpec = GetInspectSpecialization(unit);
-	local currentSpecName = currentSpec and select(2, GetSpecializationInfoByID(currentSpec)) or "None"; --1=id; 2=name; 3=desc; 4=icon; 5=bg; 6=role; 7=class
-	spec:SetText("|cffffffff"..(currentSpecName));
-
-	-- Role
-	local roleToken = GetSpecializationRoleByID(currentSpec);
-	if(roleToken == "HEALER") then
-		role.icon:SetTexCoord(unpack(RoleIcon[1]));
-	elseif(roleToken == "TANK") then
-		role.icon:SetTexCoord(unpack(RoleIcon[2]));
-	elseif(roleToken == "DAMAGER") then
-		role.icon:SetTexCoord(unpack(RoleIcon[3]));
-	else
-		role.icon:SetTexCoord(unpack(RoleIcon[4]));
-	end
-
+	local numTalents = GetNumTalents(1);
 	--Talents
-	for talentIndex = 1, numTalents do --MAX_NUM_TALENTS
+
+	-- Talents
+	for talentIndex = 1, numTalents do
+		talents[talentIndex] = tal;
 		local _, _, classID = UnitClass(INSPECTED_UNIT);
-		local name, iconTexture, tier, column, selected, available = GetTalentInfo(talentIndex, true, activeSpec, unit, classID);
 
 		local tal = talents[talentIndex];
-		local talentLink = GetTalentLink(talentIndex, true, classID);
-		tal.link = talentLink;
 		tal.missing = nil;
 		tal.icon:SetTexture(iconTexture);
-		tal.level:SetText(tier*15);
 
 		 if ( selected ) then
 			tal.icon.border:SetVertexColor(1,1,1);
@@ -85,50 +66,17 @@ function mod:UpdateSpecRoleTalentsGlyphs()
 		tal:Show();
 	end
 
-	-- Glyphs
-	for glyphIndex = 1, NUM_GLYPH_SLOTS do
-		local enabled, glyphType, _, _, icon, glyphID = GetGlyphSocketInfo(glyphIndex, activeSpec, true, unit);
-
-		if (enabled == 1) then
-			local gly = glyphs[glyphIndex];
-			if (glyphID ~= nil) then
-				local glyphLink = GetGlyphLinkByID(glyphID);
-				if (glyphLink ~= "") then
-
-					gly.link = glyphLink;
-					gly.missing = nil;
-					gly.icon:SetTexture(icon);
-					gly.type = glyphType;
-
-					if(gly.type == 2) then
-						gly:SetWidth(22);
-						gly:SetHeight(22);
-						gly.icon.border:SetWidth(25);
-						gly.icon.border:SetHeight(25);
-					end
-
-					gly.icon:SetAlpha(1);
-					SetDesaturation(gly.icon, false);
-					gly.icon.border:SetVertexColor(0.392157, 0.584314, 0.929412); -- headline-blue
-					gly.icon.border:Show();
-					gly:Show();
-				else
-					gly:Hide();
-				end
-			else
-				gly:Hide();
-			end
-		end
-	end
 end
 
 --------------------------------------------------------------------------------------------------------
 --                                          Widget Creation                                           --
 --------------------------------------------------------------------------------------------------------
 
+
+local tal = CreateFrame("Button",nil,mod.page);
+local numTalents = GetNumTalents(1);
 -- Talents
 for talentIndex = 1, numTalents do
-	local tal = CreateFrame("Button",nil,mod.page);
 
 	tal:SetWidth(32);
 	tal:SetHeight(32);
@@ -160,38 +108,6 @@ for talentIndex = 1, numTalents do
 		tal:SetPoint("RIGHT",talents[talentIndex - 1],"RIGHT",40,0);
 		tal.icon.border:SetPoint("RIGHT",talents[talentIndex - 1],"RIGHT",40,0);
 	end
-
-	talents[talentIndex] = tal;
-end
-
--- Glyphs
-for glyphIndex = 1, NUM_GLYPH_SLOTS do
-	local gly = CreateFrame("Button",nil,mod.page);
-
-	gly:SetWidth(28);
-	gly:SetHeight(28);
-	gly:SetScript("OnClick",ex.ItemButton_OnClick);
-	gly:SetScript("OnEnter",ex.ItemButton_OnEnter);
-	gly:SetScript("OnLeave",ex.HideGTT);
-
-	gly.icon = gly:CreateTexture(nil,"ARTWORK");
-	gly.icon:SetAllPoints();
-	gly.icon:SetTexture("Interface\Icons\INV_Misc_QuestionMark");
-
-	gly.icon.border = gly:CreateTexture(nil,"OVERLAY");
-	gly.icon.border:SetTexture("Interface\Addons\Examiner\Textures\Border");
-	gly.icon.border:SetWidth(30);
-	gly.icon.border:SetHeight(30);
-
-	if (glyphIndex == 1) then
-		gly:SetPoint("RIGHT",-29,80);
-		gly.icon.border:SetPoint("RIGHT",0,0);
-	else
-		gly:SetPoint("RIGHT",glyphs[glyphIndex - 1],"RIGHT", 0, -39);
-		gly.icon.border:SetPoint("RIGHT",glyphs[glyphIndex - 1],"RIGHT", 0, -40);
-	end
-
-	glyphs[glyphIndex] = gly;
 end
 
 -- Spec

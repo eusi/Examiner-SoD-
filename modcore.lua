@@ -203,7 +203,7 @@ ModuleCore.backdrop = backdrop;
 
 -- Creates a Default Module Page
 function ModuleCore:CreatePage(full,header)
-	local page = CreateFrame("Frame",nil,ex.model);
+	local page = CreateFrame("Frame",nil,ex.model,"BackdropTemplate");
 	page:SetSize(full and 320 or 235,full and 330 or 288);
 	page:SetPoint("TOP");
 

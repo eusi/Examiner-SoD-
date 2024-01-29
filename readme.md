@@ -1,4 +1,4 @@
-**Project Status: Inactive**
+Updated for SoD by eusi
 
 Fan Update
 ---------------------------------------
