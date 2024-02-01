@@ -11,7 +11,7 @@ function AzMsg(msg) DEFAULT_CHAT_FRAME:AddMessage(tostring(msg):gsub("|1","|cfff
 local cfg, cache;
 
 -- Data Tables
-local info = { Sets = {}, Items = {} };
+local info = { Sets = {}, Items = {}, Runes = {} };
 local unitStats = {};
 local equippedSlots = {};
 local statTipStats1, statTipStats2 = {}, {};
@@ -740,9 +740,14 @@ end
 function ex:ScanGear(unit)
 	wipe(unitStats);
 	wipe(info.Sets);
+	wipe(info.Runes);
 	LibGearExam:ScanUnitItems(unit,unitStats,info.Sets);
 	for slotName, slotId in next, LibGearExam.SlotIDs do
 		local link = (GetInventoryItemLink(unit,slotId) or ""):match(LibGearExam.ITEMLINK_PATTERN);
+		local engravingInfo = C_Engraving.GetRuneForEquipmentSlot(slotId);
+		if (engravingInfo ~= nil) then
+			info.Runes[#info.Runes + 1] = engravingInfo;
+		end
 		info.Items[slotName] = LibGearExam:FixItemStringLevel(link,info.level);
 		if (link) then
 			ex.itemsLoaded = true;

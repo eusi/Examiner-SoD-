@@ -317,6 +317,14 @@ local function BuildStatList()
 	for setName, setEntry in next, ex.info.Sets do
 		AddListEntry(setName,setEntry.count.."/"..setEntry.max);
 	end
+	-- Add SoD Runes
+	if (next(ex.info.Runes)) then
+		AddListEntry();
+		AddListEntry("SoD Runes");
+	end
+	for _, rune in ipairs(ex.info.Runes) do
+		AddListEntry(rune.name, "", "");
+	end
 	-- Add Padding + Update Resistances + Shown Items
 	AddListEntry();
 	UpdateResistances();

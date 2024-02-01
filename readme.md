@@ -1,27 +1,14 @@
 Updated for SoD by eusi
 
-Fan Update
 ---------------------------------------
-* Disabled Talents, Guild and Feats
-* PVP module support for WoW Classic
-* Support for ranged slot
-* Item level fix
-* Sort average item level fix
-* Item scan for hit/crit % and weapon skills
-* Fixed enchant name in gearlist module
-* Character stats should be display correctly even if the client didn't cached the item yet (workaround)
-* Currently support English, French, Spanish, Korean, Chinese and Deutsch clients
-* Ability to Show/Hide PVP and gearlist module in options
-* Added back Item Usage module for fun statistics :)
 
-To do:
-* Portuguese and Russian translation
-* Fix stats in the cache module, you might have to enter the same entry twice to show all the stats
+* Lots of fixes
+* Rune page
 
-Known issues:
-* HonorSpy break Examiner, see [Issue 6](https://github.com/taxidriveer/Examiner/issues/6#issuecomment-578391763) 
+![alt text](https://i.ibb.co/d0hDmcK/1.jpg)
 
-![alt text](https://i.imgur.com/voq7odP.jpg)
+![alt text](https://i.ibb.co/DGftBh2/2.jpg)
+
 
 Examiner - An Advanced Inspection Addon
 ---------------------------------------

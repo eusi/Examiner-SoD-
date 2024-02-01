@@ -84,12 +84,12 @@ end
 function mod:LoadHonorNormal()
 	self:HasData(true);
 	-- Query -- Az: Even if inspecting ourself, use inspect data as GetPVPYesterdayStats() is bugged as of 4.0.1
-	if (not ex.isSelf) or (HasInspectHonorData()) then
-		hd.todayHK, hd.todayHonor, hd.yesterdayHK, hd.yesterdayHonor, hd.lifetimeHK, hd.lifetimeRank = GetInspectHonorData();
+	if ((ex.isSelf) or (UnitName("player") == ex.info.name)) then
+	  hd.todayHK, hd.todayHonor = GetPVPSessionStats();
+		hd.yesterdayHK, _, hd.yesterdayHonor = GetPVPYesterdayStats();
+		hd.lifetimeHK, _, hd.lifetimeRank = GetPVPLifetimeStats();
 	else
-		hd.todayHK, hd.todayHonor = GetPVPSessionStats();
-		hd.yesterdayHK, hd.yesterdayHonor = GetPVPYesterdayStats();
-		hd.lifetimeHK, hd.lifetimeRank = GetPVPLifetimeStats();
+		hd.todayHK, hd.todayHonor, hd.yesterdayHK, hd.yesterdayHonor, hd.lifetimeHK, hd.lifetimeRank = GetInspectHonorData();
 	end
 	-- Update
 	self:UpdateHonor();

@@ -21,6 +21,7 @@ Modules\itemslots.lua
 Modules\config.lua
 Modules\cache.lua
 Modules\stats.lua
+Modules\runes.lua
 Modules\pvp.lua
 Modules\delayedscan.lua
 Modules\talents.lua
