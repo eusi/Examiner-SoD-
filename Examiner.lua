@@ -12,6 +12,7 @@ local cfg, cache;
 
 -- Data Tables
 local info = { Sets = {}, Items = {}, Runes = {} };
+local averageItemLevel = 0;
 local unitStats = {};
 local equippedSlots = {};
 local statTipStats1, statTipStats2 = {}, {};
@@ -741,18 +742,35 @@ function ex:ScanGear(unit)
 	wipe(unitStats);
 	wipe(info.Sets);
 	wipe(info.Runes);
+	self.averageItemLevel = 0;
 	LibGearExam:ScanUnitItems(unit,unitStats,info.Sets,info.Runes);
+	local itemCount = -1; --we start at -1 because we dont want to count the shirt
+	local totalItemLevel = 0;
+	local rememberMainSlot = 0;
 	for slotName, slotId in next, LibGearExam.SlotIDs do
 		local link = (GetInventoryItemLink(unit,slotId) or ""):match(LibGearExam.ITEMLINK_PATTERN);
-		--local engravingInfo = C_Engraving.GetRuneForEquipmentSlot(slotId);
-		--if (engravingInfo ~= nil) then
-		--	info.Runes[#info.Runes + 1] = engravingInfo;
-		--end
 		info.Items[slotName] = LibGearExam:FixItemStringLevel(link,info.level);
+		if( link ~= nil ) then
+				local itemLevel = GetDetailedItemLevelInfo(link);
+				local modi = 1;
+        if slotId == 4 then --shirt
+        	modi = 0;
+        end
+        if slotId == 16 then --2h-weapon
+        	modi = 2;
+        	rememberMainSlot = itemLevel;
+        end
+        if slotId == 17 then --off-hand
+        	totalItemLevel = totalItemLevel - round(rememberMainSlot/2);--1h should be counted only once
+        end
+        totalItemLevel = totalItemLevel + itemLevel * modi;
+		end
+		itemCount = itemCount + 1;
 		if (link) then
 			ex.itemsLoaded = true;
 		end
 	end
+	self.averageItemLevel = round(totalItemLevel / itemCount);
 end
 
 --------------------------------------------------------------------------------------------------------
@@ -794,6 +812,11 @@ end
 --------------------------------------------------------------------------------------------------------
 --                                          Helper Functions                                          --
 --------------------------------------------------------------------------------------------------------
+
+-- Round number
+function round(num)
+    return math.floor(num + 0.5)
+end
 
 -- Format Time (sec)
 function ex:FormatTime(time,short)

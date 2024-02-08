@@ -291,6 +291,23 @@ local function AddListEntry(name,value,tip)
 	tbl.tip = tip;
 end
 
+-- Build Detail List
+local function BuildInfoList()
+	displayList.count = 0;
+	--- Show Details from Modules
+	for index, mod in ipairs(ex.modules) do
+		if (mod.details) and (#mod.details.entries > 0) then
+			for index, entry in ipairs(mod.details.entries) do
+				AddListEntry(entry.label,entry.value,entry.tip);
+			end
+		end
+	end
+	-- Add Padding + Update Resistances + Shown Items
+	AddListEntry();
+	UpdateResistances();
+	UpdateShownItems(mod.scroll);
+end
+
 -- Build Stat List
 local function BuildStatList()
 	displayList.count = 0;
@@ -318,27 +335,27 @@ local function BuildStatList()
 		AddListEntry(setName,setEntry.count.."/"..setEntry.max);
 	end
 	-- Add SoD Runes
-	if (next(ex.info.Runes)) then
-		AddListEntry();
-		AddListEntry("SoD Runes");
-	end
-	for _, rune in ipairs(ex.info.Runes) do
-		AddListEntry(rune.name, "", "");
-	end
-	-- Add Padding + Update Resistances + Shown Items
+	--if (next(ex.info.Runes)) then
+	--	AddListEntry();
+	--	AddListEntry("SoD Runes");
+	--end
+	--for _, rune in ipairs(ex.info.Runes) do
+	--	AddListEntry(rune.name, "", "");
+	--end
+	-- Add Gear Score
 	AddListEntry();
-	UpdateResistances();
-	UpdateShownItems(mod.scroll);
-end
-
--- Build Detail List
-local function BuildInfoList()
-	displayList.count = 0;
+	AddListEntry("Gear Score");
+	AddListEntry("Average Item Level",ex.averageItemLevel,"");
+	--BuildInfoList();
 	--- Show Details from Modules
+	--AddListEntry(entry.label,entry.value,entry.tip);
+	--print(ex.modules.details.entries[7].label);
 	for index, mod in ipairs(ex.modules) do
 		if (mod.details) and (#mod.details.entries > 0) then
 			for index, entry in ipairs(mod.details.entries) do
-				AddListEntry(entry.label,entry.value,entry.tip);
+				if( index == 8 ) then
+					AddListEntry(entry.label,entry.value,entry.tip);
+				end
 			end
 		end
 	end

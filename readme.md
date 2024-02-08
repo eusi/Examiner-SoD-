@@ -2,8 +2,9 @@ Updated for SoD by eusi
 
 ---------------------------------------
 
-* Lots of fixes
 * Rune page
+* Average item level
+* Lots of fixes (talents etc.)
 
 ![alt text](https://i.ibb.co/d0hDmcK/1.jpg)
 
