@@ -125,6 +125,7 @@ end
 -- Talent OnEnter
 local function TalentButton_OnEnter(self,motion)
 	GameTooltip:SetOwner(self,"ANCHOR_RIGHT");
+	if( activeTab == nil ) then	return end;
 	GameTooltip:SetTalent(activeTab,self.id,isInspect,nil,activeSpec);
 end
 
@@ -210,7 +211,7 @@ scf:SetHeight(1);
 sc:SetScrollChild(scf);
 
 -- Talent Tabs
-for i = 1, _G.GetNumTalentTabs() do
+for i = 1, 3 do --_G.GetNumTalentTabs()
 	local tab = CreateFrame("Button","ExaminerTab"..i,mod.page,"TabButtonTemplate");
 	tab.id = i;
 	tab:SetScript("OnClick",TalentsTab_OnClick);
@@ -220,6 +221,7 @@ for i = 1, _G.GetNumTalentTabs() do
 		tab:SetPoint("LEFT","ExaminerTab"..(i - 1),"RIGHT");
 	end
 end
+
 ex.selectedTab = 1;
 PanelTemplates_SetNumTabs(ex,3);
 PanelTemplates_UpdateTabs(ex);
@@ -317,11 +319,10 @@ AzMsg("|2Examiner Talent Module:|r blocked path |1"..tier.." x "..i.."|r    left
 		end
 	end
 end
-
 -- Init Talents
 function mod:InitTalents()
 	if (self:IsShown()) then
-		self:UpdateTalents();
+	    mod:UpdateTalents();
 	end
 	-- Gather Talent Info
 	local maxTree = 1;
@@ -356,7 +357,7 @@ function mod:InitTalents()
 end
 
 -- Update Talents
-function mod.UpdateTalents()
+function mod:UpdateTalents()
 	--activeSpec = cfg.shownSpec or GetActiveTalentGroup(isInspect);
 	--local uniqueId, tabName, description, icon, pointsSpent, background, previewPointsSpent, bool = GetTalentTabInfo(activeTab,isInspect,nil,activeSpec);
 	--ex:SetBackgroundTexture("Interface\\TalentFrame\\"..background.."-");
@@ -387,7 +388,10 @@ function mod.UpdateTalents()
 		end
 	end
 	-- Talents
+	if( activeTab == nil ) then return end;
 	local numTalents = GetNumTalents(activeTab,isInspect,nil);
+	if not numTalents or numTalents <= 0 then return end;
+
 	for i = 1, numTalents do
 		local name, iconTexture, tier, column, rank, maxRank, meetsPrereq, previewRank, meetsPreviewPrereq, isExceptional, goldBorder =	GetTalentInfo(activeTab,i,isInspect,nil,activeSpec);
 		local btn = talentBtns[i];
@@ -443,3 +447,8 @@ function mod.UpdateTalents()
 		arrows[i]:Hide();
 	end
 end
+
+--local status, error = pcall(PanelTemplates_UpdateTabs, ex);
+--if not status then
+--    print("Error on PanelTemplates_UpdateTabs: ", error);
+--end

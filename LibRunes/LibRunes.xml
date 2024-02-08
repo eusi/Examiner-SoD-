@@ -1,0 +1,10 @@
+<Ui>
+
+	<!-- Core -->
+	<Script file="LibRunes.lua"/>
+
+	<!--  Localisation -->
+	<Script file="enUS.lua"/>
+	<Script file="deDE.lua"/>
+
+</Ui>

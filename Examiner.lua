@@ -741,13 +741,13 @@ function ex:ScanGear(unit)
 	wipe(unitStats);
 	wipe(info.Sets);
 	wipe(info.Runes);
-	LibGearExam:ScanUnitItems(unit,unitStats,info.Sets);
+	LibGearExam:ScanUnitItems(unit,unitStats,info.Sets,info.Runes);
 	for slotName, slotId in next, LibGearExam.SlotIDs do
 		local link = (GetInventoryItemLink(unit,slotId) or ""):match(LibGearExam.ITEMLINK_PATTERN);
-		local engravingInfo = C_Engraving.GetRuneForEquipmentSlot(slotId);
-		if (engravingInfo ~= nil) then
-			info.Runes[#info.Runes + 1] = engravingInfo;
-		end
+		--local engravingInfo = C_Engraving.GetRuneForEquipmentSlot(slotId);
+		--if (engravingInfo ~= nil) then
+		--	info.Runes[#info.Runes + 1] = engravingInfo;
+		--end
 		info.Items[slotName] = LibGearExam:FixItemStringLevel(link,info.level);
 		if (link) then
 			ex.itemsLoaded = true;

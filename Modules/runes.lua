@@ -4,7 +4,6 @@ local cfg;
 -- Module
 local mod = ex:CreateModule("Runes","SoD Runes");
 mod.help = "It shows the currently equiped SoD Runes";
---mod.page = CreateFrame("Frame",nil,ex);
 mod:CreatePage(false,"Runes");
 mod:HasButton(true);
 
@@ -77,22 +76,43 @@ end
 
 -- Update
 local function UpdateShownItems(self)
+	-- list all engravings, sadly only from the own class
+    --C_Engraving.RefreshRunesList(); 
+    --for _,slot in ipairs(C_Engraving.GetRuneCategories(false,false)) do 
+    --	local runes=C_Engraving.GetRunesForCategory(slot,false); 
+    --	for _,rune in ipairs(runes) do 
+    --		local runeSpellId=0; for _,spell in pairs(rune.learnedAbilitySpellIDs) do --[1] instead of loop?
+    --			runeSpellId=spell 
+    --		end; 
+    --		print(rune.name,slot,runeSpellId)
+    --	end;
+    --end
+
 	FauxScrollFrame_Update(self,#showEngravings,NUM_BUTTONS,BUTTON_HEIGHT);
 	local index = self.offset;
+
+    LibRunes:CreateRunesTable( ex.info.class );
+
 	for i = 1, NUM_BUTTONS do
 		index = (index + 1);
 		local btn = buttons[i];
 		local engraving = showEngravings[index];
+
 		if (engraving) then
 			btn.name:SetText(engraving.name);
-			btn.icon:SetTexture(engraving.iconTexture);
+
+			btn.id = LibRunes.abilities[ engraving.name ];
+			btn.icon:SetTexture( GetSpellTexture(btn.id) );
+
+			--btn.icon:SetTexture(engraving.iconTexture);
 			-- it looks like the array has only one spell id for runes
-      for _,spell in pairs(engraving.learnedAbilitySpellIDs) do --Example: 409433 | Chimera Shot
-          btn.id = spell;
-      end
+            --for _,spell in pairs(engraving.learnedAbilitySpellIDs) do --Example: 409433 | Chimera Shot
+            --    btn.id = spell;
+            --end
+
 			btn.name:SetTextColor(0.9,0.9,0.9);
-			btn:SetAttribute("type", "spell")
-			btn:SetAttribute("spell", engraving.name)
+			btn:SetAttribute("type", "spell");
+			btn:SetAttribute("spell", engraving.name);
 			btn:Show();
 		else
 			btn:Hide();
@@ -130,14 +150,8 @@ for i = 1, NUM_BUTTONS do
 		btn:SetPoint("TOPRIGHT",buttons[#buttons],"BOTTOMRIGHT");
 	end
 
-	--btn:SetScript("OnShow",OnShow);
-	--btn:SetScript("OnHide",OnHide);
-	--btn:SetScript("OnClick",OnClick);
 	btn:SetScript("OnEnter",RuneButton_OnEnter);
 	btn:SetScript("OnLeave",RuneButton_OnLeave);
-	--btn:SetScript("OnEvent",OnEvent);
-	--btn:SetScript("OnDragStart",OnDrag);
-	--btn:SetScript("OnReceiveDrag",OnDrag);
 
 	btn.icon = btn:CreateTexture(nil,"ARTWORK");
 	btn.icon:SetSize(BUTTON_HEIGHT - 2,BUTTON_HEIGHT - 2);

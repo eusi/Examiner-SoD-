@@ -201,7 +201,7 @@ LGE.StatRatingBaseTable = {
 --------------------------------------------------------------------------------------------------------
 --           Scan all items & set bonuses on given [unit] - Make sure the tables are reset            --
 --------------------------------------------------------------------------------------------------------
-function LGE:ScanUnitItems(unit,statTable,setTable)
+function LGE:ScanUnitItems(unit,statTable,setTable,runesTable)
 	if (not unit) or (not UnitExists(unit)) then
 		return;
 	end
@@ -215,6 +215,14 @@ function LGE:ScanUnitItems(unit,statTable,setTable)
 		-- Check Lines -- Az: re-write this loop as two loops instead?
 		for i = 2, self.Tip:NumLines() do
 			local needScan, lineText = self:DoLineNeedScan(_G["LibGearExamTipTextLeft"..i],true);
+			-- old version to get the engravings/runes
+			if (lineText ~= nil) then
+				-- filter runes only from "enchantments"
+				if (lineText:match("^[^%d%+<>:]+$")) then
+					runesTable[#runesTable + 1] = { name = lineText };
+					-- print( slotName, lineText );
+				end
+			end
 			if (needScan) then
 				-- We use "setMax" to check if the Line was a SetNamePattern (WTB continue statement in Lua)
 				local setName, setCount, setMax;
@@ -354,6 +362,7 @@ function LGE:ScanLineForPatterns(text,statTable)
 				AzMsg(format("text = |1%s|r",text));
 				AzMsg(format("pattern = |1%s|r",pattern.p));
 				AzMsg(format("link = |1%s|r",tostring(link)));
+				print( link, self:GetEnchantInfo(link) );
 			end
 			-- Add to stat
 			if (type(pattern.s) == "string") then
@@ -507,6 +516,7 @@ function LGE:GetEnchantInfo(link)
 	if (not enchantName) or (enchantName == "") then
 		return;
 	end
+	print( enchantName )
 	-- return
 	return id, enchantName;
 end
