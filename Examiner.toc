@@ -1,4 +1,4 @@
-## Interface: 11500
+## Interface: 11501
 ## Version: SoD Classic Fan Update
 ## Title: Examiner
 ## Author: Aezay (Earthen Ring EU), sAks

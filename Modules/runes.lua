@@ -3,7 +3,7 @@ local cfg;
 
 -- Module
 local mod = ex:CreateModule("Runes","SoD Runes");
-mod.help = "It shows the currently equiped SoD Runes";
+mod.help = "It shows the currently equipped SoD Runes";
 mod:CreatePage(false,"Runes");
 mod:HasButton(true);
 
@@ -91,7 +91,7 @@ local function UpdateShownItems(self)
 	FauxScrollFrame_Update(self,#showEngravings,NUM_BUTTONS,BUTTON_HEIGHT);
 	local index = self.offset;
 
-    LibRunes:CreateRunesTable( ex.info.class );
+  LibRunes:CreateRunesTable( ex.info.class );
 
 	for i = 1, NUM_BUTTONS do
 		index = (index + 1);
@@ -100,16 +100,8 @@ local function UpdateShownItems(self)
 
 		if (engraving) then
 			btn.name:SetText(engraving.name);
-
 			btn.id = LibRunes.abilities[ engraving.name ];
 			btn.icon:SetTexture( GetSpellTexture(btn.id) );
-
-			--btn.icon:SetTexture(engraving.iconTexture);
-			-- it looks like the array has only one spell id for runes
-            --for _,spell in pairs(engraving.learnedAbilitySpellIDs) do --Example: 409433 | Chimera Shot
-            --    btn.id = spell;
-            --end
-
 			btn.name:SetTextColor(0.9,0.9,0.9);
 			btn:SetAttribute("type", "spell");
 			btn:SetAttribute("spell", engraving.name);

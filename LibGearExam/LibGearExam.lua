@@ -206,7 +206,7 @@ function LGE:ScanUnitItems(unit,statTable,setTable,runesTable)
 		return;
 	end
 	-- Check all item slots
-	for _, slotName in ipairs(self.Slots) do
+	for slotId, slotName in ipairs(self.Slots) do
 		-- Set New Item Tip
 		self.Tip:ClearLines();
 		self.Tip:SetInventoryItem(unit,self.SlotIDs[slotName]);
@@ -219,8 +219,10 @@ function LGE:ScanUnitItems(unit,statTable,setTable,runesTable)
 			if (lineText ~= nil) then
 				-- filter runes only from "enchantments"
 				if (lineText:match("^[^%d%+<>:]+$")) then
-					runesTable[#runesTable + 1] = { name = lineText };
-					-- print( slotName, lineText );
+					--MainHandSlot can never be engraved with a rune (currently: with Wild Strikes, it is the buff of the feral in the group)
+					if not (slotId == 17) then
+					  runesTable[#runesTable + 1] = { name = lineText };
+					end
 				end
 			end
 			if (needScan) then

@@ -64,6 +64,7 @@ Loc = Loc or {
     ["arcane blast"] = "Arkanschlag",
     ["ice lance"] = "Eislanze",
     --priest
+    --p1
     ["void plague"] = "Leerenpest",
     ["serendipity"] = "Serendipität",
     ["strength of soul"] = "Seelenstärke",
@@ -76,6 +77,19 @@ Loc = Loc or {
     ["mind sear"] = "Gedankenschinden",
     ["circle of healing"] = "Kreis der Heilung",
     ["shadow word: death"] = "Schattenwort: Tod",
+    --p2
+    ["divine aegis"] = "Göttliche Aegis",
+    ["empowered renew"] = "Verstärkte Erneuerung",
+    ["renewed hope"] = "Erneuerte Hoffnung",
+    ["mind spike"] = "Gedankenspike",
+    ["shadowfriend"] = "Schattenfreund",
+    ["powerword: barrier"] = "Machtwort: Barriere",
+    ["pain suppression"] = "Schmerzunterdrückung",
+    ["spirit of the redeemer"] = "Geist des Erlösers",
+    ["surge of light"] = "Lichtschwall",
+    ["despair"] = "Verzweiflung",
+    ["void zone"] = "Leerenzone",
+
     --warlock
     ["lake of fire"] = "Feuersee",
     ["master channeler"] = "Meisterkanalisierer",
