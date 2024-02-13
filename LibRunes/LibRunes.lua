@@ -59,7 +59,7 @@ function LR:CreateRunesTable(class)
 	  self.abilities[self:T("victory rush")] = 402927
 	  self.abilities[self:T("endless rage")] = 403218
 	  self.abilities[self:T("devastate")] = 403196
-	  self.abilities[self:T("single minded fury")] = 413404
+	  self.abilities[self:T("single-minded fury")] = 413404
 	  self.abilities[self:T("quick strike")] = 429765
 	  --p2
 		self.abilities[self:T("focused rage")] = 29787
@@ -76,7 +76,7 @@ function LR:CreateRunesTable(class)
 	  self.abilities[self:T("aegis")] = 425589
 	  self.abilities[self:T("divine sacrifice")] = 407804
 	  self.abilities[self:T("inspiration exemplar")] = 407880
-	  self.abilities[self:T("avengers shield")] = 407669
+	  self.abilities[self:T("avenger's shield")] = 407669
 	  self.abilities[self:T("exorcist")] = 415076
 	  self.abilities[self:T("rebuke")] = 425609
 	  self.abilities[self:T("beacon of light")] = 407613
@@ -127,6 +127,7 @@ function LR:CreateRunesTable(class)
 	  self.abilities[self:T("shadow word: death")] = 401955
 	  --p2
 	  self.abilities[self:T("divine aegis")] = 431622
+	  self.abilities[self:T("dispersion")] = 425294
 	  self.abilities[self:T("empowered renew")] = 425266
 	  self.abilities[self:T("renewed hope")] = 425280
 	  self.abilities[self:T("mind spike")] = 431655

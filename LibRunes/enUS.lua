@@ -44,7 +44,7 @@ Loc = Loc or {
     ["victory rush"] = "Victory Rush",
     ["endless rage"] = "Endless Rage",
     ["devastate"] = "Devastate",
-    ["single minded fury"] = "Single Minded Fury",
+    ["single-minded fury"] = "Single-Minded Fury",
     ["quick strike"] = "Quick Strike",
     --p2
     ["focused rage"] = "Focused Rage",
@@ -61,7 +61,7 @@ Loc = Loc or {
     ["aegis"] = "Aegis",
     ["divine sacrifice"] = "Divine Sacrifice",
     ["inspiration exemplar"] = "Inspiration Exemplar",
-    ["avengers shield"] = "Avengers Shield",
+    ["avenger's shield"] = "Avenger's Shield",
     ["exorcist"] = "Exorcist",
     ["rebuke"] = "Rebuke",
     ["beacon of light"] = "Beacon of Light",
@@ -111,6 +111,7 @@ Loc = Loc or {
     ["circle of healing"] = "Circle of Healing",
     ["shadow word: death"] = "Shadow Word: Death",
     --p2
+    ["dispersion"] = "Dispersion",
     ["divine aegis"] = "Divine Aegis",
     ["empowered renew"] = "Empowered Renew",
     ["renewed hope"] = "Renewed Hope",

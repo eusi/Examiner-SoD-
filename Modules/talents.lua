@@ -29,7 +29,7 @@ end
 --                                           Module Scripts                                           --
 --------------------------------------------------------------------------------------------------------
 
--- OnInspect
+-- OnInitialize
 function mod:OnInitialize()
 	cfg = Examiner_Config;
 	cache = Examiner_Cache;

@@ -1,5 +1,6 @@
 local ex = Examiner;
 local cfg;
+local gtt = GameTooltip;
 
 -- Module
 local mod = ex:CreateModule("Runes","SoD Runes");
@@ -20,12 +21,12 @@ local buttons = {};
 -- OnInitialize
 function mod:OnInitialize()
 	cfg = ex.cfg;
-	self:BuildEngravingList();
 end
 
 -- OnInspect
 function mod:OnInspect(unit)
-	self:BuildEngravingList();
+	-- in case you inspect one from the other fraction
+	mod.page:Hide();
 end
 
 -- OnInspectReady
@@ -35,12 +36,12 @@ end
 
 -- OnCacheLoaded
 function mod:OnCacheLoaded(entry,unit)
-	self:BuildEngravingList();
 end
 
 -- OnClearInspect
 function mod:OnClearInspect()
-	self:BuildEngravingList();
+	self:HasData(nil);
+	wipe(showEngravings);
 end
 
 -- OnPageChanged
@@ -60,14 +61,14 @@ end
 
 -- Rune OnEnter
 local function RuneButton_OnEnter(self,motion)
-	GameTooltip:SetOwner(self,"ANCHOR_RIGHT");
-  GameTooltip:SetSpellByID(self.id);
-  GameTooltip:Show();
+	gtt:SetOwner(self,"ANCHOR_RIGHT");
+  gtt:SetSpellByID(self.id);
+  gtt:Show();
 end
 
 -- Rune OnLeave
 local function RuneButton_OnLeave(self,motion)
-  GameTooltip:Hide();
+  gtt:Hide();
 end
 
 --------------------------------------------------------------------------------------------------------
@@ -119,6 +120,9 @@ function mod:BuildEngravingList()
 		showEngravings[#showEngravings + 1] = rune;
 	end
 	UpdateShownItems(self.scroll);
+	if(#showEngravings>0) then
+		self:HasData(true);
+	end
 end
 
 --------------------------------------------------------------------------------------------------------
