@@ -41,12 +41,12 @@ function LR:CreateRunesTable(class)
 	  self.abilities[self:T("explosive shot")] = 409552
 	  self.abilities[self:T("carve")] = 425711
 	  --p2
-	  self.abilities["dual wield specialization"] = 409687
-	  self.abilities["expose weakness"] = 409504
-	  self.abilities["invigoration"] = 437997
-	  self.abilities["steady shot"] = 437123
-	  self.abilities["trap launcher"] = 409541
-	  self.abilities["melee specialist"] = 415352
+	  self.abilities[self:T("dual wield specialization")] = 409687
+	  self.abilities[self:T("expose weakness")] = 409504
+	  self.abilities[self:T("invigoration")] = 437997
+	  self.abilities[self:T("steady shot")] = 437123
+	  self.abilities[self:T("trap launcher")] = 409541
+	  self.abilities[self:T("melee specialist")] = 415352
 	elseif class == Loc["warrior"] then
 	  --p1
 	  self.abilities[self:T("flagellation")] = 402877
@@ -104,13 +104,13 @@ function LR:CreateRunesTable(class)
 	  self.abilities[self:T("arcane blast")] = 400574
 	  self.abilities[self:T("ice lance")] = 400640
 	  --p2
-	  self.abilities["spellfrost bolt"] = 412532
-	  self.abilities["chronostatic preservation"] = 436516
-	  self.abilities["hot streak"] = 400624
-	  self.abilities["frostfire bolt"] = 401502
-	  self.abilities["brain freeze"] = 400731
-	  self.abilities["spell power"] = 412322
-	  self.abilities["missile barrage"] = 400588
+	  self.abilities[self:T("spellfrost bolt")] = 412532
+	  self.abilities[self:T("chronostatic preservation")] = 436516
+	  self.abilities[self:T("hot streak")] = 400625
+	  self.abilities[self:T("frostfire bolt")] = 401502
+	  self.abilities[self:T("brain freeze")] = 400731
+	  self.abilities[self:T("spell power")] = 412322
+	  self.abilities[self:T("missile barrage")] = 400589
 	elseif class == Loc["priest"] then
 	  --p1
 	  self.abilities[self:T("void plague")] = 425204
