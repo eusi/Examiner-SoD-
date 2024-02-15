@@ -1,4 +1,4 @@
---if GetLocale() ~= "enUS" then return end
+if not (GetLocale() == "enGB" or GetLocale() == "enUS") then return end
 
 Loc = Loc or {
     --classes

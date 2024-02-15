@@ -1,7 +1,7 @@
 if GetLocale() ~= "deDE" then return end
 
 Loc = Loc or {
-    --classes
+    -- Klassen
     ["warrior"] = "Krieger",
     ["hunter"] = "Jäger",
     ["paladin"] = "Paladin",
@@ -11,7 +11,29 @@ Loc = Loc or {
     ["shaman"] = "Schamane",
     ["druid"] = "Druide",
     ["rogue"] = "Schurke",
-    --warrior
+    -- Jäger
+    --p1
+    ["heart of the lion"] = "Herz des Löwen",
+    ["master marksman"] = "Meisterschütze",
+    ["lone wolf"] = "Einsamer Wolf",
+    ["cobra strikes"] = "Kobraschläge",
+    ["kill command"] = "Tötungsbefehl",
+    ["sniper training"] = "Scharfschützentraining",
+    ["serpent spread"] = "Schlangenschwarm",
+    ["flanking strike"] = "Flankenangriff",
+    ["beast mastery"] = "Tierherrschaft",
+    ["chimera shot"] = "Schimärenschuss",
+    ["explosive shot"] = "Explosivschuss",
+    ["carve"] = "Schnitzen",
+    --p2
+    ["dual wield specialization"] = "Beidhändigkeits-Spezialisierung",
+    ["expose weakness"] = "Schwäche aufdecken",
+    ["invigoration"] = "Belebung",
+    ["steady shot"] = "Zuverlässiger Schuss",
+    ["trap launcher"] = "Fallenwerfer",
+    ["melee specialist"] = "Nahkampfspezialist",
+    -- Krieger
+    --p1
     ["flagellation"] = "Geißelung",
     ["blood frenzy"] = "Blutraserei",
     ["raging blow"] = "Tobender Schlag",
@@ -22,35 +44,38 @@ Loc = Loc or {
     ["victory rush"] = "Siegesrausch",
     ["endless rage"] = "Endlose Wut",
     ["devastate"] = "Verwüsten",
-    ["single minded fury"] = "Einzelkämpferwut",
+    ["single-minded fury"] = "Entschlossene Wut",
     ["quick strike"] = "Schneller Schlag",
-    --hunter
-    ["heart of the lion"] = "Herz des Löwen",
-    ["master marksman"] = "Meisterschütze",
-    ["lone wolf"] = "Einsamer Wolf",
-    ["cobra strikes"] = "Kobraschläge",
-    ["kill command"] = "Tötungsbefehl",
-    ["sniper training"] = "Scharfschützentraining",
-    ["serpent spread"] = "Schlangenausbreitung",
-    ["flanking strike"] = "Flankenangriff",
-    ["beast mastery"] = "Tierherrschaft",
-    ["chimera shot"] = "Schimärenschuss",
-    ["explosive shot"] = "Explosivschuss",
-    ["carve"] = "Schnitzen",
-    --paladin
+    --p2
+    ["focused rage"] = "Fokussierte Wut",
+    ["intervene"] = "Einschreiten",
+    ["rallying cry"] = "Anspornender Schrei",
+    ["enraged regeneration"] = "Wütende Regeneration",
+    ["blood surge"] = "Blutwallung",
+    ["precise timing"] = "Präzises Timing",
+    -- Paladin
+    --p1
     ["seal of martyrdom"] = "Siegel des Märtyrertums",
     ["divine storm"] = "Göttlicher Sturm",
     ["horn of lordaeron"] = "Horn von Lordaeron",
     ["aegis"] = "Ägis",
     ["divine sacrifice"] = "Göttliches Opfer",
-    ["inspiration exemplar"] = "Inspirationsvorbild",
-    ["avengers shield"] = "Schild des Rächers",
+    ["inspiration exemplar"] = "Inspirierendes Vorbild",
+    ["avenger's shield"] = "Schild des Rächers",
     ["exorcist"] = "Exorzist",
     ["rebuke"] = "Zurechtweisung",
     ["beacon of light"] = "Lichtsignal",
     ["crusader strike"] = "Kreuzfahrerschlag",
     ["hand of reckoning"] = "Hand der Abrechnung",
-    --mage
+    --p2
+    ["enlightened judgements"] = "Erleuchtete Urteile",
+    ["guarded by the light"] = "Vom Licht behütet",
+    ["sacred shield"] = "Heiliger Schild",
+    ["the art of war"] = "Die Kunst des Krieges",
+    ["infusion of light"] = "Lichtinfusion",
+    ["sheath of light"] = "Lichtscheide",
+    -- Magier
+    --p1
     ["burnout"] = "Ausgebrannt",
     ["fingers of frost"] = "Eisige Finger",
     ["regeneration"] = "Regeneration",
@@ -63,7 +88,15 @@ Loc = Loc or {
     ["living bomb"] = "Lebende Bombe",
     ["arcane blast"] = "Arkanschlag",
     ["ice lance"] = "Eislanze",
-    --priest
+    --p2
+    ["spellfrost bolt"] = "Zauberfrostbolzen",
+    ["chronostatic preservation"] = "Chronostatische Bewahrung",
+    ["hot streak"] = "Heiße Serie",
+    ["frostfire bolt"] = "Frostfeuerblitz",
+    ["brain freeze"] = "Gehirnfrost",
+    ["spell power"] = "Zaubermacht",
+    ["missile barrage"] = "Raketensalve",
+    -- Priester
     --p1
     ["void plague"] = "Leerenpest",
     ["serendipity"] = "Serendipität",
@@ -78,10 +111,11 @@ Loc = Loc or {
     ["circle of healing"] = "Kreis der Heilung",
     ["shadow word: death"] = "Schattenwort: Tod",
     --p2
+    ["dispersion"] = "Dispersion",
     ["divine aegis"] = "Göttliche Aegis",
-    ["empowered renew"] = "Verstärkte Erneuerung",
+    ["empowered renew"] = "Machtvolle Erneuerung",
     ["renewed hope"] = "Erneuerte Hoffnung",
-    ["mind spike"] = "Gedankenspike",
+    ["mind spike"] = "Gedankenspieß",
     ["shadowfriend"] = "Schattenfreund",
     ["powerword: barrier"] = "Machtwort: Barriere",
     ["pain suppression"] = "Schmerzunterdrückung",
@@ -89,11 +123,11 @@ Loc = Loc or {
     ["surge of light"] = "Lichtschwall",
     ["despair"] = "Verzweiflung",
     ["void zone"] = "Leerenzone",
-
-    --warlock
+    -- Hexenmeister
+    --p1
     ["lake of fire"] = "Feuersee",
     ["master channeler"] = "Meisterkanalisierer",
-    ["soul siphon"] = "Seelensiphon",
+    ["soul siphon"] = "Seelensog",
     ["demonic tactics"] = "Dämonische Taktiken",
     ["everlasting affliction"] = "Ewige Pein",
     ["incinerate"] = "Verbrennen",
@@ -103,10 +137,18 @@ Loc = Loc or {
     ["shadow bolt volley"] = "Schattenblitzsalve",
     ["chaos bolt"] = "Chaosblitz",
     ["haunt"] = "Heimsuchung",
-    --shaman
-    ["dual wield specialization"] = "Beidhändigkeits-Spezialisierung",
+    --p2
+    ["dance of the wicked"] = "Tanz der Verdammten",
+    ["shadowflame"] = "Schattenflamme",
+    ["grimoire of synergy"] = "Lehrbuch der Synergie",
+    ["shadow and flame"] = "Schatten und Flamme",
+    ["invocation"] = "Beschwörung",
+    ["demonic knowledge"] = "Dämonisches Wissen",
+    -- Schamane
+    --p1
+    ["dual wield specialization"] = "Spezialisierung auf beidhändigen Kampf",
     ["shield mastery"] = "Schildbeherrschung",
-    ["overload"] = "Überlastung",
+    ["overload"] = "Überladung",
     ["healing rain"] = "Heilender Regen",
     ["ancestral guidance"] = "Ahnenführung",
     ["earth shield"] = "Erdschild",
@@ -115,31 +157,55 @@ Loc = Loc or {
     ["water shield"] = "Wasserschild",
     ["lava burst"] = "Lavastoß",
     ["lava lash"] = "Lavapeitsche",
-    ["molten blast"] = "Geschmolzene Explosion",
-    --druid
+    ["molten blast"] = "Geschmolzener Schlag",
+    --p2
+    ["decoy totem"] = "Lockvogeltotem",
+    ["spirit of the alpha"] = "Geist des Alphas",
+    ["power surge"] = "Energieschub",
+    ["maelstrom weapon"] = "Waffe des Mahlstroms",
+    ["fire nova"] = "Feuernova",
+    ["ancestral awakening"] = "Ahnenweckung",
+    ["two-handed mastery"] = "Meisterschaft im Zweihandkampf",
+    -- Druide
+    --p1
     ["living seed"] = "Lebendiger Samen",
     ["wild strikes"] = "Wilde Schläge",
-    ["fury of stormrage"] = "Zorn des Sturmgrimm",
+    ["fury of stormrage"] = "Sturmgrimms Wut",
     ["survival of the fittest"] = "Überleben des Stärkeren",
     ["starsurge"] = "Sternensog",
     ["lifebloom"] = "Blühendes Leben",
     ["skull bash"] = "Schädelstoß",
-    ["savage roar"] = "Wilder Brüller",
+    ["savage roar"] = "Wildes Brüllen",
     ["sunfire"] = "Sonnenfeuer",
     ["lacerate"] = "Aufschlitzen",
     ["wild growth"] = "Wildwuchs",
     ["mangle"] = "Zerfleischen",
-    --rogue
+    --p2
+    ["berserk"] = "Berserker",
+    ["dreamstate"] = "Traumzustand",
+    ["survival instincts"] = "Überlebensinstinkte",
+    ["eclipse"] = "Finsternis",
+    ["nourish"] = "Nähren",
+    ["king of the jungle"] = "König des Dschungels",
+    -- Schurke
+    --p1
     ["deadly brew"] = "Tödlicher Trank",
     ["just a flesh wound"] = "Nur eine Fleischwunde",
-    ["quick draw"] = "Schnellziehen",
+    ["quick draw"] = "Schneller Zug",
     ["slaughter from the shadows"] = "Schlachten aus den Schatten",
-    ["between the eyes"] = "Zwischen die Augen",
+    ["between the eyes"] = "Zwischen den Augen",
     ["blade dance"] = "Klingentanz",
     ["envenom"] = "Vergiften",
     ["mutilate"] = "Verstümmeln",
     ["shadowstrike"] = "Schattenschlag",
     ["saber slash"] = "Säbelhieb",
-    ["shiv"] = "Einkerben",
+    ["shiv"] = "Taschendolch",
     ["main gauche"] = "Parierdolch",
+    --p2
+    ["rolling with the punches"] = "Mit den Schlägen rollen",
+    ["shadowstep"] = "Schattenschritt",
+    ["master of subtlety"] = "Meister der Subtilität",
+    ["shuriken toss"] = "Shurikenwurf",
+    ["poisoned knife"] = "Vergiftetes Messer",
+    ["waylay"] = "Hinterhalt",
 }
