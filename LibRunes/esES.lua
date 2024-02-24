@@ -116,7 +116,6 @@ Loc = Loc or {
     ["empowered renew"] = "Renovar Potenciado",
     ["renewed hope"] = "Esperanza Renovada",
     ["mind spike"] = "Púa Mental",
-    ["shadowfriend"] = "Amigo Sombrío",
     ["powerword: barrier"] = "Palabrapoder: Barrera",
     ["pain suppression"] = "Supresión del Dolor",
     ["spirit of the redeemer"] = "Espíritu del Redentor",

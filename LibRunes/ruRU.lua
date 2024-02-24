@@ -116,7 +116,6 @@ Loc = Loc or {
     ["empowered renew"] = "Усиленное обновление",
     ["renewed hope"] = "Обновленная надежда",
     ["mind spike"] = "Удар разума",
-    ["shadowfriend"] = "Теневой друг",
     ["powerword: barrier"] = "Слово силы: Барьер",
     ["pain suppression"] = "Подавление боли",
     ["spirit of the redeemer"] = "Дух искупителя",

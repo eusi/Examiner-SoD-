@@ -77,40 +77,37 @@ end
 
 -- Update
 local function UpdateShownItems(self)
-	-- list all engravings, sadly only from the own class
-    --C_Engraving.RefreshRunesList(); 
-    --for _,slot in ipairs(C_Engraving.GetRuneCategories(false,false)) do 
-    --	local runes=C_Engraving.GetRunesForCategory(slot,false); 
-    --	for _,rune in ipairs(runes) do 
-    --		local runeSpellId=0; for _,spell in pairs(rune.learnedAbilitySpellIDs) do --[1] instead of loop?
-    --			runeSpellId=spell 
-    --		end; 
-    --		print(rune.name,slot,runeSpellId)
-    --	end;
-    --end
+    FauxScrollFrame_Update(self, #showEngravings, NUM_BUTTONS, BUTTON_HEIGHT);
+    LibRunes:CreateRunesTable(ex.info.class);
 
-	FauxScrollFrame_Update(self,#showEngravings,NUM_BUTTONS,BUTTON_HEIGHT);
-	local index = self.offset;
+    local index = self.offset+1;
 
-  LibRunes:CreateRunesTable( ex.info.class );
+    for i = 1, NUM_BUTTONS do
+        local btn = buttons[i];
+        local engraving, engravingId = nil, nil;
 
-	for i = 1, NUM_BUTTONS do
-		index = (index + 1);
-		local btn = buttons[i];
-		local engraving = showEngravings[index];
+        --search for a valid engraving (skip enchantings etc.)
+        while index <= #showEngravings and not engravingId do
+            engraving = showEngravings[index];
+            engravingId = LibRunes.abilities[engraving.name];
+            if not engravingId then
+                index = index+1;
+            end
+        end
 
-		if (engraving) then
-			btn.name:SetText(engraving.name);
-			btn.id = LibRunes.abilities[ engraving.name ];
-			btn.icon:SetTexture( GetSpellTexture(btn.id) );
-			btn.name:SetTextColor(0.9,0.9,0.9);
-			btn:SetAttribute("type", "spell");
-			btn:SetAttribute("spell", engraving.name);
-			btn:Show();
-		else
-			btn:Hide();
-		end
-	end
+        if engravingId then
+            btn.name:SetText(engraving.name);
+            btn.id = engravingId;
+            btn.icon:SetTexture(GetSpellTexture(btn.id));
+            btn.name:SetTextColor(0.9, 0.9, 0.9);
+            btn:SetAttribute("type", "spell");
+            btn:SetAttribute("spell", engraving.name);
+            btn:Show();
+            index = index + 1;
+        else
+            btn:Hide();
+        end
+    end
 end
 
 -- Build list of runes which has a page but no button

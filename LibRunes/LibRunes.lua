@@ -131,7 +131,6 @@ function LR:CreateRunesTable(class)
 	  self.abilities[self:T("empowered renew")] = 425266
 	  self.abilities[self:T("renewed hope")] = 425280
 	  self.abilities[self:T("mind spike")] = 431655
-	  self.abilities[self:T("shadowfriend")] = 401977
 	  self.abilities[self:T("powerword: barrier")] = 425207
 	  self.abilities[self:T("pain suppression")] = 402004
 	  self.abilities[self:T("spirit of the redeemer")] = 425284

@@ -116,7 +116,6 @@ Loc = Loc or {
     ["empowered renew"] = "Empowered Renew",
     ["renewed hope"] = "Renewed Hope",
     ["mind spike"] = "Mind Spike",
-    ["shadowfriend"] = "Shadowfriend",
     ["powerword: barrier"] = "Powerword: Barrier",
     ["pain suppression"] = "Pain Suppression",
     ["spirit of the redeemer"] = "Spirit of the Redeemer",
