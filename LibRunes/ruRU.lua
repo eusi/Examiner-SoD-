@@ -32,6 +32,21 @@ Loc = Loc or {
     ["steady shot"] = "Прицельный выстрел",
     ["trap launcher"] = "Запуск ловушки",
     ["melee specialist"] = "Специалист по ближнему бою",
+    --p3
+    ["focus fire"] = "Сосредоточенный огонь",
+    ["raptor fury"] = "Ярость ящера",
+    ["t.n.t."] = "Динамит",
+    ["catlike reflexes"] = "Кошачьи рефлексы",
+    ["lock and load"] = "Заряжай и стреляй",
+    ["rapid killing"] = "Быстрое убийство"
+    --p4
+    ["hit and run"] = "Удар и бегство",
+    ["improved volley"] = "Улучшенный залп",
+    ["resourcefulness"] = "Находчивость"
+    --p5
+    ["melee specialist"] = "Специалист ближнего боя"
+    --p6
+    --p7
     -- Воин
     --p1
     ["flagellation"] = "Бичевание",
@@ -53,6 +68,21 @@ Loc = Loc or {
     ["enraged regeneration"] = "Яростное восстановление",
     ["blood surge"] = "Прилив крови",
     ["precise timing"] = "Точное время",
+    --p3
+    ["blood surge"] = "Всплеск крови",
+    ["rampage"] = "Буйство",
+    ["shockwave"] = "Ударная волна",
+    ["single-minded fury"] = "Однонаправленная ярость",
+    ["warbringer"] = "Вестник войны",
+    ["enraged regeneration"] = "Разъяренная регенерация"
+    --p4
+    ["deep wounds"] = "Глубокие раны",
+    ["frenzied assault"] = "Бешеный натиск",
+    ["safeguard"] = "Гарантия безопасности"
+    --p5
+    ["blood craze"] = "Кровавое безумие"
+    --p6
+    --p7
     -- Паладин
     --p1
     ["seal of martyrdom"] = "Печать мученичества",
@@ -74,6 +104,29 @@ Loc = Loc or {
     ["the art of war"] = "Искусство войны",
     ["infusion of light"] = "Вливание света",
     ["sheath of light"] = "Покров света",
+    --p3
+    ["fanaticism"] = "Фанатизм",
+    ["improved sanctuary"] = "Улучшенное святилище",
+    ["wrath"] = "Гнев",
+    ["hammer of the righteous"] = "Молот праведника",
+    ["improved hammer of wrath"] = "Улучшенный молот гнева",
+    ["light's grace"] = "Благодать Света",
+    ["purifying power"] = "Очищающая сила"
+    --p4
+    ["righteous vengeance"] = "Праведная месть",
+    ["shield of righteousness"] = "Щит праведности",
+    ["shock and awe"] = "Шок и трепет",
+    ["axe specialization"] = "Специализация на топорах",
+    ["defense specialization"] = "Специализация на защите",
+    ["holy specialization"] = "Специализация на Свете",
+    ["mace specialization"] = "Специализация на булаве",
+    ["pole weapon specialization"] = "Специализация на древковом оружии",
+    ["sword specialization"] = "Специализация на мечах"
+    --p5
+    ["healing specialization"] = "Специализация на исцелении",
+    ["meditation specialization"] = "Специализация на медитации"
+    --p6
+    --p7
     -- Маг
     --p1
     ["burnout"] = "Выгорание",
@@ -96,6 +149,28 @@ Loc = Loc or {
     ["brain freeze"] = "Обморожение мозга",
     ["spell power"] = "Сила заклинаний",
     ["missile barrage"] = "Залп ракет",
+    --p3
+    ["advanced warding"] = "Продвинутая защита",
+    ["deep freeze"] = "Глубокая заморозка",
+    ["temporal anomaly"] = "Временная аномалия",
+    ["balefire bolt"] = "Пагубный огненный шар",
+    ["displacement"] = "Смещение",
+    ["molten armor"] = "Раскаленная броня"
+    --p4
+    ["arcane barrage"] = "Чародейский залп",
+    ["overheat"] = "Перегрев",
+    ["frozen orb"] = "Замороженный шар",
+    ["arcane specialization"] = "Специализация на тайной магии",
+    ["dagger specialization"] = "Специализация на кинжалах",
+    ["fire specialization"] = "Специализация на огне",
+    ["frost specialization"] = "Специализация на льде",
+    ["pole weapon specialization"] = "Специализация на древковом оружии",
+    ["sword specialization"] = "Специализация на мечах"
+    --p5
+    ["healing specialization"] = "Специализация на исцелении",
+    ["meditation specialization"] = "Специализация на медитации"
+    --p6
+    --p7
     -- Жрец
     --p1
     ["void plague"] = "Чума пустоты",
@@ -122,6 +197,28 @@ Loc = Loc or {
     ["surge of light"] = "Всплеск света",
     ["despair"] = "Отчаяние",
     ["void zone"] = "Зона пустоты",
+    --p3
+    ["despair"] = "Отчаяние",
+    ["surge of light"] = "Всплеск Света",
+    ["void zone"] = "Зона Пустоты",
+    ["divine aegis"] = "Божественная эгида",
+    ["eye of the void"] = "Око Бездны",
+    ["pain and suffering"] = "Боль и страдание"
+    --p4
+    ["binding heal"] = "Связующее исцеление",
+    ["soul warding"] = "Охрана души",
+    ["vampiric touch"] = "Вампирический прикосновение",
+    ["dagger specialization"] = "Специализация на кинжалах",
+    ["defense specialization"] = "Специализация на защите",
+    ["holy specialization"] = "Специализация на Свете",
+    ["mace specialization"] = "Специализация на булаве",
+    ["pole weapon specialization"] = "Специализация на древковом оружии",
+    ["shadow specialization"] = "Специализация на Тени"
+    --p5
+    ["healing specialization"] = "Специализация на исцелении",
+    ["meditation specialization"] = "Специализация на медитации"
+    --p6
+    --p7
     -- Чернокнижник
     --p1
     ["lake of fire"] = "Озеро огня",
@@ -143,6 +240,28 @@ Loc = Loc or {
     ["shadow and flame"] = "Тень и пламя",
     ["invocation"] = "Призыв",
     ["demonic knowledge"] = "Демоническое знание",
+    --p3
+    ["demonic knowledge"] = "Демоническое знание",
+    ["demonic tactics"] = "Демоническая тактика",
+    ["shadow mastery"] = "Мастерство Тьмы",
+    ["backlash"] = "Ответный удар",
+    ["shadowflame"] = "Теневое пламя",
+    ["soul link"] = "Связь душ"
+    --p4
+    ["bane"] = "Проклятие",
+    ["death's embrace"] = "Объятие смерти",
+    ["shadowburn"] = "Ожог Тьмы",
+    ["dagger specialization"] = "Специализация на кинжалах",
+    ["defense specialization"] = "Специализация на защите",
+    ["fire specialization"] = "Специализация на огне",
+    ["pole weapon specialization"] = "Специализация на древковом оружии",
+    ["shadow specialization"] = "Специализация на Тени",
+    ["sword specialization"] = "Специализация на мечах"
+    --p5
+    ["healing specialization"] = "Специализация на исцелении",
+    ["meditation specialization"] = "Специализация на медитации"
+    --p6
+    --p7
     -- Шаман
     --p1
     ["dual wield specialization"] = "Специализация на владении двумя оружиями",
@@ -165,6 +284,28 @@ Loc = Loc or {
     ["fire nova"] = "Огненная нова",
     ["ancestral awakening"] = "Пробуждение предков",
     ["two-handed mastery"] = "Мастерство двуручного оружия",
+    --p3
+    ["earth shield"] = "Щит Земли",
+    ["elemental mastery"] = "Повелитель стихий",
+    ["mental quickness"] = "Ментальная стремительность",
+    ["shamanistic rage"] = "Ярость шамана",
+    ["storm, earth, and fire"] = "Буря, земля и огонь",
+    ["totemic wrath"] = "Тотемный гнев"
+    --p4
+    ["ancestral awakening"] = "Пробуждение предков",
+    ["lava surge"] = "Всплеск лавы",
+    ["maelstrom weapon"] = "Оружие Водоворота",
+    ["axe specialization"] = "Специализация на топорах",
+    ["dagger specialization"] = "Специализация на кинжалах",
+    ["mace specialization"] = "Специализация на булах",
+    ["pole weapon specialization"] = "Специализация на древковом оружии",
+    ["shield specialization"] = "Специализация на щитах",
+    ["sword specialization"] = "Специализация на мечах"
+    --p5
+    ["healing specialization"] = "Специализация на исцелении",
+    ["meditation specialization"] = "Специализация на медитации"
+    --p6
+    --p7
     -- Друид
     --p1
     ["living seed"] = "Живое семя",
@@ -186,6 +327,28 @@ Loc = Loc or {
     ["eclipse"] = "Затмение",
     ["nourish"] = "Питание",
     ["king of the jungle"] = "Король джунглей",
+    --p3
+    ["eclipse"] = "Затмение",
+    ["predatory instincts"] = "Инстинкты хищника",
+    ["survival instincts"] = "Инстинкты выживания",
+    ["wild growth"] = "Буйный рост",
+    ["berserk"] = "Берсерк",
+    ["nourish"] = "Подпитка"
+    --p4
+    ["gale winds"] = "Шквальный ветер",
+    ["infected wounds"] = "Зараженные раны",
+    ["primal gore"] = "Первобытная кровь",
+    ["dagger specialization"] = "Специализация на кинжалах",
+    ["defense specialization"] = "Специализация на защите",
+    ["mace specialization"] = "Специализация на булах",
+    ["pole weapon specialization"] = "Специализация на древковом оружии",
+    ["staff specialization"] = "Специализация на посохах",
+    ["sword specialization"] = "Специализация на мечах"
+    --p5
+    ["healing specialization"] = "Специализация на исцелении",
+    ["meditation specialization"] = "Специализация на медитации"
+    --p6
+    --p7
     -- Разбойник
     --p1
     ["deadly brew"] = "Смертельный отвар",
@@ -207,4 +370,22 @@ Loc = Loc or {
     ["shuriken toss"] = "Бросок сюрикена",
     ["poisoned knife"] = "Отравленный нож",
     ["waylay"] = "Засада",
+    --p3
+    ["combat potency"] = "Боевой потенциал",
+    ["focused attacks"] = "Сфокусированные атаки",
+    ["honor among thieves"] = "Честь среди воров"
+    --p4
+    ["blunderbuss"] = "Картечница",
+    ["crimson tempest"] = "Багровый шторм",
+    ["fan of knives"] = "Шквал клинков"
+    --p5
+    ["dagger specialization"] = "Специализация на кинжалах",
+    ["fist weapon specialization"] = "Специализация на кастетах",
+    ["mace specialization"] = "Специализация на булах",
+    ["ranged weapon specialization"] = "Специализация на дальнобойном оружии",
+    ["sword specialization"] = "Специализация на мечах",
+    ["defense specialization"] = "Специализация на защите",
+    ["nature specialization"] = "Специализация на силах природы"
+    --p6
+    --p7
 }

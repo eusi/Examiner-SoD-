@@ -31,23 +31,19 @@ Loc = Loc or {
     ["invigoration"] = "Invigoration",
     ["steady shot"] = "Steady Shot",
     ["trap launcher"] = "Trap Launcher",
+    --p3  
+    ["focus fire"] = "Focus Fire",  
+    ["raptor fury"] = "Raptor Fury",  
+    ["t.n.t."] = "T.N.T.",  
+    ["catlike reflexes"] = "Catlike Reflexes",  
+    ["lock and load"] = "Lock and Load",  
+    ["rapid killing"] = "Rapid Killing",  
+    --p4  
+    ["hit and run"] = "Hit and Run",  
+    ["improved volley"] = "Improved Volley",  
+    ["resourcefulness"] = "Resourcefulness",  
+    --p5  
     ["melee specialist"] = "Melee Specialist",
-    --p3
-    ["eye of the void"] = "Eye of the Void",
-    ["pain and suffering"] = "Pain and Suffering",
-    --p4
-    ["binding heal"] = "Binding Heal",
-    ["soul warding"] = "Soul Warding",
-    ["vampiric touch"] = "Vampiric Touch",
-    ["dagger specialization"] = "Dagger Specialization",
-    ["defense specialization"] = "Defense Specialization",
-    ["holy specialization"] = "Holy Specialization",
-    ["mace specialization"] = "Mace Specialization",
-    ["pole weapon specialization"] = "Pole Weapon Specialization",
-    ["shadow specialization"] = "Shadow Specialization",
-    --p5
-    ["healing specialization"] = "Healing Specialization",
-    ["meditation specialization"] = "Meditation Specialization",
     --p6
     --p7
     --warrior
@@ -71,6 +67,21 @@ Loc = Loc or {
     ["enraged regeneration"] = "Enraged Regeneration",
     ["blood surge"] = "Blood Surge",
     ["precise timing"] = "Precise Timing",
+    --p3
+    ["blood surge"] = "Blood Surge",
+    ["rampage"] = "Rampage",
+    ["shockwave"] = "Shockwave",
+    ["single-minded fury"] = "Single-Minded Fury",
+    ["warbringer"] = "Warbringer",
+    ["enraged regeneration"] = "Enraged Regeneration",
+    --p4
+    ["deep wounds"] = "Deep Wounds",
+    ["frenzied assault"] = "Frenzied Assault",
+    ["safeguard"] = "Safeguard",
+    --p5
+    ["blood craze"] = "Blood Craze",
+    --p6
+    --p7
     --paladin
     --p1
     ["seal of martyrdom"] = "Seal of Martyrdom",
@@ -92,6 +103,29 @@ Loc = Loc or {
     ["the art of war"] = "The Art of War",
     ["infusion of light"] = "Infusion of Light",
     ["sheath of light"] = "Sheath of Light",
+    --p3
+    ["fanaticism"] = "Fanaticism",
+    ["improved sanctuary"] = "Improved Sanctuary",
+    ["wrath"] = "Wrath",
+    ["hammer of the righteous"] = "Hammer of the Righteous",
+    ["improved hammer of wrath"] = "Improved Hammer of Wrath",
+    ["light's grace"] = "Light's Grace",
+    ["purifying power"] = "Purifying Power",
+    --p4
+    ["righteous vengeance"] = "Righteous Vengeance",
+    ["shield of righteousness"] = "Shield of Righteousness",
+    ["shock and awe"] = "Shock and Awe",
+    ["axe specialization"] = "Axe Specialization",
+    ["defense specialization"] = "Defense Specialization",
+    ["holy specialization"] = "Holy Specialization",
+    ["mace specialization"] = "Mace Specialization",
+    ["pole weapon specialization"] = "Pole Weapon Specialization",
+    ["sword specialization"] = "Sword Specialization",
+    --p5
+    ["healing specialization"] = "Healing Specialization",
+    ["meditation specialization"] = "Meditation Specialization",
+    --p6
+    --p7
     --mage
     --p1
     ["burnout"] = "Burnout",
@@ -114,6 +148,28 @@ Loc = Loc or {
     ["brain freeze"] = "Brain Freeze",
     ["spell power"] = "Spell Power",
     ["missile barrage"] = "Missile Barrage",
+    --p3
+    ["advanced warding"] = "Advanced Warding",
+    ["deep freeze"] = "Deep Freeze",
+    ["temporal anomaly"] = "Temporal Anomaly",
+    ["balefire bolt"] = "Balefire Bolt",
+    ["displacement"] = "Displacement",
+    ["molten armor"] = "Molten Armor",
+    --p4
+    ["arcane barrage"] = "Arcane Barrage",
+    ["overheat"] = "Overheat",
+    ["frozen orb"] = "Frozen Orb",
+    ["arcane specialization"] = "Arcane Specialization",
+    ["dagger specialization"] = "Dagger Specialization",
+    ["fire specialization"] = "Fire Specialization",
+    ["frost specialization"] = "Frost Specialization",
+    ["pole weapon specialization"] = "Pole Weapon Specialization",
+    ["sword specialization"] = "Sword Specialization",
+    --p5
+    ["healing specialization"] = "Healing Specialization",
+    ["meditation specialization"] = "Meditation Specialization",
+    --p6
+    --p7
     --priest
     --p1
     ["void plague"] = "Void Plague",
@@ -140,6 +196,24 @@ Loc = Loc or {
     ["surge of light"] = "Surge of Light",
     ["despair"] = "Despair",
     ["void zone"] = "Void Zone",
+    --p3
+    ["eye of the void"] = "Eye of the Void",
+    ["pain and suffering"] = "Pain and Suffering",
+    --p4
+    ["binding heal"] = "Binding Heal",
+    ["soul warding"] = "Soul Warding",
+    ["vampiric touch"] = "Vampiric Touch",
+    ["dagger specialization"] = "Dagger Specialization",
+    ["defense specialization"] = "Defense Specialization",
+    ["holy specialization"] = "Holy Specialization",
+    ["mace specialization"] = "Mace Specialization",
+    ["pole weapon specialization"] = "Pole Weapon Specialization",
+    ["shadow specialization"] = "Shadow Specialization",
+    --p5
+    ["healing specialization"] = "Healing Specialization",
+    ["meditation specialization"] = "Meditation Specialization",
+    --p6
+    --p7
     --warlock
     --p1
     ["lake of fire"] = "Lake of Fire",
@@ -161,6 +235,28 @@ Loc = Loc or {
     ["shadow and flame"] = "Shadow and Flame",
     ["invocation"] = "Invocation",
     ["demonic knowledge"] = "Demonic Knowledge",
+    --p3
+    ["demonic knowledge"] = "Demonic Knowledge",
+    ["demonic tactics"] = "Demonic Tactics",
+    ["shadow mastery"] = "Shadow Mastery",
+    ["backlash"] = "Backlash",
+    ["shadowflame"] = "Shadowflame",
+    ["soul link"] = "Soul Link",
+    --p4
+    ["bane"] = "Bane",
+    ["death's embrace"] = "Death's Embrace",
+    ["shadowburn"] = "Shadowburn",
+    ["dagger specialization"] = "Dagger Specialization",
+    ["defense specialization"] = "Defense Specialization",
+    ["fire specialization"] = "Fire Specialization",
+    ["pole weapon specialization"] = "Pole Weapon Specialization",
+    ["shadow specialization"] = "Shadow Specialization",
+    ["sword specialization"] = "Sword Specialization",
+    --p5
+    ["healing specialization"] = "Healing Specialization",
+    ["meditation specialization"] = "Meditation Specialization",
+    --p6
+    --p7
     --shaman
     --p1
     ["dual wield specialization"] = "Dual Wield Specialization",
@@ -183,6 +279,28 @@ Loc = Loc or {
     ["fire nova"] = "Fire Nova",
     ["ancestral awakening"] = "Ancestral Awakening",
     ["two-handed mastery"] = "Two-Handed Mastery",
+    --p3
+    ["earth shield"] = "Earth Shield",
+    ["elemental mastery"] = "Elemental Mastery",
+    ["mental quickness"] = "Mental Quickness",
+    ["shamanistic rage"] = "Shamanistic Rage",
+    ["storm, earth, and fire"] = "Storm, Earth, and Fire",
+    ["totemic wrath"] = "Totemic Wrath",
+    --p4
+    ["ancestral awakening"] = "Ancestral Awakening",
+    ["lava surge"] = "Lava Surge",
+    ["maelstrom weapon"] = "Maelstrom Weapon",
+    ["axe specialization"] = "Axe Specialization",
+    ["dagger specialization"] = "Dagger Specialization",
+    ["mace specialization"] = "Mace Specialization",
+    ["pole weapon specialization"] = "Pole Weapon Specialization",
+    ["shield specialization"] = "Shield Specialization",
+    ["sword specialization"] = "Sword Specialization",
+    --p5
+    ["healing specialization"] = "Healing Specialization",
+    ["meditation specialization"] = "Meditation Specialization",
+    --p6
+    --p7
     --druid
     --p1
     ["living seed"] = "Living Seed",
@@ -204,6 +322,28 @@ Loc = Loc or {
     ["eclipse"] = "Eclipse",
     ["nourish"] = "Nourish",
     ["king of the jungle"] = "King of the Jungle",
+    --p3
+    ["eclipse"] = "Eclipse",
+    ["predatory instincts"] = "Predatory Instincts",
+    ["survival instincts"] = "Survival Instincts",
+    ["wild growth"] = "Wild Growth",
+    ["berserk"] = "Berserk",
+    ["nourish"] = "Nourish",
+    --p4
+    ["gale winds"] = "Gale Winds",
+    ["infected wounds"] = "Infected Wounds",
+    ["primal gore"] = "Primal Gore",
+    ["dagger specialization"] = "Dagger Specialization",
+    ["defense specialization"] = "Defense Specialization",
+    ["mace specialization"] = "Mace Specialization",
+    ["pole weapon specialization"] = "Pole Weapon Specialization",
+    ["staff specialization"] = "Staff Specialization",
+    ["sword specialization"] = "Sword Specialization",
+    --p5
+    ["healing specialization"] = "Healing Specialization",
+    ["meditation specialization"] = "Meditation Specialization",
+    --p6
+    --p7
     --rogue
     --p1
     ["deadly brew"] = "Deadly Brew",
@@ -225,4 +365,22 @@ Loc = Loc or {
     ["shuriken toss"] = "Shuriken Toss",
     ["poisoned knife"] = "Poisoned Knife",
     ["waylay"] = "Waylay",
+    --p3
+    ["combat potency"] = "Combat Potency",
+    ["focused attacks"] = "Focused Attacks",
+    ["honor among thieves"] = "Honor Among Thieves",
+    --p4
+    ["blunderbuss"] = "Blunderbuss",
+    ["crimson tempest"] = "Crimson Tempest",
+    ["fan of knives"] = "Fan of Knives",
+    --p5
+    ["dagger specialization"] = "Dagger Specialization",
+    ["fist weapon specialization"] = "Fist Weapon Specialization",
+    ["mace specialization"] = "Mace Specialization",
+    ["ranged weapon specialization"] = "Ranged Weapon Specialization",
+    ["sword specialization"] = "Sword Specialization",
+    ["defense specialization"] = "Defense Specialization",
+    ["nature specialization"] = "Nature Specialization",
+    --p6
+    --p7
 }

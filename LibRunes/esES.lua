@@ -32,6 +32,21 @@ Loc = Loc or {
     ["steady shot"] = "Disparo Firme",
     ["trap launcher"] = "Lanzador de Trampas",
     ["melee specialist"] = "Especialista en Combate Cuerpo a Cuerpo",
+    --p3
+    ["focus fire"] = "Fuego enfocado",
+    ["raptor fury"] = "Furia de raptor",
+    ["t.n.t."] = "T.N.T.",
+    ["catlike reflexes"] = "Reflejos felinos",
+    ["lock and load"] = "Preparación y carga",
+    ["rapid killing"] = "Matanza rápida"
+    --p4
+    ["hit and run"] = "Golpear y huir",
+    ["improved volley"] = "Lluvia de disparos mejorada",
+    ["resourcefulness"] = "Ingenio"
+    --p5
+    ["melee specialist"] = "Especialista en combate cuerpo a cuerpo"
+    --p6
+    --p7
     -- Guerrero
     --p1
     ["flagellation"] = "Flagelación",
@@ -53,6 +68,21 @@ Loc = Loc or {
     ["enraged regeneration"] = "Regeneración Enfurecida",
     ["blood surge"] = "Oleada de Sangre",
     ["precise timing"] = "Temporización Precisa",
+    --p3
+    ["blood surge"] = "Oleada de sangre",
+    ["rampage"] = "Desenfreno",
+    ["shockwave"] = "Onda de choque",
+    ["single-minded fury"] = "Furia enfocada",
+    ["warbringer"] = "Portador de guerra",
+    ["enraged regeneration"] = "Regeneración iracunda"
+    --p4
+    ["deep wounds"] = "Heridas profundas",
+    ["frenzied assault"] = "Asalto frenético",
+    ["safeguard"] = "Salvaguardia"
+    --p5
+    ["blood craze"] = "Locura de sangre"
+    --p6
+    --p7
     -- Paladín
     --p1
     ["seal of martyrdom"] = "Sello del Martirio",
@@ -74,6 +104,29 @@ Loc = Loc or {
     ["the art of war"] = "El Arte de la Guerra",
     ["infusion of light"] = "Infusión de Luz",
     ["sheath of light"] = "Vaina de Luz",
+    --p3
+    ["fanaticism"] = "Fanatismo",
+    ["improved sanctuary"] = "Santuario mejorado",
+    ["wrath"] = "Cólera",
+    ["hammer of the righteous"] = "Martillo del honrado",
+    ["improved hammer of wrath"] = "Martillo de cólera mejorado",
+    ["light's grace"] = "Gracia de la Luz",
+    ["purifying power"] = "Poder purificador"
+    --p4
+    ["righteous vengeance"] = "Venganza justa",
+    ["shield of righteousness"] = "Escudo de rectitud",
+    ["shock and awe"] = "Choque y pavor",
+    ["axe specialization"] = "Especialización en hachas",
+    ["defense specialization"] = "Especialización en defensa",
+    ["holy specialization"] = "Especialización en Sagrado",
+    ["mace specialization"] = "Especialización en mazas",
+    ["pole weapon specialization"] = "Especialización en armas de asta",
+    ["sword specialization"] = "Especialización en espadas"
+    --p5
+    ["healing specialization"] = "Especialización en sanación",
+    ["meditation specialization"] = "Especialización en meditación"
+    --p6
+    --p7
     -- Mago
     --p1
     ["burnout"] = "Agotamiento",
@@ -96,6 +149,28 @@ Loc = Loc or {
     ["brain freeze"] = "Congelación Cerebral",
     ["spell power"] = "Poder con Hechizos",
     ["missile barrage"] = "Barrida de Misiles",
+    --p3
+    ["advanced warding"] = "Protección avanzada",
+    ["deep freeze"] = "Congelación profunda",
+    ["temporal anomaly"] = "Anomalía temporal",
+    ["balefire bolt"] = "Descarga de fuego vil",
+    ["displacement"] = "Desplazamiento",
+    ["molten armor"] = "Armadura fundida"
+    --p4
+    ["arcane barrage"] = "Descarga Arcana",
+    ["overheat"] = "Sobrecalentamiento",
+    ["frozen orb"] = "Orbe congelado",
+    ["arcane specialization"] = "Especialización en Arcano",
+    ["dagger specialization"] = "Especialización en dagas",
+    ["fire specialization"] = "Especialización en Fuego",
+    ["frost specialization"] = "Especialización en Escarcha",
+    ["pole weapon specialization"] = "Especialización en armas de asta",
+    ["sword specialization"] = "Especialización en espadas"
+    --p5
+    ["healing specialization"] = "Especialización en sanación",
+    ["meditation specialization"] = "Especialización en meditación"
+    --p6
+    --p7
     -- Sacerdote
     --p1
     ["void plague"] = "Plaga del Vacío",
@@ -122,6 +197,28 @@ Loc = Loc or {
     ["surge of light"] = "Oleada de Luz",
     ["despair"] = "Desesperación",
     ["void zone"] = "Zona Vacía",
+    --p3
+    ["despair"] = "Desesperación",
+    ["surge of light"] = "Oleada de Luz",
+    ["void zone"] = "Zona de vacío",
+    ["divine aegis"] = "Égida divina",
+    ["eye of the void"] = "Ojo del Vacío",
+    ["pain and suffering"] = "Dolor y sufrimiento"
+    --p4
+    ["binding heal"] = "Sanación conjunta",
+    ["soul warding"] = "Custodia espiritual",
+    ["vampiric touch"] = "Toque vampírico",
+    ["dagger specialization"] = "Especialización en dagas",
+    ["defense specialization"] = "Especialización en defensa",
+    ["holy specialization"] = "Especialización en Sagrado",
+    ["mace specialization"] = "Especialización en mazas",
+    ["pole weapon specialization"] = "Especialización en armas de asta",
+    ["shadow specialization"] = "Especialización en Sombras"
+    --p5
+    ["healing specialization"] = "Especialización en sanación",
+    ["meditation specialization"] = "Especialización en meditación"
+    --p6
+    --p7
     -- Brujo
     --p1
     ["lake of fire"] = "Lago de Fuego",
@@ -143,6 +240,28 @@ Loc = Loc or {
     ["shadow and flame"] = "Sombra y Llama",
     ["invocation"] = "Invocación",
     ["demonic knowledge"] = "Conocimiento Demoníaco",
+    --p3
+    ["demonic knowledge"] = "Conocimiento demoníaco",
+    ["demonic tactics"] = "Tácticas demoníacas",
+    ["shadow mastery"] = "Maestría en Sombras",
+    ["backlash"] = "Reacción adversa",
+    ["shadowflame"] = "Llama de las Sombras",
+    ["soul link"] = "Enlace de alma"
+    --p4
+    ["bane"] = "Perdición",
+    ["death's embrace"] = "Abrazo de la Muerte",
+    ["shadowburn"] = "Quemadura de las Sombras",
+    ["dagger specialization"] = "Especialización en dagas",
+    ["defense specialization"] = "Especialización en defensa",
+    ["fire specialization"] = "Especialización en Fuego",
+    ["pole weapon specialization"] = "Especialización en armas de asta",
+    ["shadow specialization"] = "Especialización en Sombras",
+    ["sword specialization"] = "Especialización en espadas"
+    --p5
+    ["healing specialization"] = "Especialización en sanación",
+    ["meditation specialization"] = "Especialización en meditación"
+    --p6
+    --p7
     -- Chamán
     --p1
     ["dual wield specialization"] = "Especialización en Doble Arma",
@@ -165,6 +284,28 @@ Loc = Loc or {
     ["fire nova"] = "Nova de Fuego",
     ["ancestral awakening"] = "Despertar Ancestral",
     ["two-handed mastery"] = "Maestría en Armas de Dos Manos",
+    --p3
+    ["earth shield"] = "Escudo de tierra",
+    ["elemental mastery"] = "Maestría elemental",
+    ["mental quickness"] = "Rapidez mental",
+    ["shamanistic rage"] = "Ira chamanística",
+    ["storm, earth, and fire"] = "Tormenta, tierra y fuego",
+    ["totemic wrath"] = "Cólera totémica"
+    --p4
+    ["ancestral awakening"] = "Despertar ancestral",
+    ["lava surge"] = "Oleada de lava",
+    ["maelstrom weapon"] = "Arma de Torbellino",
+    ["axe specialization"] = "Especialización en hachas",
+    ["dagger specialization"] = "Especialización en dagas",
+    ["mace specialization"] = "Especialización en mazas",
+    ["pole weapon specialization"] = "Especialización en armas de asta",
+    ["shield specialization"] = "Especialización en escudos",
+    ["sword specialization"] = "Especialización en espadas"
+    --p5
+    ["healing specialization"] = "Especialización en sanación",
+    ["meditation specialization"] = "Especialización en meditación"
+    --p6
+    --p7
     -- Druide
     --p1
     ["living seed"] = "Semilla Viviente",
@@ -186,6 +327,28 @@ Loc = Loc or {
     ["eclipse"] = "Eclipse",
     ["nourish"] = "Nutrir",
     ["king of the jungle"] = "Rey de la Jungla",
+    --p3
+    ["eclipse"] = "Eclipse",
+    ["predatory instincts"] = "Instintos depredadores",
+    ["survival instincts"] = "Instintos de supervivencia",
+    ["wild growth"] = "Crecimiento salvaje",
+    ["berserk"] = "Rabiar",
+    ["nourish"] = "Nutrir"
+    --p4
+    ["gale winds"] = "Vientos borrascosos",
+    ["infected wounds"] = "Heridas infectadas",
+    ["primal gore"] = "Destripador primigenio",
+    ["dagger specialization"] = "Especialización en dagas",
+    ["defense specialization"] = "Especialización en defensa",
+    ["mace specialization"] = "Especialización en mazas",
+    ["pole weapon specialization"] = "Especialización en armas de asta",
+    ["staff specialization"] = "Especialización en bastones",
+    ["sword specialization"] = "Especialización en espadas"
+    --p5
+    ["healing specialization"] = "Especialización en sanación",
+    ["meditation specialization"] = "Especialización en meditación"
+    --p6
+    --p7
     -- Pícaro
     --p1
     ["deadly brew"] = "Brebaje Mortal",
@@ -207,4 +370,22 @@ Loc = Loc or {
     ["shuriken toss"] = "Lanzamiento de Shuriken",
     ["poisoned knife"] = "Cuchillo Envenenado",
     ["waylay"] = "Emboscada",
+    --p3
+    ["combat potency"] = "Potencia de combate",
+    ["focused attacks"] = "Ataques enfocados",
+    ["honor among thieves"] = "Honor entre ladrones"
+    --p4
+    ["blunderbuss"] = "Trabuco",
+    ["crimson tempest"] = "Tempestad carmesí",
+    ["fan of knives"] = "Lluvia de cuchillas"
+    --p5
+    ["dagger specialization"] = "Especialización en dagas",
+    ["fist weapon specialization"] = "Especialización en armas de puño",
+    ["mace specialization"] = "Especialización en mazas",
+    ["ranged weapon specialization"] = "Especialización en armas a distancia",
+    ["sword specialization"] = "Especialización en espadas",
+    ["defense specialization"] = "Especialización en defensa",
+    ["nature specialization"] = "Especialización en Naturaleza"
+    --p6
+    --p7
 }

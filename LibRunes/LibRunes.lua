@@ -46,7 +46,21 @@ function LR:CreateRunesTable(class)
 	  self.abilities[self:T("invigoration")] = 437997
 	  self.abilities[self:T("steady shot")] = 437123
 	  self.abilities[self:T("trap launcher")] = 409541
-	  self.abilities[self:T("melee specialist")] = 415352
+		--p3  
+		self.abilities[self:T("focus fire")] = 428726  
+		self.abilities[self:T("raptor fury")] = 415358  
+		self.abilities[self:T("t.n.t.")] = 428717  
+		self.abilities[self:T("catlike reflexes")] = 415428  
+		self.abilities[self:T("lock and load")] = 415413  
+		self.abilities[self:T("rapid killing")] = 415405  
+		--p4  
+		self.abilities[self:T("hit and run")] = 440533  
+		self.abilities[self:T("improved volley")] = 440520  
+		self.abilities[self:T("resourcefulness")] = 440529  
+		--p5
+	  self.abilities[self:T("melee specialist")] = 415723
+		--p6
+		--p7
 	elseif class == Loc["warrior"] then
 	  --p1
 	  self.abilities[self:T("flagellation")] = 402877
@@ -68,6 +82,20 @@ function LR:CreateRunesTable(class)
 		self.abilities[self:T("enraged regeneration")] = 402913
 		self.abilities[self:T("blood surge")] = 413380
 		self.abilities[self:T("precise timing")] = 402922
+		--p3
+		self.abilities[self:T("rampage")] = 426940
+		self.abilities[self:T("shockwave")] = 415304
+		self.abilities[self:T("single-minded fury")] = 413404
+		self.abilities[self:T("warbringer")] = 415306
+		self.abilities[self:T("enraged regeneration")] = 402913
+		--p4
+		self.abilities[self:T("deep wounds")] = 415308
+		self.abilities[self:T("frenzied assault")] = 415309
+		self.abilities[self:T("safeguard")] = 415310
+		--p5
+		self.abilities[self:T("blood craze")] = 415311
+		--p6
+		--p7
 	elseif class == Loc["paladin"] then
 	  --p1
 	  self.abilities[self:T("seal of martyrdom")] = 407798
@@ -89,6 +117,29 @@ function LR:CreateRunesTable(class)
 		self.abilities[self:T("the art of war")] = 426157
 		self.abilities[self:T("infusion of light")] = 426065
 		self.abilities[self:T("sheath of light")] = 426158
+		--p3
+		self.abilities[self:T("fanaticism")] = 429142
+		self.abilities[self:T("improved sanctuary")] = 415313
+		self.abilities[self:T("wrath")] = 415314
+		self.abilities[self:T("hammer of the righteous")] = 407632
+		self.abilities[self:T("improved hammer of wrath")] = 415316
+		self.abilities[self:T("light's grace")] = 415317
+		self.abilities[self:T("purifying power")] = 429144
+		--p4
+		self.abilities[self:T("righteous vengeance")] = 440672
+		self.abilities[self:T("shield of righteousness")] = 415320
+		self.abilities[self:T("shock and awe")] = 462834
+		self.abilities[self:T("axe specialization")] = 415322
+		self.abilities[self:T("defense specialization")] = 459312
+		self.abilities[self:T("holy specialization")] = 442898
+		self.abilities[self:T("mace specialization")] = 415325
+		self.abilities[self:T("pole weapon specialization")] = 415326
+		self.abilities[self:T("sword specialization")] = 415327
+		--p5
+		self.abilities[self:T("healing specialization")] = 442898
+		self.abilities[self:T("meditation specialization")] = 468762
+		--p6
+		--p7
 	elseif class == Loc["mage"] then
 	  --p1
 	  self.abilities[self:T("burnout")] = 412286
@@ -111,6 +162,28 @@ function LR:CreateRunesTable(class)
 	  self.abilities[self:T("brain freeze")] = 400731
 	  self.abilities[self:T("spell power")] = 412322
 	  self.abilities[self:T("missile barrage")] = 400589
+		--p3
+		self.abilities[self:T("advanced warding")] = 415330
+		self.abilities[self:T("deep freeze")] = 415331
+		self.abilities[self:T("temporal anomaly")] = 415332
+		self.abilities[self:T("balefire bolt")] = 415333
+		self.abilities[self:T("displacement")] = 415334
+		self.abilities[self:T("molten armor")] = 415335
+		--p4
+		self.abilities[self:T("arcane barrage")] = 415336
+		self.abilities[self:T("overheat")] = 415337
+		self.abilities[self:T("frozen orb")] = 415338
+		self.abilities[self:T("arcane specialization")] = 415339
+		self.abilities[self:T("dagger specialization")] = 415340
+		self.abilities[self:T("fire specialization")] = 415341
+		self.abilities[self:T("frost specialization")] = 415342
+		self.abilities[self:T("pole weapon specialization")] = 415343
+		self.abilities[self:T("sword specialization")] = 415344
+		--p5
+		self.abilities[self:T("healing specialization")] = 415345
+		self.abilities[self:T("meditation specialization")] = 415346
+		--p6
+		--p7
 	elseif class == Loc["priest"] then
 	  --p1
 	  self.abilities[self:T("void plague")] = 425204
@@ -176,6 +249,28 @@ function LR:CreateRunesTable(class)
 		self.abilities[self:T("shadow and flame")] = 426316
 		self.abilities[self:T("invocation")] = 426243
 		self.abilities[self:T("demonic knowledge")] = 412732
+		--p3
+		self.abilities[self:T("demonic knowledge")] = 415347
+		self.abilities[self:T("demonic tactics")] = 415348
+		self.abilities[self:T("shadow mastery")] = 415349
+		self.abilities[self:T("backlash")] = 415350
+		self.abilities[self:T("shadowflame")] = 415351
+		self.abilities[self:T("soul link")] = 415352
+		--p4
+		self.abilities[self:T("bane")] = 415353
+		self.abilities[self:T("death's embrace")] = 415354
+		self.abilities[self:T("shadowburn")] = 415355
+		self.abilities[self:T("dagger specialization")] = 415356
+		self.abilities[self:T("defense specialization")] = 415357
+		self.abilities[self:T("fire specialization")] = 415358
+		self.abilities[self:T("pole weapon specialization")] = 415359
+		self.abilities[self:T("shadow specialization")] = 415360
+		self.abilities[self:T("sword specialization")] = 415361
+		--p5
+		self.abilities[self:T("healing specialization")] = 415362
+		self.abilities[self:T("meditation specialization")] = 415363
+		--p6
+		--p7
 	elseif class == Loc["shaman"] then
 	  --p1
 	  self.abilities[self:T("dual wield specialization")] = 408496
@@ -198,6 +293,28 @@ function LR:CreateRunesTable(class)
 		self.abilities[self:T("fire nova")] = 408339
 		self.abilities[self:T("ancestral awakening")] = 425858
 		self.abilities[self:T("two-handed mastery")] = 436364
+		--p3
+		self.abilities[self:T("earth shield")] = 415364
+		self.abilities[self:T("elemental mastery")] = 415365
+		self.abilities[self:T("mental quickness")] = 415366
+		self.abilities[self:T("shamanistic rage")] = 415367
+		self.abilities[self:T("storm, earth, and fire")] = 415368
+		self.abilities[self:T("totemic wrath")] = 429139
+		--p4
+		self.abilities[self:T("ancestral awakening")] = 415370
+		self.abilities[self:T("lava surge")] = 415371
+		self.abilities[self:T("maelstrom weapon")] = 415372
+		self.abilities[self:T("axe specialization")] = 415373
+		self.abilities[self:T("dagger specialization")] = 415374
+		self.abilities[self:T("mace specialization")] = 415375
+		self.abilities[self:T("pole weapon specialization")] = 415376
+		self.abilities[self:T("shield specialization")] = 415377
+		self.abilities[self:T("sword specialization")] = 415378
+		--p5
+		self.abilities[self:T("healing specialization")] = 415379
+		self.abilities[self:T("meditation specialization")] = 415380
+		--p6
+		--p7
 	elseif class == Loc["druid"] then
 	  --p1
 	  self.abilities[self:T("living seed")] = 414677
@@ -219,6 +336,28 @@ function LR:CreateRunesTable(class)
 		self.abilities[self:T("eclipse")] = 408248
 		self.abilities[self:T("nourish")] = 408247
 		self.abilities[self:T("king of the jungle")] = 417046
+		--p3
+		self.abilities[self:T("eclipse")] = 415381
+		self.abilities[self:T("predatory instincts")] = 415382
+		self.abilities[self:T("survival instincts")] = 415383
+		self.abilities[self:T("wild growth")] = 415384
+		self.abilities[self:T("berserk")] = 415385
+		self.abilities[self:T("nourish")] = 415386
+		--p4
+		self.abilities[self:T("gale winds")] = 415387
+		self.abilities[self:T("infected wounds")] = 415388
+		self.abilities[self:T("primal gore")] = 415389
+		self.abilities[self:T("dagger specialization")] = 415390
+		self.abilities[self:T("defense specialization")] = 415391
+		self.abilities[self:T("mace specialization")] = 415392
+		self.abilities[self:T("pole weapon specialization")] = 415393
+		self.abilities[self:T("staff specialization")] = 415394
+		self.abilities[self:T("sword specialization")] = 415395
+		--p5
+		self.abilities[self:T("healing specialization")] = 415396
+		self.abilities[self:T("meditation specialization")] = 415397
+		--p6
+		--p7
 	elseif class == Loc["rogue"] then
 	  --p1
 	  self.abilities[self:T("deadly brew")] = 399965
@@ -240,5 +379,23 @@ function LR:CreateRunesTable(class)
 		self.abilities[self:T("shuriken toss")] = 399986
 		self.abilities[self:T("poisoned knife")] = 425012
 		self.abilities[self:T("waylay")] = 408700
+		--p3
+		self.abilities[self:T("combat potency")] = 415398
+		self.abilities[self:T("focused attacks")] = 415399
+		self.abilities[self:T("honor among thieves")] = 432264
+		--p4
+		self.abilities[self:T("blunderbuss")] = 415401
+		self.abilities[self:T("crimson tempest")] = 412096
+		self.abilities[self:T("fan of knives")] = 415403
+		--p5
+		self.abilities[self:T("dagger specialization")] = 442887
+		self.abilities[self:T("fist weapon specialization")] = 415405
+		self.abilities[self:T("mace specialization")] = 415406
+		self.abilities[self:T("ranged weapon specialization")] = 415407
+		self.abilities[self:T("sword specialization")] = 415408
+		self.abilities[self:T("defense specialization")] = 459312
+		self.abilities[self:T("nature specialization")] = 442896
+		--p6
+		--p7
 	end
 end
