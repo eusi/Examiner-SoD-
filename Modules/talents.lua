@@ -329,6 +329,7 @@ function mod:InitTalents()
 	local combined = 0;
 	for i = 1, _G.GetNumTalentTabs() do
 		local _, _, pointsSpent = GetTalentTabInfo(i,isInspect);
+		pointsSpent = tonumber(pointsSpent) or 0
 		points[i] = pointsSpent;
 		combined = (combined + pointsSpent);
 		if (pointsSpent > points[maxTree]) then

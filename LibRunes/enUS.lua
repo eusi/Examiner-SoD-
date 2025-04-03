@@ -3,7 +3,7 @@ if not (GetLocale() == "enGB" or GetLocale() == "enUS") then return end
 Loc = Loc or {
     --p4 - specializations
     ["arcane specialization"] = "Arcane Specialization",
-    ["axe specialization"] = " Axe Specialization",
+    ["axe specialization"] = "Axe Specialization",
     ["dagger specialization"] = "Dagger Specialization",
     ["defense specialization"] = "Defense Specialization",
     ["feral combat specialization"] = "Feral Combat Specialization",
@@ -60,6 +60,9 @@ Loc = Loc or {
     ["hit and run"] = "Hit and Run",  
     ["improved volley"] = "Improved Volley",  
     ["resourcefulness"] = "Resourcefulness",  
+    ["cobra slayer"] = "Cobra Slayer",
+    ["wyvern strike"] = "Wyvern Strike",
+    ["kill shot"] = "Kill Shot",
     --p5  
     ["melee specialist"] = "Melee Specialist",
     --p6
@@ -96,6 +99,8 @@ Loc = Loc or {
     ["deep wounds"] = "Deep Wounds",
     ["frenzied assault"] = "Frenzied Assault",
     ["safeguard"] = "Safeguard",
+    ["taste for blood"] = "Taste for Blood",
+    ["fresh meat"] = "Fresh Meat",
     --p5
     ["blood craze"] = "Blood Craze",
     --p6
@@ -133,15 +138,11 @@ Loc = Loc or {
     ["righteous vengeance"] = "Righteous Vengeance",
     ["shield of righteousness"] = "Shield of Righteousness",
     ["shock and awe"] = "Shock and Awe",
-    ["axe specialization"] = "Axe Specialization",
-    ["defense specialization"] = "Defense Specialization",
-    ["holy specialization"] = "Holy Specialization",
-    ["mace specialization"] = "Mace Specialization",
-    ["pole weapon specialization"] = "Pole Weapon Specialization",
-    ["sword specialization"] = "Sword Specialization",
+    ["aura mastery"] = "Aura Mastery",
+    ["malleable protection"] = "Malleable Protection",
+    ["hallowed ground"] = "Hallowed Ground",
+    ["divine light"] = "Divine Light",
     --p5
-    ["healing specialization"] = "Healing Specialization",
-    ["meditation specialization"] = "Meditation Specialization",
     --p6
     --p7
     --mage
@@ -177,15 +178,7 @@ Loc = Loc or {
     ["arcane barrage"] = "Arcane Barrage",
     ["overheat"] = "Overheat",
     ["frozen orb"] = "Frozen Orb",
-    ["arcane specialization"] = "Arcane Specialization",
-    ["dagger specialization"] = "Dagger Specialization",
-    ["fire specialization"] = "Fire Specialization",
-    ["frost specialization"] = "Frost Specialization",
-    ["pole weapon specialization"] = "Pole Weapon Specialization",
-    ["sword specialization"] = "Sword Specialization",
     --p5
-    ["healing specialization"] = "Healing Specialization",
-    ["meditation specialization"] = "Meditation Specialization",
     --p6
     --p7
     --priest
@@ -221,15 +214,7 @@ Loc = Loc or {
     ["binding heal"] = "Binding Heal",
     ["soul warding"] = "Soul Warding",
     ["vampiric touch"] = "Vampiric Touch",
-    ["dagger specialization"] = "Dagger Specialization",
-    ["defense specialization"] = "Defense Specialization",
-    ["holy specialization"] = "Holy Specialization",
-    ["mace specialization"] = "Mace Specialization",
-    ["pole weapon specialization"] = "Pole Weapon Specialization",
-    ["shadow specialization"] = "Shadow Specialization",
     --p5
-    ["healing specialization"] = "Healing Specialization",
-    ["meditation specialization"] = "Meditation Specialization",
     --p6
     --p7
     --warlock
@@ -264,15 +249,11 @@ Loc = Loc or {
     ["bane"] = "Bane",
     ["death's embrace"] = "Death's Embrace",
     ["shadowburn"] = "Shadowburn",
-    ["dagger specialization"] = "Dagger Specialization",
-    ["defense specialization"] = "Defense Specialization",
-    ["fire specialization"] = "Fire Specialization",
-    ["pole weapon specialization"] = "Pole Weapon Specialization",
-    ["shadow specialization"] = "Shadow Specialization",
-    ["sword specialization"] = "Sword Specialization",
+    ["unstable affliction"] = "Unstable Affliction",
+    ["mark of chaos"] = "Mark of Chaos",
+    ["backdraft"] = "Backdraft",
+    ["summon felguard"] = "Summon Felguard",
     --p5
-    ["healing specialization"] = "Healing Specialization",
-    ["meditation specialization"] = "Meditation Specialization",
     --p6
     --p7
     --shaman
@@ -308,15 +289,7 @@ Loc = Loc or {
     ["ancestral awakening"] = "Ancestral Awakening",
     ["lava surge"] = "Lava Surge",
     ["maelstrom weapon"] = "Maelstrom Weapon",
-    ["axe specialization"] = "Axe Specialization",
-    ["dagger specialization"] = "Dagger Specialization",
-    ["mace specialization"] = "Mace Specialization",
-    ["pole weapon specialization"] = "Pole Weapon Specialization",
-    ["shield specialization"] = "Shield Specialization",
-    ["sword specialization"] = "Sword Specialization",
     --p5
-    ["healing specialization"] = "Healing Specialization",
-    ["meditation specialization"] = "Meditation Specialization",
     --p6
     --p7
     --druid
@@ -351,15 +324,13 @@ Loc = Loc or {
     ["gale winds"] = "Gale Winds",
     ["infected wounds"] = "Infected Wounds",
     ["primal gore"] = "Primal Gore",
-    ["dagger specialization"] = "Dagger Specialization",
-    ["defense specialization"] = "Defense Specialization",
-    ["mace specialization"] = "Mace Specialization",
-    ["pole weapon specialization"] = "Pole Weapon Specialization",
-    ["staff specialization"] = "Staff Specialization",
-    ["sword specialization"] = "Sword Specialization",
+    ["elune's fires"] = "Elune's Fires",
+    ["starfall"] = "Starfall",
+    ["improved barkskin"] = "Improved Barkskin",
+    ["improved swipe"] = "Improved Swipe",
+    ["improved frenzied regeneration"] = "Improved Frenzied Regeneration",
+    ["gore"] = "Gore",
     --p5
-    ["healing specialization"] = "Healing Specialization",
-    ["meditation specialization"] = "Meditation Specialization",
     --p6
     --p7
     --rogue
@@ -391,14 +362,8 @@ Loc = Loc or {
     ["blunderbuss"] = "Blunderbuss",
     ["crimson tempest"] = "Crimson Tempest",
     ["fan of knives"] = "Fan of Knives",
+    ["carnage"] = "Carnage",
     --p5
-    ["dagger specialization"] = "Dagger Specialization",
-    ["fist weapon specialization"] = "Fist Weapon Specialization",
-    ["mace specialization"] = "Mace Specialization",
-    ["ranged weapon specialization"] = "Ranged Weapon Specialization",
-    ["sword specialization"] = "Sword Specialization",
-    ["defense specialization"] = "Defense Specialization",
-    ["nature specialization"] = "Nature Specialization",
     --p6
     --p7
 }

@@ -61,6 +61,9 @@ Loc = Loc or {
     ["hit and run"] = "Golpear y huir",
     ["improved volley"] = "Lluvia de disparos mejorada",
     ["resourcefulness"] = "Ingenio",
+    ["cobra slayer"] = "Asesino de cobras",
+    ["wyvern strike"] = "Golpe de dracoleón",
+    ["kill shot"] = "Disparo mortal",
     --p5
     ["melee specialist"] = "Especialista en combate cuerpo a cuerpo",
     --p6
@@ -87,7 +90,6 @@ Loc = Loc or {
     ["blood surge"] = "Oleada de Sangre",
     ["precise timing"] = "Temporización Precisa",
     --p3
-    ["blood surge"] = "Oleada de sangre",
     ["rampage"] = "Desenfreno",
     ["shockwave"] = "Onda de choque",
     ["single-minded fury"] = "Furia enfocada",
@@ -97,6 +99,8 @@ Loc = Loc or {
     ["deep wounds"] = "Heridas profundas",
     ["frenzied assault"] = "Asalto frenético",
     ["safeguard"] = "Salvaguardia",
+    ["taste for blood"] = "Sabor a sangre",
+    ["fresh meat"] = "Carne Fresca",
     --p5
     ["blood craze"] = "Locura de sangre",
     --p6
@@ -134,15 +138,11 @@ Loc = Loc or {
     ["righteous vengeance"] = "Venganza justa",
     ["shield of righteousness"] = "Escudo de rectitud",
     ["shock and awe"] = "Choque y pavor",
-    ["axe specialization"] = "Especialización en hachas",
-    ["defense specialization"] = "Especialización en defensa",
-    ["holy specialization"] = "Especialización en Sagrado",
-    ["mace specialization"] = "Especialización en mazas",
-    ["pole weapon specialization"] = "Especialización en armas de asta",
-    ["sword specialization"] = "Especialización en espadas",
+    ["aura mastery"] = "Maestría en auras",
+    ["malleable protection"] = "Protección maleable",
+    ["hallowed ground"] = "Suelo consagrado",
+    ["divine light"] = "Luz divina",
     --p5
-    ["healing specialization"] = "Especialización en sanación",
-    ["meditation specialization"] = "Especialización en meditación",
     --p6
     --p7
     -- Mago
@@ -178,15 +178,7 @@ Loc = Loc or {
     ["arcane barrage"] = "Descarga Arcana",
     ["overheat"] = "Sobrecalentamiento",
     ["frozen orb"] = "Orbe congelado",
-    ["arcane specialization"] = "Especialización en Arcano",
-    ["dagger specialization"] = "Especialización en dagas",
-    ["fire specialization"] = "Especialización en Fuego",
-    ["frost specialization"] = "Especialización en Escarcha",
-    ["pole weapon specialization"] = "Especialización en armas de asta",
-    ["sword specialization"] = "Especialización en espadas",
     --p5
-    ["healing specialization"] = "Especialización en sanación",
-    ["meditation specialization"] = "Especialización en meditación",
     --p6
     --p7
     -- Sacerdote
@@ -226,15 +218,7 @@ Loc = Loc or {
     ["binding heal"] = "Sanación conjunta",
     ["soul warding"] = "Custodia espiritual",
     ["vampiric touch"] = "Toque vampírico",
-    ["dagger specialization"] = "Especialización en dagas",
-    ["defense specialization"] = "Especialización en defensa",
-    ["holy specialization"] = "Especialización en Sagrado",
-    ["mace specialization"] = "Especialización en mazas",
-    ["pole weapon specialization"] = "Especialización en armas de asta",
-    ["shadow specialization"] = "Especialización en Sombras",
     --p5
-    ["healing specialization"] = "Especialización en sanación",
-    ["meditation specialization"] = "Especialización en meditación",
     --p6
     --p7
     -- Brujo
@@ -269,15 +253,11 @@ Loc = Loc or {
     ["bane"] = "Perdición",
     ["death's embrace"] = "Abrazo de la Muerte",
     ["shadowburn"] = "Quemadura de las Sombras",
-    ["dagger specialization"] = "Especialización en dagas",
-    ["defense specialization"] = "Especialización en defensa",
-    ["fire specialization"] = "Especialización en Fuego",
-    ["pole weapon specialization"] = "Especialización en armas de asta",
-    ["shadow specialization"] = "Especialización en Sombras",
-    ["sword specialization"] = "Especialización en espadas",
+    ["unstable affliction"] = "Aflicción inestable",
+    ["mark of chaos"] = "Marca del caos",
+    ["backdraft"] = "Rebufo",
+    ["summon felguard"] = "Invocar Guardia vil",
     --p5
-    ["healing specialization"] = "Especialización en sanación",
-    ["meditation specialization"] = "Especialización en meditación",
     --p6
     --p7
     -- Chamán
@@ -313,15 +293,7 @@ Loc = Loc or {
     ["ancestral awakening"] = "Despertar ancestral",
     ["lava surge"] = "Oleada de lava",
     ["maelstrom weapon"] = "Arma de Torbellino",
-    ["axe specialization"] = "Especialización en hachas",
-    ["dagger specialization"] = "Especialización en dagas",
-    ["mace specialization"] = "Especialización en mazas",
-    ["pole weapon specialization"] = "Especialización en armas de asta",
-    ["shield specialization"] = "Especialización en escudos",
-    ["sword specialization"] = "Especialización en espadas",
     --p5
-    ["healing specialization"] = "Especialización en sanación",
-    ["meditation specialization"] = "Especialización en meditación",
     --p6
     --p7
     -- Druide
@@ -356,15 +328,13 @@ Loc = Loc or {
     ["gale winds"] = "Vientos borrascosos",
     ["infected wounds"] = "Heridas infectadas",
     ["primal gore"] = "Destripador primigenio",
-    ["dagger specialization"] = "Especialización en dagas",
-    ["defense specialization"] = "Especialización en defensa",
-    ["mace specialization"] = "Especialización en mazas",
-    ["pole weapon specialization"] = "Especialización en armas de asta",
-    ["staff specialization"] = "Especialización en bastones",
-    ["sword specialization"] = "Especialización en espadas",
+    ["elune's fires"] = "Fuego de Eluna",
+    ["starfall"] = "Lluvia de estrellas",
+    ["improved barkskin"] = "Piel de corteza mejorada",
+    ["improved swipe"] = "Zarpa mejorada",
+    ["improved frenzied regeneration"] = "Regeneración frenética mejorada",
+    ["gore"] = "Hemorragia",
     --p5
-    ["healing specialization"] = "Especialización en sanación",
-    ["meditation specialization"] = "Especialización en meditación",
     --p6
     --p7
     -- Pícaro
@@ -392,18 +362,12 @@ Loc = Loc or {
     ["combat potency"] = "Potencia de combate",
     ["focused attacks"] = "Ataques enfocados",
     ["honor among thieves"] = "Honor entre ladrones",
+    ["carnage"] = "Carnicería",
     --p4
     ["blunderbuss"] = "Trabuco",
     ["crimson tempest"] = "Tempestad carmesí",
     ["fan of knives"] = "Lluvia de cuchillas",
     --p5
-    ["dagger specialization"] = "Especialización en dagas",
-    ["fist weapon specialization"] = "Especialización en armas de puño",
-    ["mace specialization"] = "Especialización en mazas",
-    ["ranged weapon specialization"] = "Especialización en armas a distancia",
-    ["sword specialization"] = "Especialización en espadas",
-    ["defense specialization"] = "Especialización en defensa",
-    ["nature specialization"] = "Especialización en Naturaleza",
     --p6
     --p7
 }

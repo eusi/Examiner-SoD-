@@ -61,6 +61,9 @@ Loc = Loc or {
     ["hit and run"] = "Удар и бегство",
     ["improved volley"] = "Улучшенный залп",
     ["resourcefulness"] = "Находчивость",
+    ["cobra slayer"] = "Убийца кобр",
+    ["wyvern strike"] = "Удар виверны",
+    ["kill shot"] = "Смертельный выстрел",
     --p5
     ["melee specialist"] = "Специалист ближнего боя",
     --p6
@@ -87,7 +90,6 @@ Loc = Loc or {
     ["blood surge"] = "Прилив крови",
     ["precise timing"] = "Точное время",
     --p3
-    ["blood surge"] = "Всплеск крови",
     ["rampage"] = "Буйство",
     ["shockwave"] = "Ударная волна",
     ["single-minded fury"] = "Однонаправленная ярость",
@@ -97,6 +99,8 @@ Loc = Loc or {
     ["deep wounds"] = "Глубокие раны",
     ["frenzied assault"] = "Бешеный натиск",
     ["safeguard"] = "Гарантия безопасности",
+    ["taste for blood"] = "Вкус крови",
+    ["fresh meat"] = "Свежее мясо",
     --p5
     ["blood craze"] = "Кровавое безумие",
     --p6
@@ -134,15 +138,11 @@ Loc = Loc or {
     ["righteous vengeance"] = "Праведная месть",
     ["shield of righteousness"] = "Щит праведности",
     ["shock and awe"] = "Шок и трепет",
-    ["axe specialization"] = "Специализация на топорах",
-    ["defense specialization"] = "Специализация на защите",
-    ["holy specialization"] = "Специализация на Свете",
-    ["mace specialization"] = "Специализация на булаве",
-    ["pole weapon specialization"] = "Специализация на древковом оружии",
-    ["sword specialization"] = "Специализация на мечах",
+    ["aura mastery"] = "Повелитель аур",
+    ["malleable protection"] = "Гибкая защита",
+    ["hallowed ground"] = "Священная земля",
+    ["divine light"] = "Божественный свет",
     --p5
-    ["healing specialization"] = "Специализация на исцелении",
-    ["meditation specialization"] = "Специализация на медитации",
     --p6
     --p7
     -- Маг
@@ -178,15 +178,7 @@ Loc = Loc or {
     ["arcane barrage"] = "Чародейский залп",
     ["overheat"] = "Перегрев",
     ["frozen orb"] = "Замороженный шар",
-    ["arcane specialization"] = "Специализация на тайной магии",
-    ["dagger specialization"] = "Специализация на кинжалах",
-    ["fire specialization"] = "Специализация на огне",
-    ["frost specialization"] = "Специализация на льде",
-    ["pole weapon specialization"] = "Специализация на древковом оружии",
-    ["sword specialization"] = "Специализация на мечах",
     --p5
-    ["healing specialization"] = "Специализация на исцелении",
-    ["meditation specialization"] = "Специализация на медитации",
     --p6
     --p7
     -- Жрец
@@ -226,15 +218,7 @@ Loc = Loc or {
     ["binding heal"] = "Связующее исцеление",
     ["soul warding"] = "Охрана души",
     ["vampiric touch"] = "Вампирический прикосновение",
-    ["dagger specialization"] = "Специализация на кинжалах",
-    ["defense specialization"] = "Специализация на защите",
-    ["holy specialization"] = "Специализация на Свете",
-    ["mace specialization"] = "Специализация на булаве",
-    ["pole weapon specialization"] = "Специализация на древковом оружии",
-    ["shadow specialization"] = "Специализация на Тени",
     --p5
-    ["healing specialization"] = "Специализация на исцелении",
-    ["meditation specialization"] = "Специализация на медитации",
     --p6
     --p7
     -- Чернокнижник
@@ -269,15 +253,11 @@ Loc = Loc or {
     ["bane"] = "Проклятие",
     ["death's embrace"] = "Объятие смерти",
     ["shadowburn"] = "Ожог Тьмы",
-    ["dagger specialization"] = "Специализация на кинжалах",
-    ["defense specialization"] = "Специализация на защите",
-    ["fire specialization"] = "Специализация на огне",
-    ["pole weapon specialization"] = "Специализация на древковом оружии",
-    ["shadow specialization"] = "Специализация на Тени",
-    ["sword specialization"] = "Специализация на мечах",
+    ["unstable affliction"] = "Нестабильное страдание",
+    ["mark of chaos"] = "Метка хаоса",
+    ["backdraft"] = "Обратная тяга",
+    ["summon felguard"] = "Призыв стража Скверны",
     --p5
-    ["healing specialization"] = "Специализация на исцелении",
-    ["meditation specialization"] = "Специализация на медитации",
     --p6
     --p7
     -- Шаман
@@ -313,15 +293,7 @@ Loc = Loc or {
     ["ancestral awakening"] = "Пробуждение предков",
     ["lava surge"] = "Всплеск лавы",
     ["maelstrom weapon"] = "Оружие Водоворота",
-    ["axe specialization"] = "Специализация на топорах",
-    ["dagger specialization"] = "Специализация на кинжалах",
-    ["mace specialization"] = "Специализация на булах",
-    ["pole weapon specialization"] = "Специализация на древковом оружии",
-    ["shield specialization"] = "Специализация на щитах",
-    ["sword specialization"] = "Специализация на мечах",
     --p5
-    ["healing specialization"] = "Специализация на исцелении",
-    ["meditation specialization"] = "Специализация на медитации",
     --p6
     --p7
     -- Друид
@@ -356,15 +328,13 @@ Loc = Loc or {
     ["gale winds"] = "Шквальный ветер",
     ["infected wounds"] = "Зараженные раны",
     ["primal gore"] = "Первобытная кровь",
-    ["dagger specialization"] = "Специализация на кинжалах",
-    ["defense specialization"] = "Специализация на защите",
-    ["mace specialization"] = "Специализация на булах",
-    ["pole weapon specialization"] = "Специализация на древковом оружии",
-    ["staff specialization"] = "Специализация на посохах",
-    ["sword specialization"] = "Специализация на мечах",
+    ["elune's fires"] = "Огни Элуны",
+    ["starfall"] = "Звездопад",
+    ["improved barkskin"] = "Улучшенная кора",
+    ["improved swipe"] = "Улучшенный размах",
+    ["improved frenzied regeneration"] = "Улучшенное бешеное восстановление",
+    ["gore"] = "Кровотечение",
     --p5
-    ["healing specialization"] = "Специализация на исцелении",
-    ["meditation specialization"] = "Специализация на медитации",
     --p6
     --p7
     -- Разбойник
@@ -396,14 +366,8 @@ Loc = Loc or {
     ["blunderbuss"] = "Картечница",
     ["crimson tempest"] = "Багровый шторм",
     ["fan of knives"] = "Шквал клинков",
+    ["carnage"] = "Кровавая бойня",
     --p5
-    ["dagger specialization"] = "Специализация на кинжалах",
-    ["fist weapon specialization"] = "Специализация на кастетах",
-    ["mace specialization"] = "Специализация на булах",
-    ["ranged weapon specialization"] = "Специализация на дальнобойном оружии",
-    ["sword specialization"] = "Специализация на мечах",
-    ["defense specialization"] = "Специализация на защите",
-    ["nature specialization"] = "Специализация на силах природы",
     --p6
     --p7
 }

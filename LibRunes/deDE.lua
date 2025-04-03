@@ -60,6 +60,9 @@ Loc = Loc or {
     ["hit and run"] = "Schlag und Flucht",
     ["improved volley"] = "Verbesserte Salve",
     ["resourcefulness"] = "Einfallsreichtum",
+    ["cobra slayer"] = "Kobrenschlächter",
+    ["wyvern strike"] = "Wyvernstoß",
+    ["kill shot"] = "Todesstoß",
     --p5
     ["melee specialist"] = "Nahkampfspezialist",
     --p6
@@ -86,7 +89,6 @@ Loc = Loc or {
     ["blood surge"] = "Blutwallung",
     ["precise timing"] = "Präzises Timing",
     --p3
-    ["blood surge"] = "Blutwoge",
     ["rampage"] = "Toben",
     ["shockwave"] = "Schockwelle",
     ["single-minded fury"] = "Einzelkämpferwut",
@@ -96,6 +98,8 @@ Loc = Loc or {
     ["deep wounds"] = "Tiefe Wunden",
     ["frenzied assault"] = "Rasender Angriff",
     ["safeguard"] = "Schutzvorkehrung",
+    ["taste for blood"] = "Blutdurst",
+    ["fresh meat"] = "Frischfleisch",
     --p5
     ["blood craze"] = "Blutwahnsinn",
     --p6
@@ -126,15 +130,11 @@ Loc = Loc or {
     ["righteous vengeance"] = "Rechtschaffene Vergeltung",
     ["shield of righteousness"] = "Schild der Rechtschaffenheit",
     ["shock and awe"] = "Schock und Ehrfurcht",
-    ["axe specialization"] = "Axtspezialisierung",
-    ["defense specialization"] = "Verteidigungsspezialisierung",
-    ["holy specialization"] = "Heiligspezialisierung",
-    ["mace specialization"] = "Streitkolbenspezialisierung",
-    ["pole weapon specialization"] = "Stangenwaffenspezialisierung",
-    ["sword specialization"] = "Schwertspezialisierung",
+    ["aura mastery"] = "Aurenbeherrschung",
+    ["malleable protection"] = "Formbarer Schutz",
+    ["hallowed ground"] = "Geweihter Boden",
+    ["divine light"] = "Göttliches Licht",
     --p5
-    ["healing specialization"] = "Heilungsspezialisierung",
-    ["meditation specialization"] = "Meditationsspezialisierung",
     --p6
     --p7
     --p2
@@ -177,15 +177,7 @@ Loc = Loc or {
     ["arcane barrage"] = "Arkane Salve",
     ["overheat"] = "Überhitzung",
     ["frozen orb"] = "Gefrorene Kugel",
-    ["arcane specialization"] = "Arkanespezialisierung",
-    ["dagger specialization"] = "Dolchspezialisierung",
-    ["fire specialization"] = "Feuerspezialisierung",
-    ["frost specialization"] = "Frostspezialisierung",
-    ["pole weapon specialization"] = "Stangenwaffenspezialisierung",
-    ["sword specialization"] = "Schwertspezialisierung",
     --p5
-    ["healing specialization"] = "Heilungsspezialisierung",
-    ["meditation specialization"] = "Meditationsspezialisierung",
     --p6
     --p7
     -- Priester
@@ -225,15 +217,7 @@ Loc = Loc or {
     ["binding heal"] = "Verbindende Heilung",
     ["soul warding"] = "Seelenwächter",
     ["vampiric touch"] = "Vampirberührung",
-    ["dagger specialization"] = "Dolchspezialisierung",
-    ["defense specialization"] = "Verteidigungsspezialisierung",
-    ["holy specialization"] = "Heiligspezialisierung",
-    ["mace specialization"] = "Streitkolbenspezialisierung",
-    ["pole weapon specialization"] = "Stangenwaffenspezialisierung",
-    ["shadow specialization"] = "Schattenspezialisierung",
     --p5
-    ["healing specialization"] = "Heilungsspezialisierung",
-    ["meditation specialization"] = "Meditationsspezialisierung",
     --p6
     --p7
     -- Hexenmeister
@@ -268,15 +252,11 @@ Loc = Loc or {
     ["bane"] = "Verderben",
     ["death's embrace"] = "Umarmung des Todes",
     ["shadowburn"] = "Schattenbrand",
-    ["dagger specialization"] = "Dolchspezialisierung",
-    ["defense specialization"] = "Verteidigungsspezialisierung",
-    ["fire specialization"] = "Feuerspezialisierung",
-    ["pole weapon specialization"] = "Stangenwaffenspezialisierung",
-    ["shadow specialization"] = "Schattenspezialisierung",
-    ["sword specialization"] = "Schwertspezialisierung",
+    ["unstable affliction"] = "Instabiles Gebrechen",
+    ["mark of chaos"] = "Mal des Chaos",
+    ["backdraft"] = "Rückstoß",
+    ["summon felguard"] = "Teufelswache beschwören",
     --p5
-    ["healing specialization"] = "Heilungsspezialisierung",
-    ["meditation specialization"] = "Meditationsspezialisierung",
     --p6
     --p7
     -- Schamane
@@ -311,15 +291,7 @@ Loc = Loc or {
     --p4
     ["lava surge"] = "Lavasog",
     ["maelstrom weapon"] = "Waffe des Mahlstroms",
-    ["axe specialization"] = "Axtspezialisierung",
-    ["dagger specialization"] = "Dolchspezialisierung",
-    ["mace specialization"] = "Streitkolbenspezialisierung",
-    ["pole weapon specialization"] = "Stangenwaffenspezialisierung",
-    ["shield specialization"] = "Schildspezialisierung",
-    ["sword specialization"] = "Schwertspezialisierung",
     --p5
-    ["healing specialization"] = "Heilungsspezialisierung",
-    ["meditation specialization"] = "Meditationsspezialisierung",
     --p6
     --p7
     -- Druide
@@ -354,15 +326,13 @@ Loc = Loc or {
     ["gale winds"] = "Sturmwinde",
     ["infected wounds"] = "Infizierte Wunden",
     ["primal gore"] = "Urtümlicher Bluter",
-    ["dagger specialization"] = "Dolchspezialisierung",
-    ["defense specialization"] = "Verteidigungsspezialisierung",
-    ["mace specialization"] = "Streitkolbenspezialisierung",
-    ["pole weapon specialization"] = "Stangenwaffenspezialisierung",
-    ["staff specialization"] = "Stabspezialisierung",
-    ["sword specialization"] = "Schwertspezialisierung",
+    ["elune's fires"] = "Elunes Feuer",
+    ["starfall"] = "Sternenregen",
+    ["improved barkskin"] = "Verbesserte Baumnrinde",
+    ["improved swipe"] = "Verbessertes Hieb",
+    ["improved frenzied regeneration"] = "Verbesserte Rasende Regeneration",
+    ["gore"] = "Blutung",
     --p5
-    ["healing specialization"] = "Heilungsspezialisierung",
-    ["meditation specialization"] = "Meditationsspezialisierung",
     --p6
     --p7
     -- Schurke
@@ -390,18 +360,12 @@ Loc = Loc or {
     ["combat potency"] = "Kampfkraft",
     ["focused attacks"] = "Fokussierte Angriffe",
     ["honor among thieves"] = "Ehre unter Dieben",
+    ["carnage"] = "Massaker",
     --p4
     ["blunderbuss"] = "Donnerbüchse",
     ["crimson tempest"] = "Blutroter Sturm",
     ["fan of knives"] = "Fächer aus Messern",
     --p5
-    ["dagger specialization"] = "Dolchspezialisierung",
-    ["fist weapon specialization"] = "Faustwaffenspezialisierung",
-    ["mace specialization"] = "Streitkolbenspezialisierung",
-    ["ranged weapon specialization"] = "Distanzwaffenspezialisierung",
-    ["sword specialization"] = "Schwertspezialisierung",
-    ["defense specialization"] = "Verteidigungsspezialisierung",
-    ["nature specialization"] = "Naturspezialisierung",
     --p6
     --p7
 }
