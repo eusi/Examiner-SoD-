@@ -1,6 +1,24 @@
 if not (GetLocale() == "enGB" or GetLocale() == "enUS") then return end
 
 Loc = Loc or {
+    --p4 - specializations
+    ["arcane specialization"] = "Arcane Specialization",
+    ["axe specialization"] = " Axe Specialization",
+    ["dagger specialization"] = "Dagger Specialization",
+    ["defense specialization"] = "Defense Specialization",
+    ["feral combat specialization"] = "Feral Combat Specialization",
+    ["fire specialization"] = "Fire Specialization",
+    ["fist weapon specialization"] = "Fist Weapon Specialization",
+    ["frost specialization"] = "Frost Specialization",
+    ["healing specialization"] = "Healing Specialization",
+    ["holy specialization"] = "Holy Specialization",
+    ["mace specialization"] = "Mace Specialization",
+    ["meditation specialization"] = "Meditation Specialization",
+    ["nature specialization"] = "Nature Specialization",
+    ["pole weapon specialization"] = "Pole Weapon Specialization",
+    ["ranged weapon specialization"] = "Ranged Weapon Specialization",
+    ["shadow weapon specialization"] = "Shadow Specialization",
+    ["sword specialization"] = "Sword Specialization",
     --classes
     ["warrior"] = "Warrior",
     ["hunter"] = "Hunter",
