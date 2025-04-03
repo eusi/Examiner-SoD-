@@ -218,8 +218,8 @@ function LGE:ScanUnitItems(unit,statTable,setTable,runesTable)
 			-- old version to get the engravings/runes
 			if (lineText ~= nil) then
 				-- filter runes only from "enchantments"
-				if (lineText:match("^[^%d%+<>:]+$")) then
-					--Main-/OffHandSlot can never be engraved with a rune (at least for now: p2)
+				if (lineText:match("^[^%d%+<>]+$")) then
+					--Main-/OffHandSlot can never be engraved with a rune (at least until now: p7)
 					if not (slotId == 16 or slotId == 17) then
 					  runesTable[#runesTable + 1] = { name = lineText };
 					end

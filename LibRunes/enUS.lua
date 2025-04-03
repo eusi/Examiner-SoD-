@@ -32,6 +32,24 @@ Loc = Loc or {
     ["steady shot"] = "Steady Shot",
     ["trap launcher"] = "Trap Launcher",
     ["melee specialist"] = "Melee Specialist",
+    --p3
+    ["eye of the void"] = "Eye of the Void",
+    ["pain and suffering"] = "Pain and Suffering",
+    --p4
+    ["binding heal"] = "Binding Heal",
+    ["soul warding"] = "Soul Warding",
+    ["vampiric touch"] = "Vampiric Touch",
+    ["dagger specialization"] = "Dagger Specialization",
+    ["defense specialization"] = "Defense Specialization",
+    ["holy specialization"] = "Holy Specialization",
+    ["mace specialization"] = "Mace Specialization",
+    ["pole weapon specialization"] = "Pole Weapon Specialization",
+    ["shadow specialization"] = "Shadow Specialization",
+    --p5
+    ["healing specialization"] = "Healing Specialization",
+    ["meditation specialization"] = "Meditation Specialization",
+    --p6
+    --p7
     --warrior
     --p1
     ["flagellation"] = "Flagellation",

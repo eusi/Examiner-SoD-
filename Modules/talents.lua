@@ -358,9 +358,7 @@ end
 
 -- Update Talents
 function mod:UpdateTalents()
-	--activeSpec = cfg.shownSpec or GetActiveTalentGroup(isInspect);
-	--local uniqueId, tabName, description, icon, pointsSpent, background, previewPointsSpent, bool = GetTalentTabInfo(activeTab,isInspect,nil,activeSpec);
-	--ex:SetBackgroundTexture("Interface\\TalentFrame\\"..background.."-");
+	activeSpec = cfg.shownSpec or GetActiveTalentGroup(isInspect);
 	-- Show Objects
 	sc:Show();
 	for i = 1, _G.GetNumTalentTabs() do
@@ -369,7 +367,8 @@ function mod:UpdateTalents()
 	-- Update Tabs
 	for i = 1, _G.GetNumTalentTabs() do
 		local tab = _G["ExaminerTab"..i];
-		local tabName, _, pointsSpent = _G.GetTalentTabInfo(i,isInspect);
+		local uniqueId, tabName, description, icon, pointsSpent, background, previewPointsSpent, bool = _G.GetTalentTabInfo(i,isInspect,nil,activeSpec);
+		ex:SetBackgroundTexture("Interface\\TalentFrame\\"..background.."-");
 		if (pointsSpent == nil) then
 			pointsSpent = "";
 		end

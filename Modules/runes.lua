@@ -9,7 +9,7 @@ mod:CreatePage(false,"Runes");
 mod:HasButton(true);
 
 -- Variables
-local NUM_BUTTONS = 8;
+local NUM_BUTTONS = 10;
 local BUTTON_HEIGHT = (mod.page:GetHeight() - 47) / NUM_BUTTONS;
 local showEngravings = {};
 local buttons = {};
@@ -90,6 +90,7 @@ local function UpdateShownItems(self)
         while index <= #showEngravings and not engravingId do
             engraving = showEngravings[index];
             engravingId = LibRunes.abilities[engraving.name];
+            --print( engraving.name, engravingId );
             if not engravingId then
                 index = index+1;
             end

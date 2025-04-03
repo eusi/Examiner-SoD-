@@ -137,6 +137,24 @@ function LR:CreateRunesTable(class)
 	  self.abilities[self:T("surge of light")] = 431664
 	  self.abilities[self:T("despair")] = 431670
 	  self.abilities[self:T("void zone")] = 431681
+		--p3
+		self.abilities[self:T("eye of the void")] = 402789
+		self.abilities[self:T("pain and suffering")] = 413251
+		--p4
+		self.abilities[self:T("binding heal")] = 401937
+		self.abilities[self:T("soul warding")] = 402000
+		self.abilities[self:T("vampiric touch")] = 402668
+		self.abilities[self:T("dagger specialization")] = 442887
+		self.abilities[self:T("defense specialization")] = 459312
+		self.abilities[self:T("holy specialization")] = 442898
+		self.abilities[self:T("mace specialization")] = 442881
+		self.abilities[self:T("pole weapon specialization")] = 442892
+		self.abilities[self:T("shadow specialization")] = 442897
+		--p5
+		self.abilities[self:T("healing specialization")] = 468758
+		self.abilities[self:T("meditation specialization")] = 468762
+		--p6
+		--p7
 	elseif class == Loc["warlock"] then
 	  --p1
 	  self.abilities[self:T("lake of fire")] = 403666
