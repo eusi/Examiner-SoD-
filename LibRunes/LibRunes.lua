@@ -109,7 +109,6 @@ function LR:CreateRunesTable(class)
     self.abilities[self:T("shockwave")] = 440488
     self.abilities[self:T("single-minded fury")] = 413404
     self.abilities[self:T("warbringer")] = 425421
-    self.abilities[self:T("enraged regeneration")] = 415307
     --p4
     self.abilities[self:T("deep wounds")] = 415308
     self.abilities[self:T("frenzied assault")] = 425412
@@ -253,7 +252,6 @@ function LR:CreateRunesTable(class)
     self.abilities[self:T("invocation")] = 426243
     self.abilities[self:T("demonic knowledge")] = 412732
     --p3
-    self.abilities[self:T("demonic knowledge")] = 415749
     self.abilities[self:T("shadow mastery")] = 415349
     self.abilities[self:T("backlash")] = 415350
     self.abilities[self:T("soul link")] = 415352
@@ -291,10 +289,8 @@ function LR:CreateRunesTable(class)
     self.abilities[self:T("ancestral awakening")] = 425858
     self.abilities[self:T("two-handed mastery")] = 436364
     --p3
-    self.abilities[self:T("earth shield")] = 408514
     self.abilities[self:T("elemental mastery")] = 429367
     self.abilities[self:T("mental quickness")] = 429368
-    self.abilities[self:T("shamanistic rage")] = 415367
     self.abilities[self:T("storm, earth, and fire")] = 440488 
     self.abilities[self:T("totemic wrath")] = 442896
     --p4
@@ -336,6 +332,7 @@ function LR:CreateRunesTable(class)
     self.abilities[self:T("gale winds")] = 431450
     self.abilities[self:T("infected wounds")] = 429419
     self.abilities[self:T("primal gore")] = 429420
+    self.abilities[self:T("tree of life")] = 439733
     --p5
     --p6
     --p7
@@ -364,7 +361,7 @@ function LR:CreateRunesTable(class)
     self.abilities[self:T("combat potency")] = 432259
     self.abilities[self:T("focused attacks")] = 432256
     self.abilities[self:T("honor among thieves")] = 432264
-    self.abilities[self:T("Carnage")] = 432276
+    self.abilities[self:T("carnage")] = 432276
     --p4
     self.abilities[self:T("blunderbuss")] = 436564
     self.abilities[self:T("crimson tempest")] = 412096

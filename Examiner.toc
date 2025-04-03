@@ -1,5 +1,5 @@
-## Interface: 11501
-## Version: SoD Classic Fan Update
+## Interface: 11506
+## Version: SoD Classic Fan Update V0.8
 ## Title: Examiner
 ## Author: Aezay (Earthen Ring EU), sAks
 ## Notes: Advanced Inspection Mod of Gear, Talents, Honor, Arena and Achievements.

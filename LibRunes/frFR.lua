@@ -243,7 +243,6 @@ Loc = Loc or {
     ["invocation"] = "Invocation",
     ["demonic knowledge"] = "Connaissance démoniaque",
     --p3
-    ["demonic knowledge"] = "Connaissance démoniaque",
     ["demonic tactics"] = "Tactiques démoniaques",
     ["shadow mastery"] = "Maîtrise de l'ombre",
     ["backlash"] = "Contrecoup",
@@ -282,6 +281,11 @@ Loc = Loc or {
     ["fire nova"] = "Nova de feu",
     ["ancestral awakening"] = "Éveil ancestral",
     ["two-handed mastery"] = "Maîtrise des armes à deux mains",
+    --p3
+    ["elemental mastery"] = "Elemental Mastery",
+    ["mental quickness"] = "Mental Quickness",
+    ["storm, earth, and fire"] = "Storm, Earth, and Fire",
+    ["totemic wrath"] = "Totemic Wrath",
     --p4
     ["ancestral awakening"] = "Éveil ancestral",
     ["lava surge"] = "Vague de lave",
@@ -311,11 +315,7 @@ Loc = Loc or {
     ["nourish"] = "Nourrir",
     ["king of the jungle"] = "Roi de la jungle",
     --p3
-    ["eclipse"] = "Éclipse",
     ["predatory instincts"] = "Instincts prédateurs",
-    ["survival instincts"] = "Instincts de survie",
-    ["wild growth"] = "Croissance sauvage",
-    ["berserk"] = "Frénésie",
     ["nourish"] = "Nourrir",
     --p4
     ["gale winds"] = "Vents violents",
@@ -327,6 +327,7 @@ Loc = Loc or {
     ["improved swipe"] = "Balayage amélioré",
     ["improved frenzied regeneration"] = "Régénération frénétique améliorée",
     ["gore"] = "Saignement",
+    ["tree of life"] = "Arbre de Vie",
     --p5
     --p6
     --p7

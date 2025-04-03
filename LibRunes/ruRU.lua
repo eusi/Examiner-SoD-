@@ -243,7 +243,6 @@ Loc = Loc or {
     ["invocation"] = "Призыв",
     ["demonic knowledge"] = "Демоническое знание",
     --p3
-    ["demonic knowledge"] = "Демоническое знание",
     ["demonic tactics"] = "Демоническая тактика",
     ["shadow mastery"] = "Мастерство Тьмы",
     ["backlash"] = "Ответный удар",
@@ -283,10 +282,8 @@ Loc = Loc or {
     ["ancestral awakening"] = "Пробуждение предков",
     ["two-handed mastery"] = "Мастерство двуручного оружия",
     --p3
-    ["earth shield"] = "Щит Земли",
     ["elemental mastery"] = "Повелитель стихий",
     ["mental quickness"] = "Ментальная стремительность",
-    ["shamanistic rage"] = "Ярость шамана",
     ["storm, earth, and fire"] = "Буря, земля и огонь",
     ["totemic wrath"] = "Тотемный гнев",
     --p4
@@ -318,11 +315,7 @@ Loc = Loc or {
     ["nourish"] = "Питание",
     ["king of the jungle"] = "Король джунглей",
     --p3
-    ["eclipse"] = "Затмение",
     ["predatory instincts"] = "Инстинкты хищника",
-    ["survival instincts"] = "Инстинкты выживания",
-    ["wild growth"] = "Буйный рост",
-    ["berserk"] = "Берсерк",
     ["nourish"] = "Подпитка",
     --p4
     ["gale winds"] = "Шквальный ветер",
@@ -334,6 +327,7 @@ Loc = Loc or {
     ["improved swipe"] = "Улучшенный размах",
     ["improved frenzied regeneration"] = "Улучшенное бешеное восстановление",
     ["gore"] = "Кровотечение",
+    ["tree of life"] = "Древо Жизни",
     --p5
     --p6
     --p7

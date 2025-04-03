@@ -239,7 +239,6 @@ Loc = Loc or {
     ["invocation"] = "Invocation",
     ["demonic knowledge"] = "Demonic Knowledge",
     --p3
-    ["demonic knowledge"] = "Demonic Knowledge",
     ["demonic tactics"] = "Demonic Tactics",
     ["shadow mastery"] = "Shadow Mastery",
     ["backlash"] = "Backlash",
@@ -279,10 +278,8 @@ Loc = Loc or {
     ["ancestral awakening"] = "Ancestral Awakening",
     ["two-handed mastery"] = "Two-Handed Mastery",
     --p3
-    ["earth shield"] = "Earth Shield",
     ["elemental mastery"] = "Elemental Mastery",
     ["mental quickness"] = "Mental Quickness",
-    ["shamanistic rage"] = "Shamanistic Rage",
     ["storm, earth, and fire"] = "Storm, Earth, and Fire",
     ["totemic wrath"] = "Totemic Wrath",
     --p4
@@ -314,11 +311,7 @@ Loc = Loc or {
     ["nourish"] = "Nourish",
     ["king of the jungle"] = "King of the Jungle",
     --p3
-    ["eclipse"] = "Eclipse",
     ["predatory instincts"] = "Predatory Instincts",
-    ["survival instincts"] = "Survival Instincts",
-    ["wild growth"] = "Wild Growth",
-    ["berserk"] = "Berserk",
     ["nourish"] = "Nourish",
     --p4
     ["gale winds"] = "Gale Winds",
@@ -330,6 +323,7 @@ Loc = Loc or {
     ["improved swipe"] = "Improved Swipe",
     ["improved frenzied regeneration"] = "Improved Frenzied Regeneration",
     ["gore"] = "Gore",
+    ["tree of life"] = "Tree of Life",
     --p5
     --p6
     --p7

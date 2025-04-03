@@ -242,7 +242,6 @@ Loc = Loc or {
     ["invocation"] = "Beschwörung",
     ["demonic knowledge"] = "Dämonisches Wissen",
     --p3
-    ["demonic knowledge"] = "Dämonisches Wissen",
     ["demonic tactics"] = "Dämonische Taktiken",
     ["shadow mastery"] = "Schattenbeherrschung",
     ["backlash"] = "Heftiger Rückstoß",
@@ -282,10 +281,8 @@ Loc = Loc or {
     ["ancestral awakening"] = "Ahnenweckung",
     ["two-handed mastery"] = "Meisterschaft im Zweihandkampf",
     --p3
-    ["earth shield"] = "Erdschild",
     ["elemental mastery"] = "Elementarbeherrschung",
     ["mental quickness"] = "Mentale Schnelligkeit",
-    ["shamanistic rage"] = "Schamanistische Wut",
     ["storm, earth, and fire"] = "Sturm, Erde und Feuer",
     ["totemic wrath"] = "Totemischer Zorn",
     --p4
@@ -316,11 +313,7 @@ Loc = Loc or {
     ["nourish"] = "Nähren",
     ["king of the jungle"] = "König des Dschungels",
     --p3
-    ["eclipse"] = "Finsternis",
     ["predatory instincts"] = "Raubtierinstinkte",
-    ["survival instincts"] = "Überlebensinstinkte",
-    ["wild growth"] = "Wildwuchs",
-    ["berserk"] = "Berserker",
     ["nourish"] = "Pflege",
     --p4
     ["gale winds"] = "Sturmwinde",
@@ -332,6 +325,7 @@ Loc = Loc or {
     ["improved swipe"] = "Verbessertes Hieb",
     ["improved frenzied regeneration"] = "Verbesserte Rasende Regeneration",
     ["gore"] = "Blutung",
+    ["tree of life"] = "Baum des Lebens",
     --p5
     --p6
     --p7
