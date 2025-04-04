@@ -1,7 +1,7 @@
 if not (GetLocale() == "enGB" or GetLocale() == "enUS") then return end
 
 Loc = Loc or {
-- specializations
+    -- specializations
     ["arcane specialization"] = "Arcane Specialization",
     ["axe specialization"] = "Axe Specialization",
     ["dagger specialization"] = "Dagger Specialization",
@@ -101,6 +101,7 @@ Loc = Loc or {
     ["sudden death"] = "Sudden Death",
     ["vigilance"] = "Vigilance",
     ["wrecking crew"] = "Wrecking Crew",
+    ["shield mastery"] = "Shield Mastery",
     --paladin
     --p1
     ["seal of martyrdom"] = "Seal of Martyrdom",

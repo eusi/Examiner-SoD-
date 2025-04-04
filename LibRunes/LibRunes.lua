@@ -37,7 +37,7 @@ function LR:CreateRunesTable(class)
   self.abilities[self:T("frost specialization")] = 442895
   self.abilities[self:T("healing specialization")] = 468758
   self.abilities[self:T("holy specialization")] = 442898
-  self.abilities[self:T("mace specialization")] = 415375
+  self.abilities[self:T("mace specialization")] = 442881
   self.abilities[self:T("meditation specialization")] = 468762
   self.abilities[self:T("nature specialization")] = 442896
   self.abilities[self:T("pole weapon specialization")] = 442892
@@ -115,6 +115,7 @@ function LR:CreateRunesTable(class)
     self.abilities[self:T("fresh meat")] = 440484
     self.abilities[self:T("sudden death")] = 440113
     self.abilities[self:T("blood craze")] = 415311
+    self.abilities[self:T("shield mastery")] = 426980
   elseif class == Loc["paladin"] then
     --p1
     self.abilities[self:T("seal of martyrdom")] = 407798

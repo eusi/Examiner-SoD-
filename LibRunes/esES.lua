@@ -101,6 +101,7 @@ Loc = Loc or {
     ["sudden death"] = "Muerte súbita",
     ["vigilance"] = "Vigilancia",
     ["wrecking crew"] = "Brigada de demolición",
+    ["shield mastery"] = "Maestría en escudos",
     -- Paladín
     --p1
     ["seal of martyrdom"] = "Sello del Martirio",
