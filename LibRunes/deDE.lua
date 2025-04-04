@@ -1,7 +1,7 @@
 if GetLocale() ~= "deDE" then return end
 
 Loc = Loc or {
-    --p4 - specializations
+- specializations
     ["arcane specialization"] = "Arkanespezialisierung",
     ["axe specialization"] = "Axtspezialisierung",
     ["dagger specialization"] = "Dolchspezialisierung",
@@ -49,24 +49,20 @@ Loc = Loc or {
     ["invigoration"] = "Belebung",
     ["steady shot"] = "Zuverlässiger Schuss",
     ["trap launcher"] = "Fallenwerfer",
-    --p3
+    --p3+
     ["focus fire"] = "Gezieltes Feuer",
     ["raptor fury"] = "Raptorenwut",
     ["t.n.t."] = "T.N.T.",
     ["catlike reflexes"] = "Katzenhafte Reflexe",
     ["lock and load"] = "Laden und Entsichern",
     ["rapid killing"] = "Schnelles Töten",
-    --p4
     ["hit and run"] = "Schlag und Flucht",
     ["improved volley"] = "Verbesserte Salve",
     ["resourcefulness"] = "Einfallsreichtum",
     ["cobra slayer"] = "Kobrenschlächter",
     ["wyvern strike"] = "Wyvernstoß",
     ["kill shot"] = "Todesstoß",
-    --p5
     ["melee specialist"] = "Nahkampfspezialist",
-    --p6
-    --p7
     -- Krieger
     --p1
     ["flagellation"] = "Geißelung",
@@ -88,22 +84,22 @@ Loc = Loc or {
     ["enraged regeneration"] = "Wütende Regeneration",
     ["blood surge"] = "Blutwallung",
     ["precise timing"] = "Präzises Timing",
-    --p3
+    --p3+
     ["rampage"] = "Toben",
     ["shockwave"] = "Schockwelle",
     ["single-minded fury"] = "Einzelkämpferwut",
     ["warbringer"] = "Kriegsbringer",
     ["enraged regeneration"] = "Wütende Regeneration",
-    --p4
     ["deep wounds"] = "Tiefe Wunden",
     ["frenzied assault"] = "Rasender Angriff",
     ["safeguard"] = "Schutzvorkehrung",
     ["taste for blood"] = "Blutdurst",
     ["fresh meat"] = "Frischfleisch",
-    --p5
     ["blood craze"] = "Blutwahnsinn",
-    --p6
-    --p7
+    ["gladiator stance"] = "Gladiatorenhaltung",
+    ["sudden death"] = "Plötzlicher Tod",
+    ["vigilance"] = "Wachsamkeit",
+    ["wrecking crew"] = "Zerstörungstruppe",
     -- Paladin
     --p1
     ["seal of martyrdom"] = "Siegel des Märtyrertums",
@@ -118,25 +114,6 @@ Loc = Loc or {
     ["beacon of light"] = "Lichtsignal",
     ["crusader strike"] = "Kreuzfahrerschlag",
     ["hand of reckoning"] = "Hand der Abrechnung",
-    --p3
-    ["fanaticism"] = "Fanatismus",
-    ["improved sanctuary"] = "Verbesserter Schutz",
-    ["wrath"] = "Zorn",
-    ["hammer of the righteous"] = "Hammer des Richturteils",
-    ["improved hammer of wrath"] = "Verbesserter Hammer des Zorns",
-    ["light's grace"] = "Anmut des Lichts",
-    ["purifying power"] = "Reinigungskraft",
-    --p4
-    ["righteous vengeance"] = "Rechtschaffene Vergeltung",
-    ["shield of righteousness"] = "Schild der Rechtschaffenheit",
-    ["shock and awe"] = "Schock und Ehrfurcht",
-    ["aura mastery"] = "Aurenbeherrschung",
-    ["malleable protection"] = "Formbarer Schutz",
-    ["hallowed ground"] = "Geweihter Boden",
-    ["divine light"] = "Göttliches Licht",
-    --p5
-    --p6
-    --p7
     --p2
     ["enlightened judgements"] = "Erleuchtete Urteile",
     ["guarded by the light"] = "Vom Licht behütet",
@@ -144,6 +121,22 @@ Loc = Loc or {
     ["the art of war"] = "Die Kunst des Krieges",
     ["infusion of light"] = "Lichtinfusion",
     ["sheath of light"] = "Lichtscheide",
+    --p3+
+    ["fanaticism"] = "Fanatismus",
+    ["improved sanctuary"] = "Verbesserter Schutz",
+    ["wrath"] = "Zorn",
+    ["hammer of the righteous"] = "Hammer des Richturteils",
+    ["improved hammer of wrath"] = "Verbesserter Hammer des Zorns",
+    ["light's grace"] = "Anmut des Lichts",
+    ["purifying power"] = "Reinigungskraft",
+    ["righteous vengeance"] = "Rechtschaffene Vergeltung",
+    ["shield of righteousness"] = "Schild der Rechtschaffenheit",
+    ["shock and awe"] = "Schock und Ehrfurcht",
+    ["aura mastery"] = "Aurenbeherrschung",
+    ["malleable protection"] = "Formbarer Schutz",
+    ["hallowed ground"] = "Geweihter Boden",
+    ["divine light"] = "Göttliches Licht",
+    ["hand of sacrifice"] = "Hand des Opfers",
     -- Magier
     --p1
     ["burnout"] = "Ausgebrannt",
@@ -166,20 +159,16 @@ Loc = Loc or {
     ["brain freeze"] = "Gehirnfrost",
     ["spell power"] = "Zaubermacht",
     ["missile barrage"] = "Raketensalve",
-    --p3
+    --p3+
     ["advanced warding"] = "Fortgeschrittener Schutz",
     ["deep freeze"] = "Tieffrieren",
     ["temporal anomaly"] = "Zeitliche Anomalie",
     ["balefire bolt"] = "Bannfeuerblitz",
     ["displacement"] = "Versetzung",
     ["molten armor"] = "Geschmolzene Rüstung",
-    --p4
     ["arcane barrage"] = "Arkane Salve",
     ["overheat"] = "Überhitzung",
     ["frozen orb"] = "Gefrorene Kugel",
-    --p5
-    --p6
-    --p7
     -- Priester
     --p1
     ["void plague"] = "Leerenpest",
@@ -206,20 +195,16 @@ Loc = Loc or {
     ["surge of light"] = "Lichtschwall",
     ["despair"] = "Verzweiflung",
     ["void zone"] = "Leerenzone",
-    --p3
+    --p3+
     ["despair"] = "Verzweiflung",
     ["surge of light"] = "Lichtwelle",
     ["void zone"] = "Leerenzone",
     ["divine aegis"] = "Göttliche Ägis",
     ["eye of the void"] = "Auge der Leere",
     ["pain and suffering"] = "Schmerz und Leid",
-    --p4
     ["binding heal"] = "Verbindende Heilung",
     ["soul warding"] = "Seelenwächter",
     ["vampiric touch"] = "Vampirberührung",
-    --p5
-    --p6
-    --p7
     -- Hexenmeister
     --p1
     ["lake of fire"] = "Feuersee",
@@ -241,13 +226,12 @@ Loc = Loc or {
     ["shadow and flame"] = "Schatten und Flamme",
     ["invocation"] = "Beschwörung",
     ["demonic knowledge"] = "Dämonisches Wissen",
-    --p3
+    --p3+
     ["demonic tactics"] = "Dämonische Taktiken",
     ["shadow mastery"] = "Schattenbeherrschung",
     ["backlash"] = "Heftiger Rückstoß",
     ["shadowflame"] = "Schattenflamme",
     ["soul link"] = "Seelenverbindung",
-    --p4
     ["bane"] = "Verderben",
     ["death's embrace"] = "Umarmung des Todes",
     ["shadowburn"] = "Schattenbrand",
@@ -255,9 +239,11 @@ Loc = Loc or {
     ["mark of chaos"] = "Mal des Chaos",
     ["backdraft"] = "Rückstoß",
     ["summon felguard"] = "Teufelswache beschwören",
-    --p5
-    --p6
-    --p7
+    ["decimation"] = "Dezimierung",
+    ["immolation aura"] = "Aura der Verbrennung",
+    ["infernal armor"] = "Höllenrüstung",
+    ["pandemic"] = "Pandemie",
+    ["vengeance"] = "Rachsucht",
     -- Schamane
     --p1
     ["dual wield specialization"] = "Spezialisierung auf beidhändigen Kampf",
@@ -280,17 +266,20 @@ Loc = Loc or {
     ["fire nova"] = "Feuernova",
     ["ancestral awakening"] = "Ahnenweckung",
     ["two-handed mastery"] = "Meisterschaft im Zweihandkampf",
-    --p3
+    --p3+
     ["elemental mastery"] = "Elementarbeherrschung",
     ["mental quickness"] = "Mentale Schnelligkeit",
     ["storm, earth, and fire"] = "Sturm, Erde und Feuer",
     ["totemic wrath"] = "Totemischer Zorn",
-    --p4
     ["lava surge"] = "Lavasog",
     ["maelstrom weapon"] = "Waffe des Mahlstroms",
-    --p5
-    --p6
-    --p7
+    ["feral spirit"] = "Wildgeist",
+    ["greater ghost wolf"] = "Großer Geisterwolf",
+    ["overcharged"] = "Überladen",
+    ["riptide"] = "Springflut",
+    ["rolling thunder"] = "Donnerrollen",
+    ["tidal waves"] = "Gezeitenwellen",
+    ["coherence"] = "Kohärenz",
     -- Druide
     --p1
     ["living seed"] = "Lebendiger Samen",
@@ -312,10 +301,9 @@ Loc = Loc or {
     ["eclipse"] = "Finsternis",
     ["nourish"] = "Nähren",
     ["king of the jungle"] = "König des Dschungels",
-    --p3
+    --p3+
     ["predatory instincts"] = "Raubtierinstinkte",
     ["nourish"] = "Pflege",
-    --p4
     ["gale winds"] = "Sturmwinde",
     ["infected wounds"] = "Infizierte Wunden",
     ["primal gore"] = "Urtümlicher Bluter",
@@ -326,9 +314,7 @@ Loc = Loc or {
     ["improved frenzied regeneration"] = "Verbesserte Rasende Regeneration",
     ["gore"] = "Blutung",
     ["tree of life"] = "Baum des Lebens",
-    --p5
-    --p6
-    --p7
+    ["efflorescence"] = "Blühendes Leben",
     -- Schurke
     --p1
     ["deadly brew"] = "Tödlicher Trank",
@@ -350,16 +336,15 @@ Loc = Loc or {
     ["shuriken toss"] = "Shurikenwurf",
     ["poisoned knife"] = "Vergiftetes Messer",
     ["waylay"] = "Hinterhalt",
-    --p3
+    --p3+
     ["combat potency"] = "Kampfkraft",
     ["focused attacks"] = "Fokussierte Angriffe",
     ["honor among thieves"] = "Ehre unter Dieben",
     ["carnage"] = "Massaker",
-    --p4
     ["blunderbuss"] = "Donnerbüchse",
     ["crimson tempest"] = "Blutroter Sturm",
     ["fan of knives"] = "Fächer aus Messern",
-    --p5
-    --p6
-    --p7
+    ["unfair advantage"] = "Unfairer Vorteil",
+    ["cutthroat"] = "Meuchelmörder",
+    ["cut to the chase"] = "Komm zum Punkt",
 }

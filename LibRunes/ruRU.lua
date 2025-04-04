@@ -1,7 +1,7 @@
 if GetLocale() ~= "ruRU" then return end
 
 Loc = Loc or {
-    --p4 - specializations
+- specializations
     ["arcane specialization"] = "Специализация на тайной магии",
     ["axe specialization"] = "Специализация на топорах",
     ["dagger specialization"] = "Специализация на кинжалах",
@@ -50,24 +50,20 @@ Loc = Loc or {
     ["steady shot"] = "Прицельный выстрел",
     ["trap launcher"] = "Запуск ловушки",
     ["melee specialist"] = "Специалист по ближнему бою",
-    --p3
+    --p3+
     ["focus fire"] = "Сосредоточенный огонь",
     ["raptor fury"] = "Ярость ящера",
     ["t.n.t."] = "Динамит",
     ["catlike reflexes"] = "Кошачьи рефлексы",
     ["lock and load"] = "Заряжай и стреляй",
     ["rapid killing"] = "Быстрое убийство",
-    --p4
     ["hit and run"] = "Удар и бегство",
     ["improved volley"] = "Улучшенный залп",
     ["resourcefulness"] = "Находчивость",
     ["cobra slayer"] = "Убийца кобр",
     ["wyvern strike"] = "Удар виверны",
     ["kill shot"] = "Смертельный выстрел",
-    --p5
     ["melee specialist"] = "Специалист ближнего боя",
-    --p6
-    --p7
     -- Воин
     --p1
     ["flagellation"] = "Бичевание",
@@ -89,22 +85,22 @@ Loc = Loc or {
     ["enraged regeneration"] = "Яростное восстановление",
     ["blood surge"] = "Прилив крови",
     ["precise timing"] = "Точное время",
-    --p3
+    --p3+
     ["rampage"] = "Буйство",
     ["shockwave"] = "Ударная волна",
     ["single-minded fury"] = "Однонаправленная ярость",
     ["warbringer"] = "Вестник войны",
     ["enraged regeneration"] = "Разъяренная регенерация",
-    --p4
     ["deep wounds"] = "Глубокие раны",
     ["frenzied assault"] = "Бешеный натиск",
     ["safeguard"] = "Гарантия безопасности",
     ["taste for blood"] = "Вкус крови",
     ["fresh meat"] = "Свежее мясо",
-    --p5
     ["blood craze"] = "Кровавое безумие",
-    --p6
-    --p7
+    ["gladiator stance"] = "Стойка гладиатора",
+    ["sudden death"] = "Внезапная смерть",
+    ["vigilance"] = "Бдительность",
+    ["wrecking crew"] = "Бригада разрушения",
     -- Паладин
     --p1
     ["seal of martyrdom"] = "Печать мученичества",
@@ -126,7 +122,7 @@ Loc = Loc or {
     ["the art of war"] = "Искусство войны",
     ["infusion of light"] = "Вливание света",
     ["sheath of light"] = "Покров света",
-    --p3
+    --p3+
     ["fanaticism"] = "Фанатизм",
     ["improved sanctuary"] = "Улучшенное святилище",
     ["wrath"] = "Гнев",
@@ -134,7 +130,6 @@ Loc = Loc or {
     ["improved hammer of wrath"] = "Улучшенный молот гнева",
     ["light's grace"] = "Благодать Света",
     ["purifying power"] = "Очищающая сила",
-    --p4
     ["righteous vengeance"] = "Праведная месть",
     ["shield of righteousness"] = "Щит праведности",
     ["shock and awe"] = "Шок и трепет",
@@ -142,9 +137,7 @@ Loc = Loc or {
     ["malleable protection"] = "Гибкая защита",
     ["hallowed ground"] = "Священная земля",
     ["divine light"] = "Божественный свет",
-    --p5
-    --p6
-    --p7
+    ["hand of sacrifice"] = "Рука жертвы",
     -- Маг
     --p1
     ["burnout"] = "Выгорание",
@@ -167,20 +160,16 @@ Loc = Loc or {
     ["brain freeze"] = "Обморожение мозга",
     ["spell power"] = "Сила заклинаний",
     ["missile barrage"] = "Залп ракет",
-    --p3
+    --p3+
     ["advanced warding"] = "Продвинутая защита",
     ["deep freeze"] = "Глубокая заморозка",
     ["temporal anomaly"] = "Временная аномалия",
     ["balefire bolt"] = "Пагубный огненный шар",
     ["displacement"] = "Смещение",
     ["molten armor"] = "Раскаленная броня",
-    --p4
     ["arcane barrage"] = "Чародейский залп",
     ["overheat"] = "Перегрев",
     ["frozen orb"] = "Замороженный шар",
-    --p5
-    --p6
-    --p7
     -- Жрец
     --p1
     ["void plague"] = "Чума пустоты",
@@ -207,20 +196,16 @@ Loc = Loc or {
     ["surge of light"] = "Всплеск света",
     ["despair"] = "Отчаяние",
     ["void zone"] = "Зона пустоты",
-    --p3
+    --p3+
     ["despair"] = "Отчаяние",
     ["surge of light"] = "Всплеск Света",
     ["void zone"] = "Зона Пустоты",
     ["divine aegis"] = "Божественная эгида",
     ["eye of the void"] = "Око Бездны",
     ["pain and suffering"] = "Боль и страдание",
-    --p4
     ["binding heal"] = "Связующее исцеление",
     ["soul warding"] = "Охрана души",
     ["vampiric touch"] = "Вампирический прикосновение",
-    --p5
-    --p6
-    --p7
     -- Чернокнижник
     --p1
     ["lake of fire"] = "Озеро огня",
@@ -242,13 +227,12 @@ Loc = Loc or {
     ["shadow and flame"] = "Тень и пламя",
     ["invocation"] = "Призыв",
     ["demonic knowledge"] = "Демоническое знание",
-    --p3
+    --p3+
     ["demonic tactics"] = "Демоническая тактика",
     ["shadow mastery"] = "Мастерство Тьмы",
     ["backlash"] = "Ответный удар",
     ["shadowflame"] = "Теневое пламя",
     ["soul link"] = "Связь душ",
-    --p4
     ["bane"] = "Проклятие",
     ["death's embrace"] = "Объятие смерти",
     ["shadowburn"] = "Ожог Тьмы",
@@ -256,9 +240,11 @@ Loc = Loc or {
     ["mark of chaos"] = "Метка хаоса",
     ["backdraft"] = "Обратная тяга",
     ["summon felguard"] = "Призыв стража Скверны",
-    --p5
-    --p6
-    --p7
+    ["decimation"] = "Уничтожение",
+    ["immolation aura"] = "Аура жертвоприношения",
+    ["infernal armor"] = "Инфернальная броня",
+    ["pandemic"] = "Пандемия",
+    ["vengeance"] = "Возмездие",
     -- Шаман
     --p1
     ["dual wield specialization"] = "Специализация на владении двумя оружиями",
@@ -281,18 +267,21 @@ Loc = Loc or {
     ["fire nova"] = "Огненная нова",
     ["ancestral awakening"] = "Пробуждение предков",
     ["two-handed mastery"] = "Мастерство двуручного оружия",
-    --p3
+    --p3+
     ["elemental mastery"] = "Повелитель стихий",
     ["mental quickness"] = "Ментальная стремительность",
     ["storm, earth, and fire"] = "Буря, земля и огонь",
     ["totemic wrath"] = "Тотемный гнев",
-    --p4
     ["ancestral awakening"] = "Пробуждение предков",
     ["lava surge"] = "Всплеск лавы",
     ["maelstrom weapon"] = "Оружие Водоворота",
-    --p5
-    --p6
-    --p7
+    ["feral spirit"] = "Дух дикого зверя",
+    ["greater ghost wolf"] = "Великий призрачный волк",
+    ["overcharged"] = "Перезарядка",
+    ["riptide"] = "Разлитая волна",
+    ["rolling thunder"] = "Гремящий гром",
+    ["tidal waves"] = "Приливные волны",
+    ["coherence"] = "Связность",
     -- Друид
     --p1
     ["living seed"] = "Живое семя",
@@ -314,10 +303,9 @@ Loc = Loc or {
     ["eclipse"] = "Затмение",
     ["nourish"] = "Питание",
     ["king of the jungle"] = "Король джунглей",
-    --p3
+    --p3+
     ["predatory instincts"] = "Инстинкты хищника",
     ["nourish"] = "Подпитка",
-    --p4
     ["gale winds"] = "Шквальный ветер",
     ["infected wounds"] = "Зараженные раны",
     ["primal gore"] = "Первобытная кровь",
@@ -328,9 +316,7 @@ Loc = Loc or {
     ["improved frenzied regeneration"] = "Улучшенное бешеное восстановление",
     ["gore"] = "Кровотечение",
     ["tree of life"] = "Древо Жизни",
-    --p5
-    --p6
-    --p7
+    ["efflorescence"] = "Расцвет",
     -- Разбойник
     --p1
     ["deadly brew"] = "Смертельный отвар",
@@ -352,16 +338,15 @@ Loc = Loc or {
     ["shuriken toss"] = "Бросок сюрикена",
     ["poisoned knife"] = "Отравленный нож",
     ["waylay"] = "Засада",
-    --p3
+    --p3+
     ["combat potency"] = "Боевой потенциал",
     ["focused attacks"] = "Сфокусированные атаки",
     ["honor among thieves"] = "Честь среди воров",
-    --p4
     ["blunderbuss"] = "Картечница",
     ["crimson tempest"] = "Багровый шторм",
     ["fan of knives"] = "Шквал клинков",
     ["carnage"] = "Кровавая бойня",
-    --p5
-    --p6
-    --p7
+    ["unfair advantage"] = "Несправедливое преимущество",
+    ["cutthroat"] = "Головорез",
+    ["cut to the chase"] = "Ближе к делу",
 }

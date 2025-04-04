@@ -1,7 +1,7 @@
 if not (GetLocale() == "enGB" or GetLocale() == "enUS") then return end
 
 Loc = Loc or {
-    --p4 - specializations
+- specializations
     ["arcane specialization"] = "Arcane Specialization",
     ["axe specialization"] = "Axe Specialization",
     ["dagger specialization"] = "Dagger Specialization",
@@ -49,24 +49,20 @@ Loc = Loc or {
     ["invigoration"] = "Invigoration",
     ["steady shot"] = "Steady Shot",
     ["trap launcher"] = "Trap Launcher",
-    --p3  
+    --p3+
     ["focus fire"] = "Focus Fire",  
     ["raptor fury"] = "Raptor Fury",  
     ["t.n.t."] = "T.N.T.",  
     ["catlike reflexes"] = "Catlike Reflexes",  
     ["lock and load"] = "Lock and Load",  
     ["rapid killing"] = "Rapid Killing",  
-    --p4  
     ["hit and run"] = "Hit and Run",  
     ["improved volley"] = "Improved Volley",  
     ["resourcefulness"] = "Resourcefulness",  
     ["cobra slayer"] = "Cobra Slayer",
     ["wyvern strike"] = "Wyvern Strike",
     ["kill shot"] = "Kill Shot",
-    --p5  
     ["melee specialist"] = "Melee Specialist",
-    --p6
-    --p7
     --warrior
     --p1
     ["flagellation"] = "Flagellation",
@@ -88,23 +84,23 @@ Loc = Loc or {
     ["enraged regeneration"] = "Enraged Regeneration",
     ["blood surge"] = "Blood Surge",
     ["precise timing"] = "Precise Timing",
-    --p3
+    --p3+
     ["blood surge"] = "Blood Surge",
     ["rampage"] = "Rampage",
     ["shockwave"] = "Shockwave",
     ["single-minded fury"] = "Single-Minded Fury",
     ["warbringer"] = "Warbringer",
     ["enraged regeneration"] = "Enraged Regeneration",
-    --p4
     ["deep wounds"] = "Deep Wounds",
     ["frenzied assault"] = "Frenzied Assault",
     ["safeguard"] = "Safeguard",
     ["taste for blood"] = "Taste for Blood",
     ["fresh meat"] = "Fresh Meat",
-    --p5
     ["blood craze"] = "Blood Craze",
-    --p6
-    --p7
+    ["gladiator stance"] = "Gladiator Stance",
+    ["sudden death"] = "Sudden Death",
+    ["vigilance"] = "Vigilance",
+    ["wrecking crew"] = "Wrecking Crew",
     --paladin
     --p1
     ["seal of martyrdom"] = "Seal of Martyrdom",
@@ -126,7 +122,7 @@ Loc = Loc or {
     ["the art of war"] = "The Art of War",
     ["infusion of light"] = "Infusion of Light",
     ["sheath of light"] = "Sheath of Light",
-    --p3
+    --p3+
     ["fanaticism"] = "Fanaticism",
     ["improved sanctuary"] = "Improved Sanctuary",
     ["wrath"] = "Wrath",
@@ -134,7 +130,6 @@ Loc = Loc or {
     ["improved hammer of wrath"] = "Improved Hammer of Wrath",
     ["light's grace"] = "Light's Grace",
     ["purifying power"] = "Purifying Power",
-    --p4
     ["righteous vengeance"] = "Righteous Vengeance",
     ["shield of righteousness"] = "Shield of Righteousness",
     ["shock and awe"] = "Shock and Awe",
@@ -142,9 +137,7 @@ Loc = Loc or {
     ["malleable protection"] = "Malleable Protection",
     ["hallowed ground"] = "Hallowed Ground",
     ["divine light"] = "Divine Light",
-    --p5
-    --p6
-    --p7
+    ["hand of sacrifice"] = "Hand of Sacrifice",
     --mage
     --p1
     ["burnout"] = "Burnout",
@@ -167,20 +160,16 @@ Loc = Loc or {
     ["brain freeze"] = "Brain Freeze",
     ["spell power"] = "Spell Power",
     ["missile barrage"] = "Missile Barrage",
-    --p3
+    --p3+
     ["advanced warding"] = "Advanced Warding",
     ["deep freeze"] = "Deep Freeze",
     ["temporal anomaly"] = "Temporal Anomaly",
     ["balefire bolt"] = "Balefire Bolt",
     ["displacement"] = "Displacement",
     ["molten armor"] = "Molten Armor",
-    --p4
     ["arcane barrage"] = "Arcane Barrage",
     ["overheat"] = "Overheat",
     ["frozen orb"] = "Frozen Orb",
-    --p5
-    --p6
-    --p7
     --priest
     --p1
     ["void plague"] = "Void Plague",
@@ -207,16 +196,12 @@ Loc = Loc or {
     ["surge of light"] = "Surge of Light",
     ["despair"] = "Despair",
     ["void zone"] = "Void Zone",
-    --p3
+    --p3+
     ["eye of the void"] = "Eye of the Void",
     ["pain and suffering"] = "Pain and Suffering",
-    --p4
     ["binding heal"] = "Binding Heal",
     ["soul warding"] = "Soul Warding",
     ["vampiric touch"] = "Vampiric Touch",
-    --p5
-    --p6
-    --p7
     --warlock
     --p1
     ["lake of fire"] = "Lake of Fire",
@@ -238,13 +223,12 @@ Loc = Loc or {
     ["shadow and flame"] = "Shadow and Flame",
     ["invocation"] = "Invocation",
     ["demonic knowledge"] = "Demonic Knowledge",
-    --p3
+    --p3+
     ["demonic tactics"] = "Demonic Tactics",
     ["shadow mastery"] = "Shadow Mastery",
     ["backlash"] = "Backlash",
     ["shadowflame"] = "Shadowflame",
     ["soul link"] = "Soul Link",
-    --p4
     ["bane"] = "Bane",
     ["death's embrace"] = "Death's Embrace",
     ["shadowburn"] = "Shadowburn",
@@ -252,9 +236,11 @@ Loc = Loc or {
     ["mark of chaos"] = "Mark of Chaos",
     ["backdraft"] = "Backdraft",
     ["summon felguard"] = "Summon Felguard",
-    --p5
-    --p6
-    --p7
+    ["decimation"] = "Decimation",
+    ["immolation aura"] = "Immolation Aura",
+    ["infernal armor"] = "Infernal Armor",
+    ["pandemic"] = "Pandemic",
+    ["vengeance"] = "Vengeance",
     --shaman
     --p1
     ["dual wield specialization"] = "Dual Wield Specialization",
@@ -277,18 +263,21 @@ Loc = Loc or {
     ["fire nova"] = "Fire Nova",
     ["ancestral awakening"] = "Ancestral Awakening",
     ["two-handed mastery"] = "Two-Handed Mastery",
-    --p3
+    --p3+
     ["elemental mastery"] = "Elemental Mastery",
     ["mental quickness"] = "Mental Quickness",
     ["storm, earth, and fire"] = "Storm, Earth, and Fire",
     ["totemic wrath"] = "Totemic Wrath",
-    --p4
     ["ancestral awakening"] = "Ancestral Awakening",
     ["lava surge"] = "Lava Surge",
     ["maelstrom weapon"] = "Maelstrom Weapon",
-    --p5
-    --p6
-    --p7
+    ["feral spirit"] = "Feral Spirit",
+    ["greater ghost wolf"] = "Greater Ghost Wolf",
+    ["overcharged"] = "Overcharged",
+    ["riptide"] = "Riptide",
+    ["rolling thunder"] = "Rolling Thunder",
+    ["tidal waves"] = "Tidal Waves",
+    ["coherence"] = "Coherence",
     --druid
     --p1
     ["living seed"] = "Living Seed",
@@ -310,10 +299,9 @@ Loc = Loc or {
     ["eclipse"] = "Eclipse",
     ["nourish"] = "Nourish",
     ["king of the jungle"] = "King of the Jungle",
-    --p3
+    --p3+
     ["predatory instincts"] = "Predatory Instincts",
     ["nourish"] = "Nourish",
-    --p4
     ["gale winds"] = "Gale Winds",
     ["infected wounds"] = "Infected Wounds",
     ["primal gore"] = "Primal Gore",
@@ -324,9 +312,7 @@ Loc = Loc or {
     ["improved frenzied regeneration"] = "Improved Frenzied Regeneration",
     ["gore"] = "Gore",
     ["tree of life"] = "Tree of Life",
-    --p5
-    --p6
-    --p7
+    ["efflorescence"] = "Efflorescence",
     --rogue
     --p1
     ["deadly brew"] = "Deadly Brew",
@@ -348,16 +334,15 @@ Loc = Loc or {
     ["shuriken toss"] = "Shuriken Toss",
     ["poisoned knife"] = "Poisoned Knife",
     ["waylay"] = "Waylay",
-    --p3
+    --p3+
     ["combat potency"] = "Combat Potency",
     ["focused attacks"] = "Focused Attacks",
     ["honor among thieves"] = "Honor Among Thieves",
-    --p4
     ["blunderbuss"] = "Blunderbuss",
     ["crimson tempest"] = "Crimson Tempest",
     ["fan of knives"] = "Fan of Knives",
     ["carnage"] = "Carnage",
-    --p5
-    --p6
-    --p7
+    ["unfair advantage"] = "Unfair Advantage",
+    ["cutthroat"] = "Cutthroat",
+    ["cut to the chase"] = "Cut to the Chase",
 }

@@ -1,7 +1,7 @@
 if GetLocale() ~= "frFR" then return end
 
 Loc = Loc or {
-    --p4 - specializations
+- specializations
     ["arcane specialization"] = "Spécialisation Arcanes",
     ["axe specialization"] = "Spécialisation Hache",
     ["dagger specialization"] = "Spécialisation Dague",
@@ -50,24 +50,20 @@ Loc = Loc or {
     ["steady shot"] = "Tir assuré",
     ["trap launcher"] = "Lanceur de pièges",
     ["melee specialist"] = "Spécialiste du combat rapproché",
-    --p3
+    --p3+
     ["focus fire"] = "Tir focalisé",
     ["raptor fury"] = "Fureur du raptor",
     ["t.n.t."] = "Dynamite",
     ["catlike reflexes"] = "Réflexes félins",
     ["lock and load"] = "Verrouillage et chargement",
     ["rapid killing"] = "Tuer rapidement",
-    --p4
     ["hit and run"] = "Frapper et courir",
     ["improved volley"] = "Salve améliorée",
     ["resourcefulness"] = "Ingéniosité",
     ["cobra slayer"] = "Tueur de cobras",
     ["wyvern strike"] = "Frappe de wyverne",
     ["kill shot"] = "Tir mortel",
-    --p5
     ["melee specialist"] = "Spécialiste du corps à corps",
-    --p6
-    --p7
     -- Guerrier
     --p1
     ["flagellation"] = "Flagellation",
@@ -89,22 +85,22 @@ Loc = Loc or {
     ["enraged regeneration"] = "Régénération enragée",
     ["blood surge"] = "Afflux sanguin",
     ["precise timing"] = "Synchronisation précise",
-    --p3
+    --p3+
     ["rampage"] = "Saccage",
     ["shockwave"] = "Onde de choc",
     ["single-minded fury"] = "Furie focalisée",
     ["warbringer"] = "Porteguerre",
     ["enraged regeneration"] = "Régénération enragée",
-    --p4
     ["deep wounds"] = "Blessures profondes",
     ["frenzied assault"] = "Assaut frénétique",
     ["safeguard"] = "Sauvegarde",
     ["taste for blood"] = "Goût du sang",
     ["fresh meat"] = "Viande Fraîche",
-    --p5
     ["blood craze"] = "Folie sanguinaire",
-    --p6
-    --p7
+    ["gladiator stance"] = "Posture de gladiateur",
+    ["sudden death"] = "Mort subite",
+    ["vigilance"] = "Vigilance",
+    ["wrecking crew"] = "Brigade de démolition",
     -- Paladin
     --p1
     ["seal of martyrdom"] = "Sceau du martyre",
@@ -126,7 +122,7 @@ Loc = Loc or {
     ["the art of war"] = "L'art de la guerre",
     ["infusion of light"] = "Infusion de lumière",
     ["sheath of light"] = "Gaine de lumière",
-    --p3
+    --p3+
     ["fanaticism"] = "Fanatisme",
     ["improved sanctuary"] = "Sanctuaire amélioré",
     ["wrath"] = "Courroux",
@@ -134,7 +130,6 @@ Loc = Loc or {
     ["improved hammer of wrath"] = "Marteau de courroux amélioré",
     ["light's grace"] = "Grâce de la Lumière",
     ["purifying power"] = "Pouvoir purificateur",
-    --p4
     ["righteous vengeance"] = "Vengeance vertueuse",
     ["shield of righteousness"] = "Bouclier de la vertu",
     ["shock and awe"] = "Choc et effroi",
@@ -142,9 +137,7 @@ Loc = Loc or {
     ["malleable protection"] = "Protection malléable",
     ["hallowed ground"] = "Sol sacré",
     ["divine light"] = "Lumière divine",
-    --p5
-    --p6
-    --p7
+    ["hand of sacrifice"] = "Main du sacrifice",
     -- Mage
     --p1
     ["burnout"] = "Épuisement",
@@ -167,20 +160,16 @@ Loc = Loc or {
     ["brain freeze"] = "Gel mental",
     ["spell power"] = "Puissance des sorts",
     ["missile barrage"] = "Barrage de missiles",
-    --p3
+    --p3+
     ["advanced warding"] = "Protection avancée",
     ["deep freeze"] = "Gel profond",
     ["temporal anomaly"] = "Anomalie temporelle",
     ["balefire bolt"] = "Trait de feu maléfique",
     ["displacement"] = "Déplacement",
     ["molten armor"] = "Armure fondue",
-    --p4
     ["arcane barrage"] = "Barrage des arcanes",
     ["overheat"] = "Surchauffe",
     ["frozen orb"] = "Orbe gelé",
-    --p5
-    --p6
-    --p7
     -- Prêtre
     --p1
     ["void plague"] = "Peste du vide",
@@ -207,20 +196,16 @@ Loc = Loc or {
     ["surge of light"] = "Vague de lumière",
     ["despair"] = "Désespoir",
     ["void zone"] = "Zone de vide",
-    --p3
+    --p3+
     ["despair"] = "Désespoir",
     ["surge of light"] = "Vague de Lumière",
     ["void zone"] = "Zone de Vide",
     ["divine aegis"] = "Égide divine",
     ["eye of the void"] = "Œil du Vide",
     ["pain and suffering"] = "Douleur et souffrance",
-    --p4
     ["binding heal"] = "Soins de lien",
     ["soul warding"] = "Protection de l'âme",
     ["vampiric touch"] = "Toucher vampirique",
-    --p5
-    --p6
-    --p7
     -- Démoniste
     --p1
     ["lake of fire"] = "Lac de feu",
@@ -242,13 +227,12 @@ Loc = Loc or {
     ["shadow and flame"] = "Ombre et flamme",
     ["invocation"] = "Invocation",
     ["demonic knowledge"] = "Connaissance démoniaque",
-    --p3
+    --p3+
     ["demonic tactics"] = "Tactiques démoniaques",
     ["shadow mastery"] = "Maîtrise de l'ombre",
     ["backlash"] = "Contrecoup",
     ["shadowflame"] = "Flamme d'ombre",
     ["soul link"] = "Lien spirituel",
-    --p4
     ["bane"] = "Fléau",
     ["death's embrace"] = "Étreinte de la mort",
     ["shadowburn"] = "Brûlure de l'ombre",
@@ -256,9 +240,11 @@ Loc = Loc or {
     ["mark of chaos"] = "Marque du chaos",
     ["backdraft"] = "Contrecoup",
     ["summon felguard"] = "Invocation d’un gangregarde",
-    --p5
-    --p6
-    --p7
+    ["decimation"] = "Décimation",
+    ["immolation aura"] = "Aura d’immolation",
+    ["infernal armor"] = "Armure infernale",
+    ["pandemic"] = "Pandémie",
+    ["vengeance"] = "Vengeance",
     -- Chamane
     --p1
     ["dual wield specialization"] = "Spécialisation Ambidextrie",
@@ -281,18 +267,21 @@ Loc = Loc or {
     ["fire nova"] = "Nova de feu",
     ["ancestral awakening"] = "Éveil ancestral",
     ["two-handed mastery"] = "Maîtrise des armes à deux mains",
-    --p3
+    --p3+
     ["elemental mastery"] = "Elemental Mastery",
     ["mental quickness"] = "Mental Quickness",
     ["storm, earth, and fire"] = "Storm, Earth, and Fire",
     ["totemic wrath"] = "Totemic Wrath",
-    --p4
     ["ancestral awakening"] = "Éveil ancestral",
     ["lava surge"] = "Vague de lave",
     ["maelstrom weapon"] = "Arme du Maelström",
-    --p5
-    --p6
-    --p7
+    ["feral spirit"] = "Esprit farouche",
+    ["greater ghost wolf"] = "Loup fantôme supérieur",
+    ["overcharged"] = "Surcharge",
+    ["riptide"] = "Vague de soins",
+    ["rolling thunder"] = "Tonnerre grondant",
+    ["tidal waves"] = "Vagues de soins",
+    ["coherence"] = "Cohérence",
     -- Druide
     --p1
     ["living seed"] = "Graine vivante",
@@ -314,10 +303,9 @@ Loc = Loc or {
     ["eclipse"] = "Éclipse",
     ["nourish"] = "Nourrir",
     ["king of the jungle"] = "Roi de la jungle",
-    --p3
+    --p3+
     ["predatory instincts"] = "Instincts prédateurs",
     ["nourish"] = "Nourrir",
-    --p4
     ["gale winds"] = "Vents violents",
     ["infected wounds"] = "Blessures infectées",
     ["primal gore"] = "Saignement primal",
@@ -328,9 +316,7 @@ Loc = Loc or {
     ["improved frenzied regeneration"] = "Régénération frénétique améliorée",
     ["gore"] = "Saignement",
     ["tree of life"] = "Arbre de Vie",
-    --p5
-    --p6
-    --p7
+    ["efflorescence"] = "Fleur de vie",
     -- Voleur
     --p1
     ["deadly brew"] = "Infusion mortelle",
@@ -352,16 +338,15 @@ Loc = Loc or {
     ["shuriken toss"] = "Lancer de shuriken",
     ["poisoned knife"] = "Couteau empoisonné",
     ["waylay"] = "Embuscade",
-    --p3
+    --p3+
     ["combat potency"] = "Puissance de combat",
     ["focused attacks"] = "Attaques focalisées",
     ["honor among thieves"] = "Honneur parmi les voleurs",
-    --p4
     ["blunderbuss"] = "Tromblon",
     ["crimson tempest"] = "Tempête cramoisie",
     ["fan of knives"] = "Volée de couteaux",
     ["carnage"] = "Carnage",
-    --p5
-    --p6
-    --p7
+    ["unfair advantage"] = "Avantage injuste",
+    ["cutthroat"] = "Assassin impitoyable",
+    ["cut to the chase"] = "Va droit au but",
 }
