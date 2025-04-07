@@ -1,7 +1,7 @@
 if GetLocale() ~= "ruRU" then return end
 
 Loc = Loc or {
-- specializations
+    -- specializations
     ["arcane specialization"] = "Специализация на тайной магии",
     ["axe specialization"] = "Специализация на топорах",
     ["dagger specialization"] = "Специализация на кинжалах",

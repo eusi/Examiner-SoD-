@@ -1,7 +1,7 @@
 if GetLocale() ~= "esES" then return end
 
 Loc = Loc or {
-- specializations
+    -- specializations
     ["arcane specialization"] = "Especialización en Arcano",
     ["axe specialization"] = "Especialización en hachas",
     ["dagger specialization"] = "Especialización en dagas",

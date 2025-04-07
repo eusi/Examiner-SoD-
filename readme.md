@@ -1,19 +1,17 @@
-Updated for SoD by eusi
+I'm a fan of the original addon (SuperInspect and Examiner). Since it no longer worked, I extensively modified and extended it for all Classic SoD phases 1–7 — adding a new Rune module, fixing the talents and honor tabs, adding gear score stats and more.
 
 ---------------------------------------
 
 * Rune page
-* Average item level
-* Lots of fixes (talents etc.)
+* Average item level/gear score
+* Lots of fixes (talents, honor tabs etc.)
 
-![alt text](https://i.ibb.co/d0hDmcK/1.jpg)
-
-![alt text](https://i.ibb.co/DGftBh2/2.jpg)
+![alt text](https://i.ibb.co/pvZLFMTQ/all-in-one.jpg)
 
 
 Examiner - An Advanced Inspection Addon
 ---------------------------------------
-With Examiner, you can check other players gear, talents, achievements, honor and arena team details.
+With Examiner, you can check/inspect other players gear, talents, runes and honor details.
 
 When you inspect someone, it will show a stat summery of all their equipped gear combined.
 Please note that these values are from gear alone, and will not include bonuses from buffs, talents or normal base stats.
@@ -21,14 +19,13 @@ Please note that these values are from gear alone, and will not include bonuses 
 Each player you inspect can be cached, that way you can look them up later, even when they are not around.
 The option to cache others is disabled by default, you will have to enable caching on the "Config" page.
 
-You can bind a key to inspect your target, you can even bind a key to inspect whoever is under your mouse, without having to target anyone (stealth inspection).
-To set this up, open the Key Bindings dialog and look under "Examiner".
+You can bind a key to inspect your target, you can even bind a key to inspect whoever is under your mouse, without having to target anyone (stealth inspection). To set this up, open the Key Bindings dialog and look under "Examiner".
 
 Examiner does not use that much memory by itself, but once you start caching a lot of people, memory usage can grow quite quickly.
 
-You can always find the latest release of this addon on Curse or WoWInterface.
-Post your comments, questions and suggestions for this addon on the addons comment page.
-Or in this thread: http://forums.curseforge.com/showthread.php?t=18999
+You can always find the latest release of this addon on Curse or WoWInterface
+- https://www.curseforge.com/wow/addons/examiner-classic-sod
+- https://www.wowinterface.com/downloads/fileinfo.php?id=26695
 
 Comparing Gear
 --------------

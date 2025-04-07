@@ -1,7 +1,7 @@
 if GetLocale() ~= "deDE" then return end
 
 Loc = Loc or {
-- specializations
+    -- specializations
     ["arcane specialization"] = "Arkanespezialisierung",
     ["axe specialization"] = "Axtspezialisierung",
     ["dagger specialization"] = "Dolchspezialisierung",
