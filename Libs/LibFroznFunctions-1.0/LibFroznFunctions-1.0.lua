@@ -4714,6 +4714,11 @@ function LFF_GetTacoTipGearScoreFromItemData(unitID, unitGUID, items)
 		-- end
 		return 0,0
 	end
+
+  -- create color depending on the quality
+  function LibFroznFunctions:GetQualityFromGearScore(ItemScore)
+      return GetQuality(ItemScore)
+  end
 	
 	-- return GearScore and quality color
 	local gearScore = GetScore(unitGUID);

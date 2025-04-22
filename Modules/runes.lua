@@ -4,7 +4,7 @@ local gtt = GameTooltip;
 
 -- Module
 local mod = ex:CreateModule("Runes","SoD Runes");
-mod.help = "It shows the currently equipped SoD Runes";
+mod.help = "Shows the currently equipped SoD Runes";
 mod:CreatePage(false,"Runes");
 mod:HasButton(true);
 

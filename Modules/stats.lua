@@ -9,6 +9,13 @@ mod:CreatePage(false);
 mod:HasButton(true);
 mod.details = ex:CreateDetailObject();
 
+-- Libs
+local LibFroznFunctions = LibStub("LibFroznFunctions-1.0", true)
+if not LibFroznFunctions then
+    print("Warning: LibFroznFunctions not available.")
+    return
+end
+
 -- Variables
 local ITEM_HEIGHT = 12;
 local displayList = {};
@@ -253,6 +260,14 @@ local function UpdateShownItems(self)
 			if (displayList[index].value) then
 				entry.left:SetTextColor(1,1,1);
 				entry.left:SetFormattedText("  %s",displayList[index].name);
+				if ( displayList[index] and displayList[index].name == "GearScore" and displayList[index].value ) then
+					if LibFroznFunctions.GetQualityFromGearScore then
+						local r, g, b = LibFroznFunctions:GetQualityFromGearScore(displayList[index].value);
+						entry.right:SetTextColor(r, g, b);
+					end
+				else 
+					entry.right:SetTextColor(1.0,1.0,0.0);
+				end
 				entry.right:SetText(displayList[index].value);
 			elseif (displayList[index].name) then
 				entry.left:SetTextColor(0.5,0.75,1.0);
