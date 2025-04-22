@@ -343,9 +343,10 @@ local function BuildStatList()
 	--	AddListEntry(rune.name, "", "");
 	--end
 	-- Add Gear Score
-	AddListEntry();
-	AddListEntry("Gear Score");
-	AddListEntry("Average Item Level",ex.averageItemLevel,"");
+	--AddListEntry();
+	AddListEntry("GearScore");
+	AddListEntry("GS", ex.gs or "n/a", "");
+	AddListEntry("Average Item Level", ex.averageItemLevel or "n/a", "");
 	--BuildInfoList();
 	--- Show Details from Modules
 	--AddListEntry(entry.label,entry.value,entry.tip);

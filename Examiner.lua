@@ -13,6 +13,7 @@ local cfg, cache;
 -- Data Tables
 local info = { Sets = {}, Items = {}, Runes = {} };
 local averageItemLevel = 0;
+local gs = 0;
 local unitStats = {};
 local equippedSlots = {};
 local statTipStats1, statTipStats2 = {}, {};
@@ -737,41 +738,120 @@ function ex:DoInspect(unit,openFlag)
 	end
 end
 
--- Scans the Gear
+-- GearScore Calculation: Slot weight factors (SlotMOD) from TacoTip
+local GS_SlotMOD = {
+	INVTYPE_HEAD = 1.0,
+	INVTYPE_NECK = 0.5625,
+	INVTYPE_SHOULDER = 0.75,
+	INVTYPE_CHEST = 1.0,
+	INVTYPE_ROBE = 1.0,
+	INVTYPE_WAIST = 0.75,
+	INVTYPE_LEGS = 1.0,
+	INVTYPE_FEET = 0.75,
+	INVTYPE_WRIST = 0.5625,
+	INVTYPE_HAND = 0.75,
+	INVTYPE_FINGER = 0.5625,
+	INVTYPE_TRINKET = 0.5625,
+	INVTYPE_CLOAK = 0.5625,
+	INVTYPE_WEAPON = 1.0,
+	INVTYPE_2HWEAPON = 2.0,
+	INVTYPE_WEAPONMAINHAND = 1.0,
+	INVTYPE_WEAPONOFFHAND = 1.0,
+	INVTYPE_SHIELD = 1.0,
+	INVTYPE_HOLDABLE = 1.0,
+	INVTYPE_RANGED = 0.3164,
+	INVTYPE_RANGEDRIGHT = 0.3164,
+	INVTYPE_THROWN = 0.3164,
+	INVTYPE_RELIC = 0.3164,
+}
+
+-- GearScore Calculation: Quality scaling from TacoTip
+local GS_QualityScale = {
+	[0] = 0.005,
+	[1] = 0.005,
+	[2] = 0.62,
+	[3] = 0.8,
+	[4] = 1.0,
+	[5] = 1.3,
+}
+
+local ITEMLEVEL_FIRST_RAID_TIER = 66
+
+-- GearScore Calculation: Main GearScore calculation function (TacoTip-style)
+local function CalculateTacoTipGearScore(itemLevel, quality, equipLoc)
+	if not itemLevel or not quality or not equipLoc then return 0 end
+
+	local baseLevel = 66 -- SoD baseline
+	local slotMod = GS_SlotMOD[equipLoc or ""] or 1.0
+
+	-- quality factor
+	local qualityMod = 1
+	if quality == 0 or quality == 1 then
+		qualityMod = 0.005
+	elseif quality == 5 then
+		qualityMod = 1.3
+	elseif quality == 6 then
+		qualityMod = 1.69
+	end
+
+	-- performance mod is < 1 for low iLvl
+	local performanceMod = math.pow(1.01, itemLevel - baseLevel)
+
+	-- Final formula
+	return math.floor(baseLevel * performanceMod * slotMod * qualityMod)
+end
+
+-- Scans the gear
 function ex:ScanGear(unit)
-	wipe(unitStats);
-	wipe(info.Sets);
-	wipe(info.Runes);
-	self.averageItemLevel = 0;
-	LibGearExam:ScanUnitItems(unit,unitStats,info.Sets,info.Runes);
-	local itemCount = -1; --we start at -1 because we dont want to count the shirt
-	local totalItemLevel = 0;
-	local rememberMainSlot = 0;
+	wipe(unitStats)
+	wipe(info.Sets)
+	wipe(info.Runes)
+
+	self.averageItemLevel = 0
+	self.gs = 0
+
+	LibGearExam:ScanUnitItems(unit, unitStats, info.Sets, info.Runes)
+
+	local itemCount = 0
+	local totalItemLevel = 0
+	local isTwoHanded = false
+
 	for slotName, slotId in next, LibGearExam.SlotIDs do
-		local link = (GetInventoryItemLink(unit,slotId) or ""):match(LibGearExam.ITEMLINK_PATTERN);
-		info.Items[slotName] = LibGearExam:FixItemStringLevel(link,info.level);
-		if( link ~= nil ) then
-				local itemLevel = GetDetailedItemLevelInfo(link);
-				local modi = 1;
-        if slotId == 4 then --shirt
-        	modi = 0;
-        end
-        if slotId == 16 then --2h-weapon
-        	modi = 2;
-        	rememberMainSlot = itemLevel;
-        end
-        if slotId == 17 then --off-hand
-        	totalItemLevel = totalItemLevel - round(rememberMainSlot/2);--1h should be counted only once
-        end
-        totalItemLevel = totalItemLevel + itemLevel * modi;
-		end
-		itemCount = itemCount + 1;
-		if (link) then
-			ex.itemsLoaded = true;
+		local link = (GetInventoryItemLink(unit, slotId) or ""):match(LibGearExam.ITEMLINK_PATTERN)
+		info.Items[slotName] = LibGearExam:FixItemStringLevel(link, info.level)
+
+		if link then
+			local itemLevel = GetDetailedItemLevelInfo(link)
+			local _, _, quality, _, _, _, _, _, equipSlot = GetItemInfo(link)
+
+			-- Skip shirt and tabard
+			if itemLevel and slotId ~= 4 and slotId ~= 19 then
+				-- Skip offhand if 2H is already equipped
+				if slotId == 17 and isTwoHanded then
+					-- skip
+				else
+					local ilvlMod = 1
+
+					-- Detect 2H weapon
+					if slotId == 16 and (equipSlot == "INVTYPE_2HWEAPON" or equipSlot == "INVTYPE_RANGED" or equipSlot == "INVTYPE_RANGEDRIGHT") then
+						ilvlMod = 2
+						isTwoHanded = true
+					end
+
+					totalItemLevel = totalItemLevel + itemLevel * ilvlMod
+					self.gs = self.gs + CalculateTacoTipGearScore(itemLevel, quality, equipSlot)
+					itemCount = itemCount + ilvlMod
+					ex.itemsLoaded = true
+				end
+			end
 		end
 	end
-	self.averageItemLevel = round(totalItemLevel / itemCount);
+
+	self.averageItemLevel = itemCount > 0 and round(totalItemLevel / itemCount) or 0
 end
+
+
+
 
 --------------------------------------------------------------------------------------------------------
 --                                        Additional Inspection                                       --
