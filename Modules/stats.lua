@@ -19,7 +19,7 @@ local entries = {};
 local StatEntryOrder = {
 	{ [0] = PLAYERSTAT_BASE_STATS, "STR", "AGI", "STA", "INT", "SPI", "ARMOR", "MASTERY" },
 	{ [0] = HEALTH.." & "..MANA, "HP", "MP", "HP5", "MP5" },
-	{ [0] = PLAYERSTAT_SPELL_COMBAT.." "..STATS_LABEL:gsub(":",""), "SPELLDMG", "ARCANEDMG", "FIREDMG", "NATUREDMG", "FROSTDMG", "SHADOWDMG", "HOLYDMG", "SPELLCRIT", "SPELLHIT", "SPELLHASTE", "SPELLPENETRATION" },
+	{ [0] = PLAYERSTAT_SPELL_COMBAT.." "..STATS_LABEL:gsub(":",""), "SPELLDMG", "HEAL", "ARCANEDMG", "FIREDMG", "NATUREDMG", "FROSTDMG", "SHADOWDMG", "HOLYDMG", "SPELLCRIT", "SPELLHIT", "SPELLHASTE", "SPELLPENETRATION" },
 	{ [0] = MELEE.." & "..RANGED, "AP", "RAP", "CRIT", "HIT", "HASTE", "ARMORPENETRATION", "EXPERTISE", "WPNDMG", "RANGEDDMG", "DAGGERSKILL", "ONEAXESKILL", "TWOAXESKILL", "ONESWORDSKILL", "TWOSWORDSKILL", "ONEMACESKILL", "TWOMACESKILL", "BOWSKILL", "GUNSSKILL", "CROSSBOWSKILL" },
 	{ [0] = PLAYERSTAT_DEFENSES, "DEFENSE", "DODGE", "PARRY", "BLOCK", "BLOCKVALUE", "RESILIENCE", "PVPPOWER" },
 };
@@ -343,9 +343,8 @@ local function BuildStatList()
 	--	AddListEntry(rune.name, "", "");
 	--end
 	-- Add Gear Score
-	--AddListEntry();
-	AddListEntry("GearScore");
-	AddListEntry("GS", ex.gs or "n/a", "");
+	AddListEntry("Rating");
+	AddListEntry("GearScore", ex.gs or "n/a", "");
 	AddListEntry("Average Item Level", ex.averageItemLevel or "n/a", "");
 	--BuildInfoList();
 	--- Show Details from Modules

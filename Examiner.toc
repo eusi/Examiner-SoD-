@@ -1,5 +1,5 @@
 ## Interface: 11507
-## Version: SoD Classic Fan Update V0.92
+## Version: SoD Classic Fan Update V0.93
 ## Title: Examiner
 ## Author: Aezay (Earthen Ring EU), sAks
 ## Notes: Advanced Inspection Mod of Gear, Talents, Honor, Arena and Achievements.
@@ -12,6 +12,9 @@ Libs\AzDialog.lua
 Libs\AzDropDown.lua
 Libs\LibTableRecycler.lua
 Libs\LibItemString.lua
+
+# embeds
+embeds.xml
 
 ## core ##
 Examiner.lua

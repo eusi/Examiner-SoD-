@@ -92,7 +92,9 @@ LGE.StatNames = {
 	SPELLHASTE = STAT_CATEGORY_SPELL.." "..STAT_HASTE,
 	SPELLPENETRATION = ITEM_MOD_SPELL_PENETRATION_SHORT,
 
-	SPELLDMG = ITEM_MOD_SPELL_POWER_SHORT,
+	SPELLDMG = ITEM_MOD_SPELL_DAMAGE_DONE_SHORT,--ITEM_MOD_SPELL_POWER_SHORT,
+	HEAL = ITEM_MOD_SPELL_HEALING_DONE_SHORT,
+
 	ARCANEDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_ARCANE..")",
 	FIREDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_FIRE..")",
 	NATUREDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_NATURE..")",
@@ -364,7 +366,7 @@ function LGE:ScanLineForPatterns(text,statTable)
 				AzMsg(format("text = |1%s|r",text));
 				AzMsg(format("pattern = |1%s|r",pattern.p));
 				AzMsg(format("link = |1%s|r",tostring(link)));
-				print( link, self:GetEnchantInfo(link) );
+				--print( link, self:GetEnchantInfo(link) );
 			end
 			-- Add to stat
 			if (type(pattern.s) == "string") then
@@ -447,9 +449,16 @@ function LGE:GetStatValue(statToken,statTable,compareTable,level,combineAdditive
 					value = (value + statTable["SPELLDMG"]);
 					break;
 				end
+				if (statToken == schoolToken.."HEAL") then
+					value = (value + statTable["HEAL"]);
+					break;
+				end
 			end
 		end
 		if (statToken == "SPELLDMG") and (statTable["INT"]) then
+			value = (value + statTable["INT"]);
+		end
+		if (statToken == "HEAL") and (statTable["INT"]) then
 			value = (value + statTable["INT"]);
 		end
 		if (statToken == "RAP") and (statTable["AP"]) then
@@ -518,7 +527,7 @@ function LGE:GetEnchantInfo(link)
 	if (not enchantName) or (enchantName == "") then
 		return;
 	end
-	print( enchantName )
+	--print( enchantName )
 	-- return
 	return id, enchantName;
 end
