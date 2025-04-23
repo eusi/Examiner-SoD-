@@ -26,7 +26,8 @@ end
 -- OnInspect
 function mod:OnInspect(unit)
 	-- in case you inspect one from the other fraction
-	mod.page:Hide();
+	--mod.page:Hide();
+	self:BuildEngravingList();
 end
 
 -- OnInspectReady
@@ -36,6 +37,7 @@ end
 
 -- OnCacheLoaded
 function mod:OnCacheLoaded(entry,unit)
+	self:BuildEngravingList();
 end
 
 -- OnClearInspect
