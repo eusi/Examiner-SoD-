@@ -1,4 +1,4 @@
-I'm a fan of the original addon (SuperInspect and Examiner). Since it no longer worked, I extensively modified and extended it for all Classic SoD phases 1–7 — adding a new Rune module, fixing the talents and honor tabs, adding gear score stats and more.
+I'm a fan of the original addon (SuperInspect and Examiner). Since it no longer worked, I extensively modified and extended it for all Classic SoD phases 1–8 — adding a new Rune module, fixing the talents and honor tabs, adding gear score stats and more.
 
 ---------------------------------------
 
@@ -6,20 +6,21 @@ I'm a fan of the original addon (SuperInspect and Examiner). Since it no longer 
 * Average item level/gear score
 * Lots of fixes (talents, honor tabs etc.)
 
-![alt text](https://i.ibb.co/pvZLFMTQ/all-in-one.jpg)
+![Screenshots of Addon](https://i.ibb.co/KxdQbSF3/all-in-one.jpg)
 
 
 Examiner - An Advanced Inspection Addon
 ---------------------------------------
 With Examiner, you can check/inspect other players gear, talents, runes and honor details.
 
-When you inspect someone, it will show a stat summery of all their equipped gear combined.
-Please note that these values are from gear alone, and will not include bonuses from buffs, talents or normal base stats.
+When you inspect someone, it will show the 3D model of the character (or even NPC) and a stat summery of all their equipped gear combined. Please note that these values are from gear alone, and will not include bonuses from buffs, talents or normal base stats.
 
 Each player you inspect can be cached, that way you can look them up later, even when they are not around.
 The option to cache others is disabled by default, you will have to enable caching on the "Config" page.
 
 You can bind a key to inspect your target, you can even bind a key to inspect whoever is under your mouse, without having to target anyone (stealth inspection). To set this up, open the Key Bindings dialog and look under "Examiner".
+
+One of the commands: /ex inspect <unit> or /ex i <unit>
 
 Examiner does not use that much memory by itself, but once you start caching a lot of people, memory usage can grow quite quickly.
 
