@@ -2,7 +2,6 @@
 -- Pattern entries marked with an "alert" value will cause Examiner to show a warning message,
 -- { p = "Pattern", s = "Category", alert = 1 },
 -- telling that the pattern is thought of as no longer in use. These patterns should eventually be deleted.
--- Modified by Grome of EU-Sulfuron for patch 1.13.2 October 13th 2019
 
 if GetLocale() ~= "esES" then
 	return;
@@ -82,6 +81,16 @@ LibGearExam.Patterns = {
 	{ p = "Aumenta el daño causado por los hechizos de Escarcha y los efectos hasta en (%d+) p%.", s = "FROSTDMG" },
 	{ p = "Aumenta el daño causado por los hechizos de Sombras y los efectos hasta en (%d+) p%.", s = "SHADOWDMG" },
 	{ p = "Aumenta el daño causado por los hechizos Sagrados y los efectos hasta en (%d+) p%.", s = "HOLYDMG" },
+
+
+	-- SoD Phase 8 Update
+	{ p = "Mejora tu probabilidad de conseguir un golpe crítico con todos los hechizos y ataques en un (%d+)%%%.", s = { "CRIT" }},
+	{ p = "Mejora tu probabilidad de alcanzar el objetivo con todos los hechizos y ataques en un (%d+)%%%.", s = { "HIT" }},
+	{ p = "Aumenta tu velocidad de lanzamiento de hechizos en un (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Aumenta la curación hasta en (%d+) y el daño hasta en (%d+) de todos los hechizos y efectos mágicos%." , s = { "HEAL", "SPELLDMG" } },
+	{ p = "Santificado", s = "SANCTIFIED" },
+	{ p = "Uniforme Escarlata", s = "SANCTIFIED" },
+	{ p = "Trata el beneficio de tu sello del Alba como si llevaras 2 objetos santificados adicionales.", s = "SANCTIFIED-SET" },
 
 
 	--  Health & Mana Per 5 Sec  --

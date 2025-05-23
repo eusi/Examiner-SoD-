@@ -2,7 +2,6 @@
 -- Pattern entries marked with an "alert" value will cause Examiner to show a warning message,
 -- { p = "Pattern", s = "Category", alert = 1 },
 -- telling that the pattern is thought of as no longer in use. These patterns should eventually be deleted.
--- Modified by Grome of EU-Sulfuron for patch 1.13.2 September 26th 2019
 
 if GetLocale() ~= "frFR" then
 	return;
@@ -84,7 +83,17 @@ LibGearExam.Patterns = {
 	{ p = "dégâts infligés par les sorts et effets d'Ombre de (%d+) au maximum%.", s = "SHADOWDMG" },
 	{ p = "dégâts infligés par les sorts et effets du Sacré (%d+) au maximum%.", s = "HOLYDMG" },
 
-	
+
+	-- SoD Phase 8 Update
+	{ p = "Augmente vos chances d'infliger un coup critique avec tous les sorts et attaques de (%d+)%%%.", s = { "CRIT" }},
+	{ p = "Augmente vos chances de toucher avec tous les sorts et attaques de (%d+)%%%.", s = { "HIT" }},
+	{ p = "Augmente votre vitesse d'incantation de (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Augmente les soins jusqu’à (%d+) et les dégâts jusqu’à (%d+) pour tous les sorts et effets magiques%." , s = { "HEAL", "SPELLDMG" } },
+	{ p = "Sanctifié", s = "SANCTIFIED" },
+	{ p = "Uniforme écarlate", s = "SANCTIFIED" },
+	{ p = "Améliore votre bonus du sceau de l’aube comme si vous portiez 2 objets sanctifiés supplémentaires.", s = "SANCTIFIED-SET" },
+
+		
 	--  Health & Mana Per 5 Sec  --
 	{ p = "%+(%d+) à la régén. de mana", s = "MP5" },
 	{ p = "%+(%d+) Régén. de mana", s = "MP5" },

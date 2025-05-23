@@ -2,7 +2,6 @@
 -- Pattern entries marked with an "alert" value will cause Examiner to show a warning message,
 -- { p = "Pattern", s = "Category", alert = 1 },
 -- telling that the pattern is thought of as no longer in use. These patterns should eventually be deleted.
--- Modified by chkid(주시자의눈) of KR-Ice Blood for patch 1.13.2 October 15th 2019
 
 if (GetLocale() ~= "koKR") then
 	return;
@@ -84,6 +83,16 @@ LibGearExam.Patterns = {
 	{ p = "냉기 계열의 주문과 효과의 공격력이 최대 (%d+)만큼 증가합니다.", s = "FROSTDMG" },
 	{ p = "암흑 계열의 주문과 효과의 공격력이 최대 (%d+)만큼 증가합니다.", s = "SHADOWDMG" },
 	{ p = "신성 계열의 주문과 효과의 공격력이 최대 (%d+)만큼 증가합니다.", s = "HOLYDMG" },
+
+
+	-- SoD Phase 8 Update
+	{ p = "모든 주문과 공격의 치명타 적중률이 (%d+)%%만큼 증가합니다%.", s = { "CRIT" }},
+	{ p = "모든 주문과 공격의 적중률이 (%d+)%%만큼 증가합니다%.", s = { "HIT" }},
+	{ p = "주문 시전 속도가 (%d+)%%만큼 증가합니다%.", s = { "HASTE" }},
+	{ p = "모든 마법 주문과 효과에 의한 치유량이 최대 (%d+), 피해량이 최대 (%d+)만큼 증가합니다%." , s = { "HEAL", "SPELLDMG" } },
+	{ p = "신성화됨", s = "SANCTIFIED" },
+	{ p = "붉은십자군 제복", s = "SANCTIFIED" },
+	{ p = "여명의 인장의 효과가 신성화된 아이템 2개를 추가로 착용한 것처럼 적용됩니다.", s = "SANCTIFIED-SET" },
 
 
 	--  매 5초마다 생명력 및 마나  --

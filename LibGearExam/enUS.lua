@@ -2,7 +2,6 @@
 -- Pattern entries marked with an "alert" value will cause Examiner to show a warning message,
 -- { p = "Pattern", s = "Category", alert = 1 },
 -- telling that the pattern is thought of as no longer in use. These patterns should eventually be deleted.
--- Modified by Grome of EU-Sulfuron for patch 1.13.2 September 26th 2019
 
 LibGearExam.Patterns = {
 	--  Base Stats  --
@@ -72,12 +71,22 @@ LibGearExam.Patterns = {
 	{ p = "Increases damage and healing done by magical spells and effects by up to (%d+)%.", s = { "SPELLDMG", "HEAL" } },
 	{ p = "Increases healing done by spells and effects by up to (%d+)%.", s = { "HEAL" } },
 
-	{ p = "Increases damage done by arcane spells and effects by up to (%d+)%.", s = "ARCANEDMG" },
-	{ p = "Increases damage done by fire spells and effects by up to (%d+)%.", s = "FIREDMG" },
-	{ p = "Increases damage done by nature spells and effects by up to (%d+)%.", s = "NATUREDMG" },
+	{ p = "Increases damage done by Arcane spells and effects by up to (%d+)%.", s = "ARCANEDMG" },
+	{ p = "Increases damage done by Fire spells and effects by up to (%d+)%.", s = "FIREDMG" },
+	{ p = "Increases damage done by Nature spells and effects by up to (%d+)%.", s = "NATUREDMG" },
 	{ p = "Increases damage done by Frost spells and effects by up to (%d+)%.", s = "FROSTDMG" },
-	{ p = "Increases damage done by shadow spells and effects by up to (%d+)%.", s = "SHADOWDMG" },
-	{ p = "Increases damage done by holy spells and effects by up to (%d+)%.", s = "HOLYDMG" },
+	{ p = "Increases damage done by Shadow spells and effects by up to (%d+)%.", s = "SHADOWDMG" },
+	{ p = "Increases damage done by Holy spells and effects by up to (%d+)%.", s = "HOLYDMG" },
+
+
+	-- SoD Phase 8 Update
+	{ p = "Improves your chance to get a critical strike with all spells and attacks by (%d+)%%%.", s = { "CRIT" }},
+	{ p = "Improves your chance to hit with all spells and attacks by (%d+)%%%.", s = { "HIT" }},
+	{ p = "Increase your casting speed by by (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Increases healing done by up to (%d+) and damage done by up to (%d+) for all magical spells and effects%." , s = { "HEAL", "SPELLDMG" } },
+	{ p = "Sanctified", s = "SANCTIFIED" },
+	{ p = "Scarlet Uniform", s = "SANCTIFIED" },
+	{ p = "treats your seal of the dawn bonus as if you were wearing 2 additional sanctified items.", s = "SANCTIFIED-SET" },
 
 
 	--  Health & Mana Per 5 Sec  --

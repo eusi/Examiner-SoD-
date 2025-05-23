@@ -25,9 +25,9 @@ local entries = {};
 -- Stat Entry Order -- Item 0 is the header for the group
 local StatEntryOrder = {
 	{ [0] = PLAYERSTAT_BASE_STATS, "STR", "AGI", "STA", "INT", "SPI", "ARMOR", "MASTERY" },
-	{ [0] = HEALTH.." & "..MANA, "HP", "MP", "HP5", "MP5" },
-	{ [0] = PLAYERSTAT_SPELL_COMBAT.." "..STATS_LABEL:gsub(":",""), "SPELLDMG", "HEAL", "ARCANEDMG", "FIREDMG", "NATUREDMG", "FROSTDMG", "SHADOWDMG", "HOLYDMG", "SPELLCRIT", "SPELLHIT", "SPELLHASTE", "SPELLPENETRATION" },
-	{ [0] = MELEE.." & "..RANGED, "AP", "RAP", "CRIT", "HIT", "HASTE", "ARMORPENETRATION", "EXPERTISE", "WPNDMG", "RANGEDDMG", "DAGGERSKILL", "ONEAXESKILL", "TWOAXESKILL", "ONESWORDSKILL", "TWOSWORDSKILL", "ONEMACESKILL", "TWOMACESKILL", "BOWSKILL", "GUNSSKILL", "CROSSBOWSKILL" },
+	{ [0] = STAT_CATEGORY_GENERAL, "CRIT", "HIT", "HASTE", "HP", "MP", "HP5", "MP5", "SANCTIFIED" },
+	{ [0] = PLAYERSTAT_SPELL_COMBAT.." "..STATS_LABEL:gsub(":",""), "SPELLDMG", "HEAL", "ARCANEDMG", "FIREDMG", "NATUREDMG", "FROSTDMG", "SHADOWDMG", "HOLYDMG", "SPELLPENETRATION" },
+	{ [0] = MELEE.." & "..RANGED, "AP", "RAP", "ARMORPENETRATION", "EXPERTISE", "WPNDMG", "RANGEDDMG", "DAGGERSKILL", "ONEAXESKILL", "TWOAXESKILL", "ONESWORDSKILL", "TWOSWORDSKILL", "ONEMACESKILL", "TWOMACESKILL", "BOWSKILL", "GUNSSKILL", "CROSSBOWSKILL" },
 	{ [0] = PLAYERSTAT_DEFENSES, "DEFENSE", "DODGE", "PARRY", "BLOCK", "BLOCKVALUE", "RESILIENCE", "PVPPOWER" },
 };
 
@@ -341,26 +341,17 @@ local function BuildStatList()
 			end
 		end
 	end
+	-- Add Gear Score
+	AddListEntry("Rating");
+	AddListEntry("GearScore", ex.gs or "n/a", "");
+	AddListEntry("Average Item Level", ex.averageItemLevel or "n/a", "");
 	-- Add Sets
 	if (next(ex.info.Sets)) then
-		AddListEntry();
 		AddListEntry("Sets");
 	end
 	for setName, setEntry in next, ex.info.Sets do
 		AddListEntry(setName,setEntry.count.."/"..setEntry.max);
 	end
-	-- Add SoD Runes
-	--if (next(ex.info.Runes)) then
-	--	AddListEntry();
-	--	AddListEntry("SoD Runes");
-	--end
-	--for _, rune in ipairs(ex.info.Runes) do
-	--	AddListEntry(rune.name, "", "");
-	--end
-	-- Add Gear Score
-	AddListEntry("Rating");
-	AddListEntry("GearScore", ex.gs or "n/a", "");
-	AddListEntry("Average Item Level", ex.averageItemLevel or "n/a", "");
 	--BuildInfoList();
 	--- Show Details from Modules
 	--AddListEntry(entry.label,entry.value,entry.tip);

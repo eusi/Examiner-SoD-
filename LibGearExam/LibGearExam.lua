@@ -78,9 +78,10 @@ LGE.StatNames = {
 
 	AP = STAT_ATTACK_POWER,
 	RAP = ITEM_MOD_RANGED_ATTACK_POWER_SHORT,
-	CRIT = CRIT_CHANCE ,
-	HIT = STAT_HIT_CHANCE ,
-	HASTE = MELEE.." "..STAT_HASTE,
+	CRIT = CRIT_CHANCE,
+	HIT = STAT_HIT_CHANCE,
+	--HASTE = MELEE.." "..STAT_HASTE,
+	HASTE = STAT_HASTE,
 
 	WPNDMG = DAMAGE_TOOLTIP,
 	RANGEDDMG = RANGED_DAMAGE_TOOLTIP,
@@ -92,8 +93,8 @@ LGE.StatNames = {
 	SPELLHASTE = STAT_CATEGORY_SPELL.." "..STAT_HASTE,
 	SPELLPENETRATION = ITEM_MOD_SPELL_PENETRATION_SHORT,
 
-	SPELLDMG = ITEM_MOD_SPELL_DAMAGE_DONE_SHORT,--ITEM_MOD_SPELL_POWER_SHORT,
-	HEAL = ITEM_MOD_SPELL_HEALING_DONE_SHORT,
+	SPELLDMG = ITEM_MOD_SPELL_POWER_SHORT, --ITEM_MOD_SPELL_DAMAGE_DONE_SHORT,
+	HEAL = STAT_SPELLHEALING, --ITEM_MOD_SPELL_HEALING_DONE_SHORT,
 
 	ARCANEDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_ARCANE..")",
 	FIREDMG = ITEM_MOD_SPELL_POWER_SHORT.." ("..STRING_SCHOOL_FIRE..")",
@@ -108,6 +109,9 @@ LGE.StatNames = {
 
 	HP5 = ITEM_MOD_HEALTH_REGEN_SHORT,
 	MP5 = ITEM_MOD_POWER_REGEN0_SHORT,
+
+	-- Further
+	SANCTIFIED = "Sanctified",
 	
 	-- Can we find a global variable for these one ?
 	DAGGERSKILL = "Increased Daggers Skill",
@@ -201,6 +205,56 @@ LGE.StatRatingBaseTable = {
 };
 
 --------------------------------------------------------------------------------------------------------
+--                                  Sanctified Helper Functions                                       --
+--------------------------------------------------------------------------------------------------------
+function trim(s)
+  return s:lower()
+          :gsub("|c%x%x%x%x%x%x%x%x", "") -- remove color code
+          :gsub("|r", "") -- reset code
+end
+function getSanctifiedSetBonusText()
+    local itemID = 23084 --Wristwraps of undead cleansing, one example, just want to get the text
+    if not C_Item or not C_TooltipInfo then return nil end
+    local itemName = GetItemInfo(itemID)
+    if not itemName then return nil end
+
+    local tooltipData = C_TooltipInfo.GetItemByID(itemID)
+    if not tooltipData or not tooltipData.lines then return nil end
+
+    local setBonusLines = {}
+    for _, line in ipairs(tooltipData.lines) do
+        if line.leftText and (line.leftText:find("Set:") or line.leftText:find("%(%d+%) Set:")) then
+            table.insert(setBonusLines, line.leftText)
+        end
+    end
+
+    if #setBonusLines > 0 then
+        return trim(table.concat(setBonusLines, "\n"));
+    end
+    return nil
+end
+local SanctifiedTags = {
+	["enUS"] = { "Sanctified", "Scarlet Uniform" },
+	["deDE"] = { "Geweiht", "Scharlachrote Uniform" },
+	["frFR"] = { "Sanctifié", "Uniforme écarlate" },
+	["esES"] = { "Santificado", "Uniforme Escarlata" },
+	["ruRU"] = { "Освящённый", "Форма Алого ордена" },
+	["koKR"] = { "신성화됨", "붉은십자군 제복" },
+	["zhCN"] = { "神圣", "血色军装" },
+	["zhTW"] = { "神聖", "血色軍裝" },
+}
+function isSanctifiedOrScarletTag(text)
+	local tags = SanctifiedTags[GetLocale()]
+	if not tags then return false end
+	for _, tag in ipairs(tags) do
+		if text:find(tag) then return true end
+	end
+end
+function getSanctifiedName()
+	local tags = SanctifiedTags[GetLocale()]
+	return tags and tags[1] or nil
+end
+--------------------------------------------------------------------------------------------------------
 --           Scan all items & set bonuses on given [unit] - Make sure the tables are reset            --
 --------------------------------------------------------------------------------------------------------
 function LGE:ScanUnitItems(unit,statTable,setTable,runesTable)
@@ -247,6 +301,8 @@ function LGE:ScanUnitItems(unit,statTable,setTable,runesTable)
 							self:ScanLineForPatterns(lineText,statTable);
 							setTable[lastSetName]["setBonus"..lastBonusCount] = lineText;	-- Az: remove this as cached entries now use the new ScanArmorSetBonuses() function to get set bonus stats
 							lastBonusCount = (lastBonusCount + 1);
+						elseif( lineText:find(getSanctifiedName()) ) then
+							self:ScanLineForPatterns(lineText,statTable);
 						end
 					else
 						self:ScanLineForPatterns(lineText,statTable);
@@ -346,6 +402,9 @@ function LGE:DoLineNeedScan(tipLine,scanSetBonuses)
 	-- Set Names (Needed to Check Sets)
 	elseif (scanSetBonuses and text:find(self.SetNamePattern)) then
 		return true, text;
+	-- Sanctified / Scarlet Uniform
+	elseif (scanSetBonuses and isSanctifiedOrScarletTag(text) ) then
+		return true, text;
 	end
 	return;
 end
@@ -353,21 +412,21 @@ end
 --                                 Checks a Single Line for Patterns                                  --
 --------------------------------------------------------------------------------------------------------
 function LGE:ScanLineForPatterns(text,statTable)
+	local sanctifiedSetBonusText = getSanctifiedSetBonusText() or ""
 	for index, pattern in ipairs(self.Patterns) do
 		local pos, _, value1, value2 = text:find(pattern.p);
+
+		-- Sanctiefied / Scarlet Uniform
+		if isSanctifiedOrScarletTag(pattern.p) and trim(text) == trim(pattern.p) then
+			value1 = 1;
+		end
+		if pos == nil and pattern.p == sanctifiedSetBonusText and trim(text):find(trim(pattern.p)) then
+			value1 = 1
+			pos = 1
+		end
+
 		if (pos) and (value1 or pattern.v) then
---pattern.uses = (pattern.uses or 0) + 1;
-			-- Pattern Debugging -> Find obsolete patterns put on alert
-			if (pattern.alert) and (Examiner) then
-				local _, link = self.Tip:GetItem();
-				link = link:match(self.ITEMLINK_PATTERN);
-				AzMsg("|2Examiner Scan Alert:|r Please report the following to author.");
-				AzMsg(format("index = |1%d|r, unit = |1%s|r.",index,tostring(Examiner.info.name)));
-				AzMsg(format("text = |1%s|r",text));
-				AzMsg(format("pattern = |1%s|r",pattern.p));
-				AzMsg(format("link = |1%s|r",tostring(link)));
-				--print( link, self:GetEnchantInfo(link) );
-			end
+			--pattern.uses = (pattern.uses or 0) + 1;
 			-- Add to stat
 			if (type(pattern.s) == "string") then
 				statTable[pattern.s] = (statTable[pattern.s] or 0) + (value1 or pattern.v);
@@ -443,26 +502,34 @@ function LGE:GetStatValue(statToken,statTable,compareTable,level,combineAdditive
 	end
 	-- OPTION: Add additive stats which stack to each other
 	if (combineAdditiveStats) then
-		if (statTable["SPELLDMG"]) then
-			for _, schoolToken in ipairs(self.MagicSchools) do
-				if (statToken == schoolToken.."DMG") then
-					value = (value + statTable["SPELLDMG"]);
-					break;
-				end
-				if (statToken == schoolToken.."HEAL") then
-					value = (value + statTable["HEAL"]);
-					break;
-				end
-			end
-		end
-		if (statToken == "SPELLDMG") and (statTable["INT"]) then
-			value = (value + statTable["INT"]);
-		end
-		if (statToken == "HEAL") and (statTable["INT"]) then
-			value = (value + statTable["INT"]);
-		end
+	    --not needed anymore?
+		--if (statTable["SPELLDMG"]) then
+			--for _, schoolToken in ipairs(self.MagicSchools) do
+				--if (statToken == schoolToken.."DMG") then
+				--	value = (value + statTable["SPELLDMG"]);
+				--	break;
+				--end
+				--if (statToken == schoolToken.."HEAL") then
+				--	value = (value + statTable["HEAL"]);ö
+				--	break;
+				--end
+			--end
+		--end
+		--if (statToken == "SPELLDMG") and (statTable["INT"]) then
+		--	value = (value + statTable["INT"]);
+		--end
+		--if (statToken == "HEAL") and (statTable["INT"]) then
+		--	value = (value + statTable["INT"]);
+		--end
 		if (statToken == "RAP") and (statTable["AP"]) then
 			value = (value + statTable["AP"]);
+		end
+		if (statToken == "SANCTIFIED") then
+			if (statTable["SANCTIFIED-SET"] ~= nil and statTable["SANCTIFIED-SET"] > 2) then
+				value = value + 2;	
+			end
+			local color = "|cFF88F8EF";
+			value = color..value;
 		end
 	end
 	-- OPTION: Give Rating Values in Percent
@@ -494,10 +561,8 @@ function LGE:GetStatValue(statToken,statTable,compareTable,level,combineAdditive
 	if (percentRatings) and (self.StatRatingBaseTable[statToken]) then
 		return valuePct, value;
 	else
-		 -- do we color it ? "%" looks out of place...
 		if (self.StatRatingBaseTable[statToken]) then
-			local color = "|cff80ff80";
-			value = color..value.."%";
+			value = value.."%";
 		end	
 		return value, valuePct;
 	end

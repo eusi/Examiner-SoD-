@@ -1,8 +1,6 @@
 -- For enchant and gem IDs, check out the following link: https://fr.classic.wowhead.com/enchanting
 -- Pattern entries marked with an "alert" value will cause Examiner to show a warning message,
 -- { p = "Pattern", s = "Category", alert = 1 },
--- telling that the pattern is thought of as no longer in use. These patterns should eventually be deleted.
--- Modified by Grome of EU-Sulfuron for patch 1.13.2 October 13th 2019
 
 if (GetLocale() ~= "deDE") then
 	return;
@@ -82,7 +80,17 @@ LibGearExam.Patterns = {
 	{ p = "Erhöht durch Frostzauber und Frosteffekte zugefügten Schaden um bis zu (%d+)%.", s = "FROSTDMG" },
 	{ p = "Erhöht durch Schattenzauber und Schatteneffekte zugefügten Schaden um bis zu (%d+)%.", s = "SHADOWDMG" },
 	{ p = "Erhöht durch Heiligzauber und Heiligeffekte zugefügten Schaden um bis zu (%d+)%.", s = "HOLYDMG" },
-	
+
+
+	-- SoD Phase 8 Update
+	{ p = "Erhöht Eure Chance auf einen kritischen Treffer mit allen Zaubern und Angriffen um (%d+)%%%.", s = { "CRIT" }},
+	{ p = "Erhöht Eure Trefferchance mit allen Zaubern und Angriffen um (%d+)%%%.", s = { "HIT" }},
+	{ p = "Erhöht Eure Zaubergeschwindigkeit um (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Erhöht die durch Zauber und magische Effekte verursachte Heilung um bis zu (%d+) und den Schaden um bis zu (%d+)%." , s = { "HEAL", "SPELLDMG" } },
+	{ p = "Geweiht", s = "SANCTIFIED" },
+	{ p = "Scharlachrote Uniform", s = "SANCTIFIED" },
+	{ p = "Behandelt den Bonus durch das Siegel der Dämmerung, als würdet Ihr 2 zusätzliche geweihte Gegenstände tragen.", s = "SANCTIFIED-SET" },
+
 	
 	--  Health & Mana Per 5 Sec  --
 	{ p = "Stellt alle 5 Sek%. (%d+) Punkt%(e%) Mana wieder her%.", s = "MP5" },
