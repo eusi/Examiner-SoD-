@@ -82,7 +82,7 @@ LibGearExam.Patterns = {
 	-- SoD Phase 8 Update
 	{ p = "Improves your chance to get a critical strike with all spells and attacks by (%d+)%%%.", s = { "CRIT" }},
 	{ p = "Improves your chance to hit with all spells and attacks by (%d+)%%%.", s = { "HIT" }},
-	{ p = "Increase your casting speed by by (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Increases your casting speed by (%d+)%%%.", s = { "HASTE" }},
 	{ p = "Increases healing done by up to (%d+) and damage done by up to (%d+) for all magical spells and effects%." , s = { "HEAL", "SPELLDMG" } },
 	{ p = "Sanctified", s = "SANCTIFIED" },
 	{ p = "Scarlet Uniform", s = "SANCTIFIED" },

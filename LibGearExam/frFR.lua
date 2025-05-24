@@ -84,14 +84,14 @@ LibGearExam.Patterns = {
 	{ p = "dégâts infligés par les sorts et effets du Sacré (%d+) au maximum%.", s = "HOLYDMG" },
 
 
-	-- SoD Phase 8 Update
-	{ p = "Augmente vos chances d'infliger un coup critique avec tous les sorts et attaques de (%d+)%%%.", s = { "CRIT" }},
-	{ p = "Augmente vos chances de toucher avec tous les sorts et attaques de (%d+)%%%.", s = { "HIT" }},
-	{ p = "Augmente votre vitesse d'incantation de (%d+)%%%.", s = { "HASTE" }},
-	{ p = "Augmente les soins jusqu’à (%d+) et les dégâts jusqu’à (%d+) pour tous les sorts et effets magiques%." , s = { "HEAL", "SPELLDMG" } },
+	-- SoD Phase 8 Mise à jour (frFR)
+	{ p = "Augmente de (%d+)%% vos chances d’infliger un coup critique avec tous les sorts et attaques%.", s = { "CRIT" }},
+	{ p = "Augmente de (%d+)%% les chances de toucher avec tous les sorts et attaques%.", s = { "HIT" }},
+	{ p = " Augmente votre vitesse d’incantation de (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Augmente les soins prodigués d’un maximum de (%d+) et les dégâts d’un maximum de (%d+) pour tous les sorts et effets magiques%." , s = { "HEAL", "SPELLDMG" } },
 	{ p = "Sanctifié", s = "SANCTIFIED" },
 	{ p = "Uniforme écarlate", s = "SANCTIFIED" },
-	{ p = "Améliore votre bonus du sceau de l’aube comme si vous portiez 2 objets sanctifiés supplémentaires.", s = "SANCTIFIED-SET" },
+	{ p = "traite votre bonus de sceau de l’aube comme si vous portiez 2 objets sanctifiés supplémentaires", s = "SANCTIFIED-SET" },
 
 		
 	--  Health & Mana Per 5 Sec  --

@@ -83,14 +83,14 @@ LibGearExam.Patterns = {
 	{ p = "Aumenta el daño causado por los hechizos Sagrados y los efectos hasta en (%d+) p%.", s = "HOLYDMG" },
 
 
-	-- SoD Phase 8 Update
-	{ p = "Mejora tu probabilidad de conseguir un golpe crítico con todos los hechizos y ataques en un (%d+)%%%.", s = { "CRIT" }},
-	{ p = "Mejora tu probabilidad de alcanzar el objetivo con todos los hechizos y ataques en un (%d+)%%%.", s = { "HIT" }},
-	{ p = "Aumenta tu velocidad de lanzamiento de hechizos en un (%d+)%%%.", s = { "HASTE" }},
-	{ p = "Aumenta la curación hasta en (%d+) y el daño hasta en (%d+) de todos los hechizos y efectos mágicos%." , s = { "HEAL", "SPELLDMG" } },
-	{ p = "Santificado", s = "SANCTIFIED" },
+	-- SoD Phase 8 Actualización (esES)
+	{ p = "Mejora tu probabilidad de conseguir un golpe crítico con todos los hechizos y ataques un (%d+)%%%.", s = { "CRIT" }},
+	{ p = "Mejora un (%d+)%% tu probabilidad de golpear con todos los hechizos y ataques%.", s = { "HIT" }},
+	{ p = "Aumenta un (%d+)%% tu velocidad de lanzamiento%.", s = { "HASTE" }},
+	{ p = "Aumenta hasta (%d+) p. la sanación que aplicas y hasta (%d+) p. el daño que infliges con todos los hechizos y efectos mágicos%." , s = { "HEAL", "SPELLDMG" } },
+	{ p = "Santificar", s = "SANCTIFIED" },
 	{ p = "Uniforme Escarlata", s = "SANCTIFIED" },
-	{ p = "Trata el beneficio de tu sello del Alba como si llevaras 2 objetos santificados adicionales.", s = "SANCTIFIED-SET" },
+	{ p = "tu sello del alba ofrece sus bonus como si llevaras equipados 2 objetos santificados más.", s = "SANCTIFIED-SET" },
 
 
 	--  Health & Mana Per 5 Sec  --

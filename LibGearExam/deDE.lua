@@ -82,14 +82,14 @@ LibGearExam.Patterns = {
 	{ p = "Erhöht durch Heiligzauber und Heiligeffekte zugefügten Schaden um bis zu (%d+)%.", s = "HOLYDMG" },
 
 
-	-- SoD Phase 8 Update
-	{ p = "Erhöht Eure Chance auf einen kritischen Treffer mit allen Zaubern und Angriffen um (%d+)%%%.", s = { "CRIT" }},
-	{ p = "Erhöht Eure Trefferchance mit allen Zaubern und Angriffen um (%d+)%%%.", s = { "HIT" }},
-	{ p = "Erhöht Eure Zaubergeschwindigkeit um (%d+)%%%.", s = { "HASTE" }},
-	{ p = "Erhöht die durch Zauber und magische Effekte verursachte Heilung um bis zu (%d+) und den Schaden um bis zu (%d+)%." , s = { "HEAL", "SPELLDMG" } },
+	-- SoD Phase 8 Update (deutsche WoW Classic Strings)
+	{ p = "Erhöht Eure kritische Trefferchance aller Eurer Angriffe und Zauber um (%d+)%%%.", s = { "CRIT" }},
+	{ p = "Erhöht Eure Trefferchance mit allen Angriffen und Zaubern um (%d+)%%%.", s = { "HIT" }},
+	{ p = "Erhöht Eure Zaubertempo um (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Erhöht durch sämtliche Zauber und magische Effekte verursachte Heilung um bis zu (%d+) und den verursachten Schaden um bis zu (%d+)%." , s = { "HEAL", "SPELLDMG" } },
 	{ p = "Geweiht", s = "SANCTIFIED" },
 	{ p = "Scharlachrote Uniform", s = "SANCTIFIED" },
-	{ p = "Behandelt den Bonus durch das Siegel der Dämmerung, als würdet Ihr 2 zusätzliche geweihte Gegenstände tragen.", s = "SANCTIFIED-SET" },
+	{ p = "behandelt den bonus eures siegels der dämmerung, als würdet Ihr 2 zusätzliche geweihte gegenstände tragen.", s = "SANCTIFIED-SET" },
 
 	
 	--  Health & Mana Per 5 Sec  --
