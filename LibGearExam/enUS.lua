@@ -82,12 +82,13 @@ LibGearExam.Patterns = {
 	-- SoD Phase 8 Update
 	{ p = "Improves your chance to get a critical strike with all spells and attacks by (%d+)%%%.", s = { "CRIT" }},
 	{ p = "Improves your chance to hit with all spells and attacks by (%d+)%%%.", s = { "HIT" }},
-	{ p = "Increases your casting speed by (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Increases your casting speed by (%d+)%%%.", s = { "SPELLHASTE" }},
 	{ p = "Increases healing done by up to (%d+) and damage done by up to (%d+) for all magical spells and effects%." , s = { "HEAL", "SPELLDMG" } },
 	{ p = "Sanctified", s = "SANCTIFIED" },
 	{ p = "Scarlet Uniform", s = "SANCTIFIED" },
-	{ p = "treats your seal of the dawn bonus as if you were wearing 2 additional sanctified items.", s = "SANCTIFIED-SET" },
-
+	{ p = "Set: Treats your Seal of the Dawn bonus as if you were wearing 2 additional Sanctified items.  (Equipping more than 8 Sanctified items provides no additional benefit)", s = "SANCTIFIED-SET" },
+	{ p = "Increases your attack speed by (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Reduces the chance for your attacks to be dodged or parried by (%d+)%%%.", s = { "EXPERTISE" }},
 
 	--  Health & Mana Per 5 Sec  --
 	{ p = "Restores (%d+) mana per 5 sec%.", s = "MP5" },

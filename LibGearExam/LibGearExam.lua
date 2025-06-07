@@ -208,31 +208,31 @@ LGE.StatRatingBaseTable = {
 --                                  Sanctified Helper Functions                                       --
 --------------------------------------------------------------------------------------------------------
 function trim(s)
-  return s:lower()
-          :gsub("|c%x%x%x%x%x%x%x%x", "") -- remove color code
-          :gsub("|r", "") -- reset code
+    return s:gsub("|c%x%x%x%x%x%x%x%x",""):gsub(",",""); -- remove all color coding, to simplify pattern matching
+end
+function trim2(s)
+	return trim(s):lower():gsub("|r", "") -- reset code
 end
 function getSanctifiedSetBonusText()
-    local itemID = 23084 --Wristwraps of undead cleansing, one example, just want to get the text
-    if not C_Item or not C_TooltipInfo then return nil end
-    local itemName = GetItemInfo(itemID)
-    if not itemName then return nil end
+    local itemID = 236725 --Wristwraps of undead cleansing, one example, just want to get the text
+    local itemLink = select(2, GetItemInfo(itemID))
+    if not itemLink then return nil end
 
-    local tooltipData = C_TooltipInfo.GetItemByID(itemID)
-    if not tooltipData or not tooltipData.lines then return nil end
+    local tooltip = CreateFrame("GameTooltip", "MyScanningTooltip", nil, "GameTooltipTemplate")
+    tooltip:SetOwner(UIParent, "ANCHOR_NONE")
+    tooltip:SetHyperlink(itemLink)
 
-    local setBonusLines = {}
-    for _, line in ipairs(tooltipData.lines) do
-        if line.leftText and (line.leftText:find("Set:") or line.leftText:find("%(%d+%) Set:")) then
-            table.insert(setBonusLines, line.leftText)
+    for i = 1, tooltip:NumLines() do
+        local text = _G["MyScanningTooltipTextLeft" .. i]:GetText()
+        if text and text:find("Set:") then
+            text = text:gsub("^%(%d+%)%s*", ""):gsub("%s0$", "")
+            return text
         end
     end
 
-    if #setBonusLines > 0 then
-        return trim(table.concat(setBonusLines, "\n"));
-    end
     return nil
 end
+local SanctifiedSetBonus = getSanctifiedSetBonusText();
 local SanctifiedTags = {
 	["enUS"] = { "Sanctified", "Scarlet Uniform" },
 	["deDE"] = { "Geweiht", "Scharlachrote Uniform" },
@@ -378,7 +378,7 @@ function LGE:DoLineNeedScan(tipLine,scanSetBonuses)
 	-- Init Line
 	local text = tipLine:GetText();
 	local color = text:match("^(|c%x%x%x%x%x%x%x%x)");		-- look for color code at the start of line
-	text = text:gsub("|c%x%x%x%x%x%x%x%x",""):gsub(",","");	-- remove all color coding, to simplify pattern matching
+	text = trim(text);	-- remove all color coding, to simplify pattern matching
 	local r, g, b = tipLine:GetTextColor();
 	r, g, b = ceil(r * 255), ceil(g * 255), ceil(b * 255);	-- some lines don't use color codes, but store color in the text widget itself
 	-- Always *Skip* Gray Lines
@@ -412,15 +412,19 @@ end
 --                                 Checks a Single Line for Patterns                                  --
 --------------------------------------------------------------------------------------------------------
 function LGE:ScanLineForPatterns(text,statTable)
-	local sanctifiedSetBonusText = getSanctifiedSetBonusText() or ""
+	if( SanctifiedSetBonus == nil or SanctifiedSetBonus == "" ) then
+		SanctifiedSetBonus = getSanctifiedSetBonusText() or ""
+	end
+
 	for index, pattern in ipairs(self.Patterns) do
 		local pos, _, value1, value2 = text:find(pattern.p);
 
 		-- Sanctiefied / Scarlet Uniform
-		if isSanctifiedOrScarletTag(pattern.p) and trim(text) == trim(pattern.p) then
+		if (isSanctifiedOrScarletTag(pattern.p) and trim2(text) == trim2(pattern.p)) then
 			value1 = 1;
 		end
-		if pos == nil and pattern.p == sanctifiedSetBonusText and trim(text):find(trim(pattern.p)) then
+		-- Sanctified Set
+		if (pos == nil and pattern.p == SanctifiedSetBonus and trim(text) == trim(pattern.p)) then
 			value1 = 1
 			pos = 1
 		end

@@ -86,11 +86,13 @@ LibGearExam.Patterns = {
 	-- SoD Phase 8 Actualización (esES)
 	{ p = "Mejora tu probabilidad de conseguir un golpe crítico con todos los hechizos y ataques un (%d+)%%%.", s = { "CRIT" }},
 	{ p = "Mejora un (%d+)%% tu probabilidad de golpear con todos los hechizos y ataques%.", s = { "HIT" }},
-	{ p = "Aumenta un (%d+)%% tu velocidad de lanzamiento%.", s = { "HASTE" }},
+	{ p = "Aumenta un (%d+)%% tu velocidad de lanzamiento%.", s = { "SPELLHASTE" }},
 	{ p = "Aumenta hasta (%d+) p. la sanación que aplicas y hasta (%d+) p. el daño que infliges con todos los hechizos y efectos mágicos%." , s = { "HEAL", "SPELLDMG" } },
 	{ p = "Santificar", s = "SANCTIFIED" },
 	{ p = "Uniforme Escarlata", s = "SANCTIFIED" },
-	{ p = "tu sello del alba ofrece sus bonus como si llevaras equipados 2 objetos santificados más.", s = "SANCTIFIED-SET" },
+	{ p = "Conjunto: Tu Sello del Alba ofrece sus bonus como si llevaras equipados 2 objetos santificados más. (No obtendrás beneficios adicionales si llevas más de 8 objetos santificados).", s = "SANCTIFIED-SET" },
+	{ p = "Aumenta un (%d+)%% tu velocidad de ataque%.", s = { "HASTE" }},
+	{ p = "Reduce un (%d+)%% la probabilidad de que tus ataques se esquiven o paren%.", s = { "EXPERTISE" }},
 
 
 	--  Health & Mana Per 5 Sec  --

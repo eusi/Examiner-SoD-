@@ -85,11 +85,13 @@ LibGearExam.Patterns = {
 	-- SoD Phase 8 Update (deutsche WoW Classic Strings)
 	{ p = "Erhöht Eure kritische Trefferchance aller Eurer Angriffe und Zauber um (%d+)%%%.", s = { "CRIT" }},
 	{ p = "Erhöht Eure Trefferchance mit allen Angriffen und Zaubern um (%d+)%%%.", s = { "HIT" }},
-	{ p = "Erhöht Eure Zaubertempo um (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Erhöht Eure Zaubertempo um (%d+)%%%.", s = { "SPELLHASTE" }},
 	{ p = "Erhöht durch sämtliche Zauber und magische Effekte verursachte Heilung um bis zu (%d+) und den verursachten Schaden um bis zu (%d+)%." , s = { "HEAL", "SPELLDMG" } },
 	{ p = "Geweiht", s = "SANCTIFIED" },
 	{ p = "Scharlachrote Uniform", s = "SANCTIFIED" },
-	{ p = "behandelt den bonus eures siegels der dämmerung, als würdet Ihr 2 zusätzliche geweihte gegenstände tragen.", s = "SANCTIFIED-SET" },
+	{ p = "Set: Behandelt den Bonus Eures Siegels der Dämmerung, als würdet Ihr 2 zusätzliche geweihte Gegenstände tragen. (Das Ausrüsten von mehr als 8 geweihten Gegenständen bringt keine weiteren Vorteile)", s = "SANCTIFIED-SET" },
+	{ p = "Erhöht Eurer Angriffstempo um (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Verringert die Chance, dass Eure Angriffe pariert werden oder ihnen ausgewichen wird, um (%d+)%%%.", s = { "EXPERTISE" }},
 
 	
 	--  Health & Mana Per 5 Sec  --

@@ -87,11 +87,13 @@ LibGearExam.Patterns = {
 	-- SoD Phase 8 Mise à jour (frFR)
 	{ p = "Augmente de (%d+)%% vos chances d’infliger un coup critique avec tous les sorts et attaques%.", s = { "CRIT" }},
 	{ p = "Augmente de (%d+)%% les chances de toucher avec tous les sorts et attaques%.", s = { "HIT" }},
-	{ p = " Augmente votre vitesse d’incantation de (%d+)%%%.", s = { "HASTE" }},
+	{ p = " Augmente votre vitesse d’incantation de (%d+)%%%.", s = { "SPELLHASTE" }},
 	{ p = "Augmente les soins prodigués d’un maximum de (%d+) et les dégâts d’un maximum de (%d+) pour tous les sorts et effets magiques%." , s = { "HEAL", "SPELLDMG" } },
 	{ p = "Sanctifié", s = "SANCTIFIED" },
 	{ p = "Uniforme écarlate", s = "SANCTIFIED" },
-	{ p = "traite votre bonus de sceau de l’aube comme si vous portiez 2 objets sanctifiés supplémentaires", s = "SANCTIFIED-SET" },
+	{ p = "Set: Traite votre bonus de Sceau de l’Aube comme si vous portiez 2 objets sanctifiés supplémentaires (vous équiper de plus de 8 objets sanctifiés n’apporte aucun avantage supplémentaire).", s = "SANCTIFIED-SET" },
+	{ p = "Augmente votre vitesse d’attaque de (%d+)%%%.", s = { "HASTE" }},
+	{ p = "Réduit les chances que vos attaques soient esquivées ou parées de (%d+)%%%.", s = { "EXPERTISE" }},
 
 		
 	--  Health & Mana Per 5 Sec  --
