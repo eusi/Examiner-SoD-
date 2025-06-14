@@ -71,9 +71,9 @@ ex.options = {
 
 -- Binding Name
 BINDING_HEADER_EXAMINER = modName;
-BINDING_NAME_EXAMINER_OPEN = "Open "..modName;
-BINDING_NAME_EXAMINER_TARGET = INSPECT.." "..TARGET;
-BINDING_NAME_EXAMINER_MOUSEOVER = INSPECT.." Mouseover";
+BINDING_NAME_EXAMINER_OPEN = "Ex: Open "..modName;
+BINDING_NAME_EXAMINER_TARGET = "Ex: "..INSPECT.." "..TARGET;
+BINDING_NAME_EXAMINER_MOUSEOVER = "Ex: "..INSPECT.." Mouseover";
 
 -- Allow Inspect from Any Range -- This was apparently causing TAINT, so it has now been disabled.
 --UnitPopupButtons.INSPECT.dist = 0;
@@ -561,19 +561,24 @@ end
 
 -- Normal Open
 function ex:InspectMouseover()
-	local unit = "mouseover";
-	-- See if mouseover == unitframe unit
-	local mouseFocus = GetMouseFocus();
-	if (mouseFocus) then
-		unit = (mouseFocus:GetAttribute("unit") or unit);
+	local unit = "mouseover"
+
+	-- Sichere Alternative zu GetMouseFocus:
+	if GameTooltip and GameTooltip:GetUnit() then
+		local tooltipUnit = select(2, GameTooltip:GetUnit())
+		if tooltipUnit and UnitExists(tooltipUnit) then
+			unit = tooltipUnit
+		end
 	end
+
 	-- Show/Hide
-	if (UnitExists(unit)) then
-		self:DoInspect(unit);
+	if UnitExists(unit) then
+		self:DoInspect(unit)
 	else
-		self:Display(false);
+		self:Display(false)
 	end
 end
+
 
 -- ClearInspect -- Clears all work variables. Always called before a new inspect request!
 function ex:ClearInspect()

@@ -91,20 +91,28 @@ local DEF_MAX_MENU_ITEMS = 16;
 --------------------------------------------------------------------------------------------------------
 
 -- Used for both the DropDownMenuMixin & DropDownFrameMixin
-local function ApplyBackdrop(self,backdrop,backdropColor,backdropBorderColor)
-	if (not backdropColor) then
-		backdropColor = backdrop and backdrop.backdropColor or AzDropDown.backdrop.backdropColor;
+local function ApplyBackdrop(self, backdrop, backdropColor, backdropBorderColor)
+	-- Use default backdrop if none is provided
+	backdrop = backdrop or AzDropDown.backdrop
+
+	-- Fallback to default colors if needed
+	local r1, g1, b1, a1 = 0.1, 0.1, 0.1, 1       -- default background color
+	local r2, g2, b2, a2 = 0.4, 0.4, 0.4, 1       -- default border color
+
+	-- Try reading from provided ColorMixin or raw color values
+	if type(backdropColor) == "table" and type(backdropColor.GetRGBA) == "function" then
+		r1, g1, b1, a1 = backdropColor:GetRGBA()
 	end
-	if (not backdropBorderColor) then
-		backdropBorderColor = backdrop and backdrop.backdropBorderColor or AzDropDown.backdrop.backdropBorderColor;
+	if type(backdropBorderColor) == "table" and type(backdropBorderColor.GetRGBA) == "function" then
+		r2, g2, b2, a2 = backdropBorderColor:GetRGBA()
 	end
-	if (not backdrop) then
-		backdrop = AzDropDown.backdrop;
-	end
-	self:SetBackdrop(backdrop);
-	self:SetBackdropColor(backdropColor:GetRGBA());
-	self:SetBackdropBorderColor(backdropBorderColor:GetRGBA());
+
+	-- Apply backdrop and final colors
+	self:SetBackdrop(backdrop)
+	self:SetBackdropColor(r1, g1, b1, a1)
+	self:SetBackdropBorderColor(r2, g2, b2, a2)
 end
+
 
 --------------------------------------------------------------------------------------------------------
 --                                        DropDown Menu Mixin                                         --
@@ -184,8 +192,12 @@ function DropDownMenuMixin:Initialize(parent,point,parentPoint)
 	-- Copy Backdrop from parent, or use default
 	local backdrop = parent:GetBackdrop();
 	if (backdrop) then
-		backdropColor:SetRGB(parent:GetBackdropColor());
-		backdropBorderColor:SetRGBA(parent:GetBackdropBorderColor());
+		local r1, g1, b1 = parent:GetBackdropColor()
+		local r2, g2, b2, a2 = parent:GetBackdropBorderColor()
+		local color1 = CreateColor(r1 or 0, g1 or 0, b1 or 0, 1)
+		local color2 = CreateColor(r2 or 1, g2 or 1, b2 or 1, a2 or 1)
+		self:ApplyBackdrop(backdrop, color1, color2)
+
 		self:ApplyBackdrop(backdrop,backdropColor,backdropBorderColor);
 	else
 		self:ApplyBackdrop(AzDropDown.backdrop);
@@ -300,27 +312,44 @@ end
 
 -- Creates the DropDown menu with item buttons and scrollbar
 local function CreateDropDownMenu()
-	menu = CreateFrame("Frame",nil,nil,"BackdropTemplate");
+	menu = CreateFrame("Frame", nil, nil, "BackdropTemplate")
 
-	menu:SetToplevel(true);
-	menu:SetClampedToScreen(true);
-	menu:SetFrameStrata("FULLSCREEN_DIALOG");
-	menu:SetScript("OnHide",function(self) if (self:IsShown()) then self:Hide(); end end);	-- hides the menu if parent is hidden
-	menu:Hide();
+	menu:SetBackdrop({
+		bgFile = "Interface\\DialogFrame\\UI-DialogBox-Background",
+		edgeFile = "Interface\\DialogFrame\\UI-DialogBox-Border",
+		tile = true, tileSize = 32, edgeSize = 32,
+		insets = { left = 11, right = 12, top = 12, bottom = 11 }
+	})
+	menu:SetBackdropColor(0, 0, 0, 1)
 
-	menu.scroll = CreateFrame("ScrollFrame","AzDropDownScroll"..REVISION,menu,"FauxScrollFrameTemplate");
-	menu.scroll:SetScript("OnVerticalScroll",function(self,offset) FauxScrollFrame_OnVerticalScroll(self,offset,MENU_ITEM_HEIGHT,self.UpdateScroll); end);
-	menu.scroll.UpdateScroll = UpdateScroll;
+	menu:SetToplevel(true)
+	menu:SetClampedToScreen(true)
+	menu:SetFrameStrata("FULLSCREEN_DIALOG")
+	menu:SetScript("OnHide", function(self)
+		if (self:IsShown()) then self:Hide() end
+	end)
+	menu:Hide()
 
-	-- fontString used to measure text width
-	menu.measure = menu:CreateFontString(nil,"ARTWORK","GameFontHighlightSmall");
-	menu.measure:Hide();
+	menu.scroll = CreateFrame("ScrollFrame", "AzDropDownScroll"..REVISION, menu, "FauxScrollFrameTemplate")
+	menu.scroll:SetScript("OnVerticalScroll", function(self, offset)
+		FauxScrollFrame_OnVerticalScroll(self, offset, MENU_ITEM_HEIGHT, self.UpdateScroll)
+	end)
+	menu.scroll.UpdateScroll = UpdateScroll
 
-	menu.items = {};
-	menu.list = setmetatable({},{ __index = function(t,k) t[k] = #storage > 0 and tremove(storage,#storage) or {}; return t[k]; end });
+	menu.measure = menu:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+	menu.measure:Hide()
 
-	Mixin(menu,DropDownMenuMixin);
+	menu.items = {}
+	menu.list = setmetatable({}, {
+		__index = function(t, k)
+			t[k] = #storage > 0 and tremove(storage, #storage) or {}
+			return t[k]
+		end
+	})
+
+	Mixin(menu, DropDownMenuMixin)
 end
+
 
 --------------------------------------------------------------------------------------------------------
 --                                   Public DropDown Menu Functions                                   --
