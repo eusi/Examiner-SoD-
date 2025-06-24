@@ -9,7 +9,7 @@
 
 -- create new library
 local LIB_NAME = "LibFroznFunctions-1.0";
-local LIB_MINOR = 42; -- bump on changes
+local LIB_MINOR = 43; -- bump on changes
 
 if (not LibStub) then
 	error(LIB_NAME .. " requires LibStub.");
@@ -101,6 +101,7 @@ LFF_GEAR_SCORE_ALGORITHM = {
 --
 -- @return .guildNameInPlayerUnitTip                                   = true/false if the guild name is included in the player unit tip (since bc)
 --         .specializationAndClassTextInPlayerUnitTip                  = true/false if a specialization and class text is included in the player unit tip (since df 10.1.5)
+--         .rightClickForFrameSettingsTextInPlayerUnitTip              = true/false if a right-click for frame settings is included in the player unit tip (since tww 11.0.7)
 --         .needsSuppressingErrorMessageAndSpeechWhenCallingCanInspect = true/false for suppressing error message and speech when calling CanInspect() (till wotlkc)
 --         .talentsAvailableForInspectedUnit                           = true/false if getting talents from other players is available (since bc 2.3.0)
 --         .numTalentTrees                                             = number of talent trees
@@ -123,6 +124,7 @@ LFF_GEAR_SCORE_ALGORITHM = {
 LibFroznFunctions.hasWoWFlavor = {
 	guildNameInPlayerUnitTip = true,
 	specializationAndClassTextInPlayerUnitTip = true,
+	rightClickForFrameSettingsTextInPlayerUnitTip = true,
 	needsSuppressingErrorMessageAndSpeechWhenCallingCanInspect = false,
 	talentsAvailableForInspectedUnit = true,
 	numTalentTrees = 2,
@@ -170,6 +172,9 @@ if (LibFroznFunctions.isWoWFlavor.ClassicEra) or (LibFroznFunctions.isWoWFlavor.
 	LibFroznFunctions.hasWoWFlavor.specializationAndClassTextInPlayerUnitTip = false;
 	LibFroznFunctions.hasWoWFlavor.experienceBarFrame = MainMenuExpBar;
 	LibFroznFunctions.hasWoWFlavor.experienceBarDockedToInterfaceBar = true;
+end
+if (LibFroznFunctions.isWoWFlavor.ClassicEra) or (LibFroznFunctions.isWoWFlavor.BCC) or (LibFroznFunctions.isWoWFlavor.WotLKC) or (LibFroznFunctions.isWoWFlavor.CataC) or (LibFroznFunctions.isWoWFlavor.SL) or (LibFroznFunctions.isWoWFlavor.DF) then
+	LibFroznFunctions.hasWoWFlavor.rightClickForFrameSettingsTextInPlayerUnitTip = false;
 end
 if (LibFroznFunctions.isWoWFlavor.CataC) then
 	LibFroznFunctions.hasWoWFlavor.GetTalentTabInfoReturnValuesFromCataC = true;
@@ -2649,6 +2654,38 @@ function LibFroznFunctions:RecalculateSizeOfGameTooltip(tip)
 	tip:GetWidth(); -- possible blizzard bug (tested under df 10.2.7): tooltip is sometimes invisible after SetPadding() is called in OnShow. Calling e.g. GetWidth() after SetPadding() fixes this. reproduced with addon "Total RP 3" where the player's unit tooltip isn't shown any more.
 end
 
+-- get tooltip info
+--
+-- @param  functionName  tooltip info function to call
+-- @param  ...           values for tooltip info function to call
+-- @return tooltipData
+--           .lines       lines of tooltip
+--             .leftText    left text of line
+--             .rightText   right text of line
+--         returns nil if no tooltip data is available.
+function LibFroznFunctions:GetTooltipInfo(functionName, ...)
+	-- get tooltip info from C_TooltipInfo
+	
+	-- since df 10.0.2
+	if (C_TooltipInfo) and (type(C_TooltipInfo[functionName]) == "function") then
+		local tooltipData = C_TooltipInfo[functionName](...);
+		
+		return tooltipData;
+	end
+	
+	-- before df 10.0.2
+	
+	-- get tooltip info from scanning tooltip
+	local accessors = { -- see "TooltipDataHandler.lua"
+		GetUnit = "SetUnit",
+		GetUnitAura = "SetUnitAura"
+	};
+	
+	local tooltipData = LibFroznFunctions:GetTooltipDataFromScanTip("GetTooltipInfo", accessors[functionName], ...);
+	
+	return tooltipData;
+end
+
 -- get tooltip data from scanning tooltip
 --
 -- @param  scanTipName   name of scanning tooltip
@@ -2678,7 +2715,7 @@ function LibFroznFunctions:GetTooltipDataFromScanTip(scanTipName, functionName, 
 		scanTip:SetOwner(UIParent, "ANCHOR_NONE");
 	end
 	
-	-- get tooltip data from tooltip
+	-- get tooltip data from scanning tooltip
 	scanTip:ClearLines();
 	scanTip[functionName](scanTip, ...);
 	
@@ -2763,18 +2800,7 @@ function LFF_GetAuraDescriptionFromSpellData(unitID, index, filter, callbackForA
 	end
 	
 	-- get aura description from spell data
-	
-	-- since df 10.0.2
-	if (C_TooltipInfo) then
-		local tooltipData = C_TooltipInfo.GetUnitAura(unitID, index, filter);
-		
-		return LFF_GetAuraDescriptionFromTooltipData(tooltipData, callbackForAuraData);
-	end
-	
-	-- before df 10.0.2
-	
-	-- get aura description from tooltip
-	local tooltipData = LibFroznFunctions:GetTooltipDataFromScanTip("GetAuraDescription", "SetUnitAura", unitID, index, filter);
+	local tooltipData = LibFroznFunctions:GetTooltipInfo("GetUnitAura", unitID, index, filter);
 	
 	return LFF_GetAuraDescriptionFromTooltipData(tooltipData, callbackForAuraData);
 end
